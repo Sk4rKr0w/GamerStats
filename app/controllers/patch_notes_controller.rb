@@ -1,0 +1,2 @@
+class PatchNotesController < ApplicationController
+end
