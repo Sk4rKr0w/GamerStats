@@ -7,7 +7,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= javascript_importmap_tags "custom_functions" %>
   </head>
 
   <body>
@@ -178,16 +178,16 @@
 
                     <h1>Battle nick</h1>
                     <%= form.text_field :battle_id %>
-                    </div>
+                </div>
 
-                    <div class="signup-mid-south-container">
+                <div class="signup-mid-south-container">
                     <%= form.submit 'Sign Up' %>
                     <span onclick="toogleSignUp()">Hai già un account? Accedi!</span>
                 </div>
             <% end %>
-
         </div>
-      </div>
+
+        <%= javascript_include_tag 'custom_script' %>
 
   </body>
 </html>
