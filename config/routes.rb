@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   get 'profile', to: 'profile#index'
 
+  post 'signup', to: 'users#create', as: 'signup'
+
   # Defines the root path route ("/")
   root "home#index"
 end

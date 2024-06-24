@@ -3,17 +3,13 @@
 one:
   nickname: MyString
   email: MyString
-  password: MyString
+  password_digest: MyString
   riot_id: MyString
   battle_id: MyString
-  user_id: MyString
-  registration_timestamp: 2024-06-23 17:44:41
 
 two:
   nickname: MyString
   email: MyString
-  password: MyString
+  password_digest: MyString
   riot_id: MyString
   battle_id: MyString
-  user_id: MyString
-  registration_timestamp: 2024-06-23 17:44:41

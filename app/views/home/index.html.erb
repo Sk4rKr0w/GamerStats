@@ -169,27 +169,33 @@
                 <%= image_tag 'toogle-login.svg', width: 36, height: 36, alt: '', onclick: 'toogleLogin()' %>
             </div>
 
-            <form action="/signup RIEMPIRE QUA" method="POST" class="signup-mid-container">
+            <%= form_with model: User.new, url: signup_path, local: true, class: 'signup-mid-container' do |form| %>
                 <div class="signup-mid-north-container">
                     <h1>Nickname</h1>
-                    <input type="text" placeholder="e.g. DealBreaker21">
-                    <h1>E-mail</h1>
-                    <input type="email" placeholder="e.g. MarcoRossi@gmail.com">
-                    <h1>Password</h1>
-                    <input type="password" placeholder="******">
-                    <h1>Conferma password</h1>
-                    <input type="password" placeholder="******">
-                    <h1>Riot nick</h1>
-                    <input type="text">
-                    <h1>Battle nick</h1>
-                    <input type="text">
-                </div>
+                    <%= form.text_field :nickname, placeholder: 'e.g. DealBreaker21' %>
 
-                <div class="signup-mid-south-container">
-                    <button type="submit">Sign Up</button>
-                    <span onclick="toogleSignUp()">Hai già un account?Accedi!</span>
+                    <h1>E-mail</h1>
+                    <%= form.email_field :email, placeholder: 'e.g. MarcoRossi@gmail.com' %>
+
+                    <h1>Password</h1>
+                    <%= form.password_field :password, placeholder: '******' %>
+
+                    <h1>Conferma password</h1>
+                    <%= form.password_field :password_confirmation, placeholder: '******' %>
+
+                    <h1>Riot nick</h1>
+                    <%= form.text_field :riot_id %>
+
+                    <h1>Battle nick</h1>
+                    <%= form.text_field :battle_id %>
+                    </div>
+
+                    <div class="signup-mid-south-container">
+                    <%= form.submit 'Sign Up' %>
+                    <span onclick="toogleSignUp()">Hai già un account? Accedi!</span>
                 </div>
-            </form>
+            <% end %>
+
         </div>
     </div>
 
