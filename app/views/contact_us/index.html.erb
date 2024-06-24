@@ -13,34 +13,34 @@
             <h1>Contact Us</h1>
         </div>
 
-        <div class="contact-container-south">
-            <form action="/invia" method="post">
-                <div class="contact-form-north">
-                <div class="row">
-                    <label for="name">Name</label>
-                    <label for="email">Email</label>
-                </div>
-                <div class="row">
-                    <input type="text" id="name" name="name" class="input-name">
-                    <input type="email" id="email" name="email" class="input-email">
-                </div>
-                <div class="row">
-                    <label for="subject">Oggetto</label>
-                </div>
-                <div class="row">
-                    <input type="text" id="subject" name="subject" class="input-subject">
-                </div>
-                </div>
+    <div class="contact-container-south">
+        <%= form_tag("/invia", method: "post") do %>
+            <div class="contact-form-north">
+            <div class="row">
+                <%= label_tag(:name, "Name") %>
+                <%= label_tag(:email, "Email") %>
+            </div>
+            <div class="row">
+                <%= text_field_tag(:name, nil, class: "input-name", placeholder: "Mario", required: true) %>
+                <%= email_field_tag(:email, nil, class: "input-email", placeholder: "MarioRossi@gmail.com", required: true) %>
+            </div>
+            <div class="row">
+                <%= label_tag(:subject, "Subjet") %>
+            </div>
+            <div class="row">
+                <%= text_field_tag(:subject, nil, class: "input-subject", placeholder: "e.g. Account not Found", required: true) %>
+            </div>
+            </div>
 
+            <div class="contact-form-south">
+            <%= label_tag(:message, "Messaggio:") %>
+            <%= text_area_tag(:message, nil, placeholder: "Digit here...", required: true) %>
 
-                <div class="contact-form-south">
-                    <label for="message">Messaggio:</label>
-                    <textarea id="message" name="message" placeholder="Digita qui..." required></textarea>
+            <%= submit_tag("Invia") %>
+            </div>
+        <% end %>
+    </div>
 
-                    <input type="submit" value="Invia">
-                </div>
-            </form>
-        </div>
     </div>
 </body>
 </html>
