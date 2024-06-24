@@ -11,6 +11,7 @@
   </head>
 
   <body>
+
       <% if flash[:notice] %>
         <div class="flash notice" style="background-color: #57FF56; color: black"><%= flash[:notice] %></div>
       <% end %>
@@ -18,6 +19,175 @@
         <div class="flash alert" style="background-color: #FE3636"><%= flash[:alert] %></div>
       <% end %>
 
-      <%= yield %>
+      <!-- NAVBAR -->
+      <nav>
+          <div class="navleft-container">
+              <%= link_to image_tag('logo.png'), home_path %>
+              <div class="hamburger-icon invisible" onclick="toogleSidebar()">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+          </div>
+          <div class="navright-container">
+              <ul>
+                  <%= link_to 'Home', home_path %>
+                  <%= link_to 'About', about_path %>
+                  <%= link_to 'Contact Us', contact_us_path %>
+                  <div onclick="toogleLogin()"><li>Login</li></div>
+                  <%= link_to 'My Squad', my_squad_path %>
+              </ul>
+          </div>
+      </nav>
+
+      <!-- CONTENUTO PRINCIPALE (NON TOCCARE) -->
+      <div class="main-content" id="main-content">
+        <div class="sidebar" id="sidebar-left">
+            <div class="sidebar-top">
+                <%= link_to leaderboard_path do %>
+                    <%= image_tag 'leaderboard-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                    Leaderboard
+                <% end %>
+
+                <%= link_to insights_path do %>
+                    <%= image_tag 'insights-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                    Insights
+                <% end %>
+
+                <%= link_to patch_notes_path do %>
+                    <%= image_tag 'patch_notes-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                    Patch Notes
+                <% end %>
+
+                <%= link_to items_path do %>
+                    <%= image_tag 'items-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                    Items
+                <% end %>
+
+                <%= link_to champion_ratings_path do %>
+                    <%= image_tag 'champion_ratings-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                    Champion Ratings
+                <% end %>
+
+                <%= link_to squads_path do %>
+                    <%= image_tag 'squads-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                    Squads
+                <% end %>
+            </div>
+
+            <div class="sidebar-bottom">
+                <%= link_to profile_path do %>
+                    <%= image_tag 'profile-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                    Profilo
+                <% end %>
+            </div>
+
+        </div>
+
+        <%= yield %>
+
+        <div class="sidebar-nav invisible" id="sidebar-right">
+            <div class="sidebar-nav-container">
+                <%= link_to home_path do %>
+                    Home
+                    <%= image_tag 'home-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
+                <% end %>
+
+                <%= link_to about_path do %>
+                    About
+                    <%= image_tag 'about-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
+                <% end %>
+
+                <%= link_to contact_us_path do %>
+                    Contact Us
+                    <%= image_tag 'contact_us-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
+                <% end %>
+
+
+                <div onclick="toogleLogin()">
+                    Login
+                    <%= image_tag 'login-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
+                </div>
+
+                <%= link_to my_squad_path do %>
+                    My Squad
+                    <%= image_tag 'my_squad-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
+                <% end %>
+            </div>
+        </div>
+      </div>
+
+      <!-- FORM DI LOGIN/SIGNUP-->
+      <div id="login" class="login-container">
+        <div class="login-section" id="login-section">
+
+            <div class="login-north-container">
+                <h1>Login</h1>
+                <%= image_tag 'toogle-login.svg', width: 36, height: 36, alt: '', onclick: 'toogleLogin()' %>
+            </div>
+
+
+            <form action="/login RIEMPIRE QUA" method="POST" class="login-mid-container">
+                <div class="login-mid-north-container">
+                    <h1>E-mail</h1>
+                    <input type="email" placeholder="e.g. MarcoRossi@gmail.com">
+                    <h1>Password</h1>
+                    <input type="password">
+                    <h1>Hai dimenticato la password?</h1>
+                </div>
+
+                <div class="login-mid-south-container">
+                    <button type="submit">Sign In</button>
+                    <span onclick="toogleSignUp()">Non hai un account? Registrati!</span>
+                </div>
+            </form>
+
+            <div class="login-south-container">
+                <span>Accedi con:</span>
+                <br>
+                <div class="login-svg-container">
+                    <%= image_tag 'google-icon.svg', width: 56, height: 56, alt: '' , style:"margin: 5px" , class: 'login-icon' %>
+                    <%= image_tag 'facebook-icon.svg', width: 56, height: 56, alt: '', style:"margin: 5px" , class: 'login-icon' %>
+                    <%= image_tag 'twitter-icon.svg', width: 56, height: 56, alt: '', style:"margin: 5px" , class: 'login-icon' %>
+                </div>
+            </div>
+        </div>
+
+        <div class="signup-section" id="signup-section">
+            <div class="signup-north-container">
+                <h1>Registrati</h1>
+                <%= image_tag 'toogle-login.svg', width: 36, height: 36, alt: '', onclick: 'toogleLogin()' %>
+            </div>
+
+            <%= form_with model: User.new, url: signup_path, local: true, class: 'signup-mid-container' do |form| %>
+                <div class="signup-mid-north-container">
+                    <h1>Nickname</h1>
+                    <%= form.text_field :nickname, placeholder: 'e.g. DealBreaker21' %>
+
+                    <h1>E-mail</h1>
+                    <%= form.email_field :email, placeholder: 'e.g. MarcoRossi@gmail.com' %>
+
+                    <h1>Password</h1>
+                    <%= form.password_field :password, placeholder: '******' %>
+
+                    <h1>Conferma password</h1>
+                    <%= form.password_field :password_confirmation, placeholder: '******' %>
+
+                    <h1>Riot nick</h1>
+                    <%= form.text_field :riot_id %>
+
+                    <h1>Battle nick</h1>
+                    <%= form.text_field :battle_id %>
+                    </div>
+
+                    <div class="signup-mid-south-container">
+                    <%= form.submit 'Sign Up' %>
+                    <span onclick="toogleSignUp()">Hai già un account? Accedi!</span>
+                </div>
+            <% end %>
+
+        </div>
+      </div>
+
   </body>
 </html>
