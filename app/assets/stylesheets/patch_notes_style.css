@@ -27,7 +27,8 @@ body {
 }
 
 .patch-notes-south {
-    display: wrap;
+    display: flex;
+    flex: wrap;
     justify-content: center;
 }
 
