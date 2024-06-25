@@ -1,6 +1,6 @@
 .contact-container {
     position: relative;
-    width: 80%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -37,7 +37,13 @@
 .contact-container-north {
     color: rgb(255, 0, 0);
     height: 10%;
-    margin: 10px;
+    margin: 20px;
+}
+
+.contact-container-north h1 {
+    padding: 10px 20px;
+    background-color: #000000;
+    border: 1px solid rgb(122, 122, 122);
 }
 
 .contact-container-south {
@@ -54,9 +60,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translateY(-30px);
 }
 
 .contact-container form {
+    border: 1px solid rgb(68, 68, 68);
     width: 100%;
     max-width: 600px;
     background: #000000;
@@ -173,7 +181,7 @@
         height: 5%;
         width: 100%;
         padding: 5px;
-        transform: translateY(15px);
+        margin-top: 100px;
     }
 
     .contact-container textarea {
@@ -188,12 +196,13 @@
     }
 
     .contact-container-south {
-        transform: scale(0.63);
+        transform: scale(0.55) translateY(-50px);
     }
 
     .contact-container-north {
         position: relative;
         z-index: 1;
         font-size: 13px;
+        margin-top: 70px;
     }
 }
