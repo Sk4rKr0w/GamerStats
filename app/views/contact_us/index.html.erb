@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <%= stylesheet_link_tag 'contact_us_style' %>
+</head>
+<body>
+
+    <div class="contact-container" id="contact-container">
+
+        <div class="contact-container-north">
+            <h1>Contact Us</h1>
+        </div>
+
+    <div class="contact-container-south">
+        <%= form_tag("/invia", method: "post") do %>
+            <div class="contact-form-north">
+            <div class="row">
+                <%= label_tag(:name, "Name") %>
+                <%= label_tag(:email, "Email") %>
+            </div>
+            <div class="row">
+                <%= text_field_tag(:name, nil, class: "input-name", placeholder: "Mario", required: true) %>
+                <%= email_field_tag(:email, nil, class: "input-email", placeholder: "MarioRossi@gmail.com", required: true) %>
+            </div>
+            <div class="row">
+                <%= label_tag(:subject, "Subjet") %>
+            </div>
+            <div class="row">
+                <%= text_field_tag(:subject, nil, class: "input-subject", placeholder: "e.g. Account not Found", required: true) %>
+            </div>
+            </div>
+
+            <div class="contact-form-south">
+            <%= label_tag(:message, "Messaggio:") %>
+            <%= text_area_tag(:message, nil, placeholder: "Digit here...", required: true) %>
+
+            <%= submit_tag("Invia") %>
+            </div>
+        <% end %>
+    </div>
+
+    </div>
+</body>
+</html>
