@@ -16,17 +16,15 @@
             </div>
 
             <div class="patch-notes-south">
-            <% @patch_notes.each do |patch_note| %>
-                <% if patch_note.game == "League of Legends" %>
+                <% @patch_notes.select { |patch_note| patch_note.game == "League of Legends" }.first(3).each do |patch_note| %>
                     <div class="patch-notes-card">
-                    <%= image_tag(patch_note.image_path, alt: "patch_notes_img") %>
-                    <span>
+                        <%= image_tag(patch_note.image_path, alt: "patch_notes_img") %>
+                        <span>
                         <h3><%= patch_note.title %></h3>
                         <%= patch_note.description %>
-                    </span>
+                        </span>
                     </div>
                 <% end %>
-            <% end %>
             </div>
         </div>
 
@@ -36,17 +34,15 @@
             </div>
 
             <div class="patch-notes-south">
-            <% @patch_notes.each do |patch_note| %>
-                <% if patch_note.game == "Overwatch" %>
+                <% @patch_notes.select { |patch_note| patch_note.game == "Overwatch" }.first(3).each do |patch_note| %>
                     <div class="patch-notes-card">
-                    <%= image_tag(patch_note.image_path, alt: "patch_notes_img") %>
-                    <span>
+                        <%= image_tag(patch_note.image_path, alt: "patch_notes_img") %>
+                        <span>
                         <h3><%= patch_note.title %></h3>
                         <%= patch_note.description %>
-                    </span>
+                        </span>
                     </div>
                 <% end %>
-            <% end %>
             </div>
         </div>
 
@@ -56,17 +52,15 @@
             </div>
 
             <div class="patch-notes-south">
-            <% @patch_notes.each do |patch_note| %>
-                <% if patch_note.game == "Valorant" %>
+                <% @patch_notes.select { |patch_note| patch_note.game == "Valorant" }.first(3).each do |patch_note| %>
                     <div class="patch-notes-card">
-                    <%= image_tag(patch_note.image_path, alt: "patch_notes_img") %>
-                    <span>
+                        <%= image_tag(patch_note.image_path, alt: "patch_notes_img") %>
+                        <span>
                         <h3><%= patch_note.title %></h3>
                         <%= patch_note.description %>
-                    </span>
+                        </span>
                     </div>
                 <% end %>
-            <% end %>
             </div>
         </div>
     </div>
