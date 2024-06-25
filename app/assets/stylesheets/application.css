@@ -296,7 +296,7 @@ nav {
     height: 45%;
 }
 
-.login-mid-south-container button,
+.login-mid-south-container input,
 .signup-mid-south-container input {
     padding: 15px 90px;
     border-radius: 10px;
@@ -309,7 +309,7 @@ nav {
     transition: 0.5s ease;
 }
 
-.login-mid-south-container button:hover,
+.login-mid-south-container input:hover,
 .signup-mid-south-container input:hover {
     background-color: white;
     color: black;

@@ -166,38 +166,39 @@
         <!-- FORM DI LOGIN/SIGNUP-->
         <div id="login" class="login-container">
             <div class="login-section" id="login-section">
-
                 <div class="login-north-container">
                     <h1>Login</h1>
-                    <%= image_tag 'toggle-login.svg', width: 36, height: 36, alt: '', onclick: 'toggleLogin()', style:"cursor: pointer;" %>
+                    <%= image_tag 'toggle-login.svg', width: 36, height: 36, alt: '', onclick: 'toggleLogin()', style: "cursor: pointer;" %>
                 </div>
 
-
-                <form action="/login RIEMPIRE QUA" method="POST" class="login-mid-container">
+                <%= form_tag('/login', method: 'POST', class: 'login-mid-container') do %>
                     <div class="login-mid-north-container">
                         <h1>E-mail</h1>
-                        <input type="email" placeholder="e.g. MarcoRossi@gmail.com">
+                        <%= email_field_tag :email, nil, placeholder: 'e.g. MarcoRossi@gmail.com' %>
+
                         <h1>Password</h1>
-                        <input type="password">
+                        <%= password_field_tag :password, nil %>
+
                         <h1>Hai dimenticato la password?</h1>
                     </div>
 
                     <div class="login-mid-south-container">
-                        <button type="submit">Sign In</button>
+                        <%= submit_tag 'Sign In' %>
                         <span onclick="toggleSignUp()">Non hai un account? Registrati!</span>
                     </div>
-                </form>
+                <% end %>
 
                 <div class="login-south-container">
                     <span>Accedi con:</span>
                     <br>
                     <div class="login-svg-container">
-                        <%= image_tag 'google-icon.svg', width: 56, height: 56, alt: '' , style:"margin: 5px" , class: 'login-icon' %>
-                        <%= image_tag 'facebook-icon.svg', width: 56, height: 56, alt: '', style:"margin: 5px" , class: 'login-icon' %>
-                        <%= image_tag 'twitter-icon.svg', width: 56, height: 56, alt: '', style:"margin: 5px" , class: 'login-icon' %>
+                        <%= image_tag 'google-icon.svg', width: 56, height: 56, alt: '', style: "margin: 5px;", class: 'login-icon' %>
+                        <%= image_tag 'facebook-icon.svg', width: 56, height: 56, alt: '', style: "margin: 5px;", class: 'login-icon' %>
+                        <%= image_tag 'twitter-icon.svg', width: 56, height: 56, alt: '', style: "margin: 5px;", class: 'login-icon' %>
                     </div>
                 </div>
             </div>
+
 
             <div class="signup-section" id="signup-section">
                 <div class="signup-north-container">
