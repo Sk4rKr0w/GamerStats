@@ -27,8 +27,8 @@ body {
 }
 
 .patch-notes-south {
-    display: flex;
-    flex: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
 }
 
@@ -73,6 +73,12 @@ body {
 @media (max-width: 480px) {
     .patch-notes-container {
         top: 30px;
+    }
+
+    .patch-notes-south {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
