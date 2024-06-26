@@ -85,9 +85,6 @@
 
         <div class="mobile-container invisible">
             <div class="mobile-top">
-                <%= link_to home_path, class: "logo" do %>
-                    <%= image_tag('logo.png') %>
-                <% end %>
                 <div class="hamburger-icon" onclick=toggleSidebar()>
                     <span></span>
                     <span></span>
@@ -126,6 +123,9 @@
                         Squads
                     <% end %>
 
+                    <%= link_to home_path, class: "logo" do %>
+                        <%= image_tag('logo.png') %>
+                    <% end %>
                 </div>
 
                 <div class="mobile-right" id="mobile-right">

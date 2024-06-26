@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_25_115424) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_25_100540) do
   create_table "patch_notes", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "description", null: false
-    t.string "game", null: false
-    t.string "image_path", null: false
-    t.text "link_path", null: false
+    t.string "title"
+    t.text "description"
+    t.string "game"
+    t.string "image_path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

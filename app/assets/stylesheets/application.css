@@ -364,7 +364,7 @@ nav {
     height: 50px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-self: center;
     border-bottom: 1px solid white;
     background-color: #000000;
@@ -448,14 +448,14 @@ nav {
     background-color: #767676;
 }
 
-.mobile-top .logo {
+.mobile-left .logo {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
 }
 
-.mobile-top .logo img {
+.mobile-left .logo img {
     transform: scale(0.5);
 }
 
@@ -494,6 +494,10 @@ nav {
 @media (min-width: 480px) and (max-width: 768px) {
     .invisible {
         display: flex;
+    }
+
+    .mobile-left .logo {
+        display: none;
     }
 
     .nav-container {
