@@ -7,16 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-PatchNote.create([
+#
+# PatchNote.create([
 
-  { title: "Patch Notes 14.12", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "League of Legends",image_path: "lol-1.jpg" },
-  { title: "Patch Notes 14.11", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "League of Legends",image_path: "lol-2.jpg" },
-  { title: "Patch Notes 14.10", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "League of Legends",image_path: "lol-3.jpg" },
-  { title: "20 Giugno 2024", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "Overwatch",image_path: "ow-1.jpg" },
-  { title: "21 Febbraio 2024", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "Overwatch",image_path: "ow-2.jpg" },
-  { title: "28 Marzo 2024", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "Overwatch",image_path: "ow-3.jpg" },
-  { title: "Patch Notes 8.11", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "Valorant",image_path: "vl-1.jpg" },
-  { title: "Patch Notes 8.10", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "Valorant",image_path: "vl-2.jpg" },
-  { title: "Patch Notes 8.09", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "Valorant",image_path: "vl-3.jpg" }
+#   { title: "Patch Notes 14.12", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "League of Legends",image_path: "lol-1.jpg", link_path:"https://www.leagueoflegends.com/it-it/news/game-updates/patch-14-12-notes/"},
+#   { title: "Patch Notes 14.11", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "League of Legends",image_path: "lol-2.jpg", link_path:"https://www.leagueoflegends.com/it-it/news/game-updates/patch-14-11-notes/"},
+#   { title: "Patch Notes 14.10", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "League of Legends",image_path: "lol-3.jpg", link_path:"https://www.leagueoflegends.com/it-it/news/game-updates/patch-14-10-notes/"},
+#   { title: "20 Giugno 2024", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "Overwatch",image_path: "ow-1.jpg", link_path:"https://overwatch.blizzard.com/en-us/news/patch-notes/"},
+#   { title: "21 Febbraio 2024", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "Overwatch",image_path: "ow-2.jpg", link_path:"https://overwatch.blizzard.com/en-us/news/patch-notes/live/2024/05"},
+#   { title: "28 Marzo 2024", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "Overwatch",image_path: "ow-3.jpg", link_path:"https://overwatch.blizzard.com/en-us/news/patch-notes/live/2024/04"},
+#   { title: "Patch Notes 8.11", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "Valorant",image_path: "vl-1.jpg", link_path:"https://playvalorant.com/en-gb/news/game-updates/valorant-patch-notes-811/"},
+#   { title: "Patch Notes 8.10", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "Valorant",image_path: "vl-2.jpg", link_path:"https://playvalorant.com/en-gb/news/game-updates/valorant-patch-notes-8-10/"},
+#   { title: "Patch Notes 8.09", description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem nemo eligendi quidem illo at fugiat debitis", game: "Valorant",image_path: "vl-3.jpg", link_path:"https://playvalorant.com/en-gb/news/game-updates/valorant-patch-notes-8-09/"}
 
-])
+# ])

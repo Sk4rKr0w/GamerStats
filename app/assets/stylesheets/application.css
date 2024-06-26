@@ -29,8 +29,9 @@ body::-webkit-scrollbar-thumb:hover {
     background: #000000;
 }
 
-.flash.notice,
-.flash.alert {
+.notice,
+.alert {
+    text-align: center;
     position: relative;
     width: 100%;
     z-index: 3;
@@ -38,12 +39,12 @@ body::-webkit-scrollbar-thumb:hover {
     left: 0;
 }
 
-.flash.notice {
+.notice {
     background-color: #57ff56;
     color: black;
 }
 
-.flash.alert {
+.alert {
     background-color: #fe3636;
 }
 
@@ -71,8 +72,13 @@ nav {
     margin: 0;
 }
 
-.nav-container ul a,
 .nav-container ul div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-container ul a {
     margin: 10px;
     padding: 10px 20px;
     font-size: 20px;
@@ -82,10 +88,21 @@ nav {
     cursor: pointer;
 }
 
+.nav-container ul button {
+    font-family: "Abel", sans-serif;
+    font-size: 20px;
+    border: none;
+    background: none;
+    color: white;
+    margin: 10px;
+    padding: 10px 20px;
+}
+
 .nav-container a:hover,
-.nav-container ul div:hover {
+.nav-container button:hover {
     background-color: #2c2c2c;
     border: 2px solid rgb(176, 173, 0);
+    cursor: pointer;
 }
 
 .sidebar {
@@ -119,13 +136,60 @@ nav {
     align-items: flex-end;
 }
 
-.sidebar-bottom a {
-    width: 100%;
+.sidebar-bottom div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     background-color: #767676;
+    padding: 10px;
+    margin: 10px 0px;
+    width: 100%;
+    transition: 0.2s ease-out;
+    cursor: pointer;
 }
 
-.sidebar-bottom a:hover,
-.mobile-right a:last-child {
+.sidebar-bottom div a {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-right div {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.mobile-right button {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-family: "Abel", sans-serif;
+    font-size: 18px;
+    padding: 15px 0px;
+}
+
+.mobile-right div:last-child {
+    width: 100%;
+    background-color: #2c2c2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-right img,
+.mobile-left img {
+    transform: translateY(2px);
+}
+
+.mobile-right a {
+    width: 100%;
+    padding: 0;
+}
+
+.sidebar-bottom div:hover {
     background-color: #2c2c2c;
 }
 
@@ -142,8 +206,18 @@ nav {
     transition: 0.2s ease-out;
 }
 
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .sidebar .logo img {
     width: 100%;
+}
+
+.mobile-top .logo img {
+    width: 50%;
 }
 
 .sidebar-top a:hover {
@@ -214,7 +288,7 @@ nav {
     width: 82.5%;
     height: 20%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -272,6 +346,10 @@ nav {
     font-size: 12px;
 }
 
+.login-mid-north-container label {
+    font-size: 18px;
+}
+
 .signup-mid-north-container {
     font-size: 11px;
     display: grid;
@@ -280,10 +358,11 @@ nav {
 
 .login-mid-north-container input,
 .signup-mid-north-container input {
-    padding: 11px;
+    padding: 12px;
     border-radius: 5px;
     width: 90%;
     font-family: "Abel", sans-serif;
+    margin-bottom: 10px;
 }
 
 .login-mid-south-container,
@@ -298,7 +377,7 @@ nav {
 
 .login-mid-south-container input,
 .signup-mid-south-container input {
-    padding: 15px 90px;
+    padding: 15px 70px;
     border-radius: 10px;
     font-family: "Abel", sans-serif;
     background-color: #2c2c2c;
@@ -316,32 +395,37 @@ nav {
     cursor: pointer;
 }
 
-.login-mid-north-container h1:last-child,
-.signup-mid-north-container h1:last-child {
+.login-mid-north-container a:last-child,
+.signup-mid-north-container a:last-child {
     font-size: 15px;
+    text-decoration: none;
+    color: white;
     color: rgb(186, 186, 186);
 }
 
-.login-mid-north-container h1:last-child:hover,
-.signup-mid-north-container h1:last-child:hover {
+.login-mid-north-container a:last-child:hover,
+.signup-mid-north-container a:last-child:hover {
     color: white;
     cursor: pointer;
 }
 
-.login-mid-south-container span:last-child:hover,
-.signup-mid-south-container span:last-child:hover {
+.login-mid-south-container a {
+    text-decoration: none;
+    color: white;
+}
+
+.login-mid-south-container a:last-child:hover,
+.signup-mid-south-container a:last-child:hover {
     color: red;
     cursor: pointer;
 }
 
-.signup-mid-south-container span {
+.signup-mid-south-container a {
     padding: 5px;
 }
 
-.signup-section {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
+.signup-mid-south-container a {
+    text-decoration: none;
 }
 
 .mobile-container {
@@ -425,8 +509,7 @@ nav {
 }
 
 .mobile-left a,
-.mobile-right a,
-.mobile-right div {
+.mobile-right a {
     text-decoration: none;
     color: white;
     padding: 15px 0px;
@@ -437,8 +520,7 @@ nav {
     text-align: left;
 }
 
-.mobile-right a,
-.mobile-right div {
+.mobile-right a {
     text-align: right;
 }
 

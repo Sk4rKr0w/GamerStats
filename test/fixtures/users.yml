@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nickname: MyString
-  email: MyString
-  password_digest: MyString
-  riot_id: MyString
-  battle_id: MyString
+    nickname: MyString
+    email: MyString
+    password: MyString
+    riot_id: MyString
+    battle_id: MyString
 
 two:
-  nickname: MyString
-  email: MyString
-  password_digest: MyString
-  riot_id: MyString
-  battle_id: MyString
+    nickname: MyString
+    email: MyString
+    password: MyString
+    riot_id: MyString
+    battle_id: MyString

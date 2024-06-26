@@ -12,12 +12,8 @@
 
     <body>
 
-        <% if flash[:notice] %>
-            <div class="flash notice"><%= flash[:notice] %></div>
-        <% end %>
-        <% if flash[:alert] %>
-            <div class="flash alert"><%= flash[:alert] %></div>
-        <% end %>
+        <div class="notice"><%= notice %></div>
+        <div class="alert"><%= alert %></div>
 
         <!-- NAVBAR -->
         <nav>
@@ -26,7 +22,15 @@
                     <%= link_to 'Home', home_path %>
                     <%= link_to 'About', about_path %>
                     <%= link_to 'Contact Us', contact_us_path %>
-                    <div onclick="toggleLogin()"><li>Login</li></div>
+                    <% if user_signed_in? %>
+                        <div>
+                            <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+                        </div>
+                    <% else %>
+                        <div>
+                            <%= link_to "Login", new_user_session_path %>
+                        </div>
+                    <% end %>
                     <%= link_to 'My Squad', my_squad_path %>
                 </ul>
             </div>
@@ -71,11 +75,14 @@
                 </div>
 
                 <div class="sidebar-bottom">
-                    <%= link_to profile_path do %>
-                        <%= image_tag 'profile-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
-                        Profilo
-                    <% end %>
+                    <div>
+                        <%= link_to edit_user_registration_path do %>
+                            <%= image_tag 'profile-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                            Profile
+                        <% end %>
+                    </div>
                 </div>
+
 
             </div>
 
@@ -85,6 +92,11 @@
 
         <div class="mobile-container invisible">
             <div class="mobile-top">
+
+                <%= link_to home_path, class: "logo" do %>
+                    <%= image_tag('logo.png') %>
+                <% end %>
+
                 <div class="hamburger-icon" onclick=toggleSidebar()>
                     <span></span>
                     <span></span>
@@ -123,9 +135,6 @@
                         Squads
                     <% end %>
 
-                    <%= link_to home_path, class: "logo" do %>
-                        <%= image_tag('logo.png') %>
-                    <% end %>
                 </div>
 
                 <div class="mobile-right" id="mobile-right">
@@ -144,94 +153,35 @@
                         <%= image_tag 'contact_us-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                     <% end %>
 
-                    <div onclick="toggleLogin()">
-                        Login
-                        <%= image_tag 'login-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
-                    </div>
+                    <% if user_signed_in? %>
+                        <div>
+                            <%= link_to destroy_user_session_path, method: :delete do %>
+                                Logout
+                                <%= image_tag 'login-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                            <% end %>
+                        </div>
+                    <% else %>
+                        <div>
+                            <%= link_to "Login", new_user_session_path %>
+                            <%= image_tag 'login-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                        </div>
+                    <% end %>
 
                     <%= link_to my_squad_path do %>
                         My Squad
                         <%= image_tag 'my_squad-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                     <% end %>
 
-                    <%= link_to profile_path do %>
-                        Profilo
-                        <%= image_tag 'profile-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                    <% if user_signed_in? %>
+                        <div>
+                            <%= link_to edit_user_registration_path do %>
+                                Profile
+                                <%= image_tag 'profile-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                            <% end %>
+                        </div>
                     <% end %>
 
                 </div>
-            </div>
-        </div>
-
-        <!-- FORM DI LOGIN/SIGNUP-->
-        <div id="login" class="login-container">
-            <div class="login-section" id="login-section">
-                <div class="login-north-container">
-                    <h1>Login</h1>
-                    <%= image_tag 'toggle-login.svg', width: 36, height: 36, alt: '', onclick: 'toggleLogin()', style: "cursor: pointer;" %>
-                </div>
-
-                <%= form_tag('/login', method: 'POST', class: 'login-mid-container') do %>
-                    <div class="login-mid-north-container">
-                        <h1>E-mail</h1>
-                        <%= email_field_tag :email, nil, placeholder: 'e.g. MarcoRossi@gmail.com' %>
-
-                        <h1>Password</h1>
-                        <%= password_field_tag :password, nil %>
-
-                        <h1>Hai dimenticato la password?</h1>
-                    </div>
-
-                    <div class="login-mid-south-container">
-                        <%= submit_tag 'Sign In' %>
-                        <span onclick="toggleSignUp()">Non hai un account? Registrati!</span>
-                    </div>
-                <% end %>
-
-                <div class="login-south-container">
-                    <span>Accedi con:</span>
-                    <br>
-                    <div class="login-svg-container">
-                        <%= image_tag 'google-icon.svg', width: 56, height: 56, alt: '', style: "margin: 5px;", class: 'login-icon' %>
-                        <%= image_tag 'facebook-icon.svg', width: 56, height: 56, alt: '', style: "margin: 5px;", class: 'login-icon' %>
-                        <%= image_tag 'twitter-icon.svg', width: 56, height: 56, alt: '', style: "margin: 5px;", class: 'login-icon' %>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="signup-section" id="signup-section">
-                <div class="signup-north-container">
-                    <h1>Registrati</h1>
-                    <%= image_tag 'toggle-login.svg', width: 36, height: 36, alt: '', onclick: 'toggleLogin()', style:"cursor: pointer;"%>
-                </div>
-
-                <%= form_with model: User.new, url: signup_path, local: true, class: 'signup-mid-container' do |form| %>
-                    <div class="signup-mid-north-container">
-                        <h1>Nickname</h1>
-                        <%= form.text_field :nickname, placeholder: 'e.g. DealBreaker21' %>
-
-                        <h1>E-mail</h1>
-                        <%= form.email_field :email, placeholder: 'e.g. MarcoRossi@gmail.com' %>
-
-                        <h1>Password</h1>
-                        <%= form.password_field :password, placeholder: '******' %>
-
-                        <h1>Conferma password</h1>
-                        <%= form.password_field :password_confirmation, placeholder: '******' %>
-
-                        <h1>Riot nick</h1>
-                        <%= form.text_field :riot_id %>
-
-                        <h1>Battle nick</h1>
-                        <%= form.text_field :battle_id %>
-                    </div>
-
-                    <div class="signup-mid-south-container">
-                        <%= form.submit 'Sign Up' %>
-                        <span onclick="toggleSignUp()">Hai già un account? Accedi!</span>
-                    </div>
-                <% end %>
             </div>
         </div>
 

@@ -1,0 +1,32 @@
+<div class="login-section" id="login-section">
+  <div class="login-north-container">
+    <h1>Login</h1>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-mid-container' }) do |f| %>
+    <div class="login-mid-north-container">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'e.g. MarcoRossi@gmail.com' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "current-password" %>
+
+      <%= link_to "Hai dimenticato la password?", new_password_path(resource_name), class: 'forgot-password-link' %>
+    </div>
+
+    <div class="login-mid-south-container">
+      <%= f.submit "Sign In" %>
+      <%= link_to "Non hai un account? Registrati!", new_user_registration_path %>
+    </div>
+  <% end %>
+
+  <div class="login-south-container">
+    <span>Accedi con:</span>
+    <br>
+    <div class="login-svg-container">
+      <%= image_tag 'google-icon.svg', width: 56, height: 56, alt: '', style: "margin: 5px;", class: 'login-icon' %>
+      <%= image_tag 'facebook-icon.svg', width: 56, height: 56, alt: '', style: "margin: 5px;", class: 'login-icon' %>
+      <%= image_tag 'twitter-icon.svg', width: 56, height: 56, alt: '', style: "margin: 5px;", class: 'login-icon' %>
+    </div>
+  </div>
+</div>
