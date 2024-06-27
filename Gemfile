@@ -78,3 +78,5 @@ gem "omniauth", "~> 2.1"
 gem "mailcatcher", "~> 0.2.4"
 
 gem 'thin', '~> 1.7'
+
+
