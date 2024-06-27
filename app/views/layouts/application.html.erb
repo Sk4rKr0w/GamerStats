@@ -24,7 +24,7 @@
                     <%= link_to 'Contact Us', contact_us_path %>
                     <% if user_signed_in? %>
                         <div>
-                            <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+                            <%= button_to "Logout", destroy_user_session_path, 'data-turbo-method': :delete %>
                         </div>
                     <% else %>
                         <div>
@@ -157,7 +157,7 @@
 
                     <% if user_signed_in? %>
                         <div>
-                            <%= link_to destroy_user_session_path, method: :delete do %>
+                            <%= link_to destroy_user_session_path, 'data-turbo-method': :delete do %>
                                 Logout
                                 <%= image_tag 'login-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                             <% end %>

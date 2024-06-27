@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_26_173254) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_26_232324) do
   create_table "patch_notes", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -30,6 +30,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_26_173254) do
     t.string "nickname"
     t.string "riot_id"
     t.string "battle_id"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

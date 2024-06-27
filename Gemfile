@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.2.3"
+ruby "3.3.3"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
@@ -74,3 +74,7 @@ end
 gem "devise", "~> 4.9"
 
 gem "omniauth", "~> 2.1"
+
+gem "thin", "~> 1.7"
+
+gem "mailcatcher", "~> 0.2.4"
