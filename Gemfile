@@ -80,3 +80,5 @@ gem "mailcatcher", "~> 0.2.4"
 gem 'thin', '~> 1.7'
 
 
+
+gem "devise-two-factor", "~> 5.1"

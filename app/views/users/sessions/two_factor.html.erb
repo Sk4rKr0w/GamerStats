@@ -1,0 +1,12 @@
+<h2>Two-Factor Authentication</h2>
+
+<%= form_with url: user_two_factor_path, method: :post do |f| %>
+  <div class="field">
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Verify" %>
+  </div>
+<% end %>
