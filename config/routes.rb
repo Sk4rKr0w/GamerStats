@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+  sessions: 'users/sessions'
+}
+
+devise_scope :user do
+  get 'users/two_factor', to: 'users/sessions#two_factor', as: 'user_two_factor'
+  post 'users/two_factor', to: 'users/sessions#verify_two_factor'
+end
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -21,6 +30,8 @@ Rails.application.routes.draw do
   get 'profile', to: 'profile#index'
 
   post 'signup', to: 'users#create', as: 'signup'
+
+
 
   # Defines the root path route ("/")
   root "home#index"
