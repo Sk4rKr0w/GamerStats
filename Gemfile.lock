@@ -142,11 +142,6 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-two-factor (5.1.0)
-      activesupport (~> 7.0)
-      devise (~> 4.0)
-      railties (~> 7.0)
-      rotp (~> 6.0)
     diff-lcs (1.5.1)
     drb (2.2.1)
     erubi (1.13.0)
@@ -277,7 +272,6 @@ GEM
       railties (>= 5.2)
     rexml (3.3.1)
       strscan
-    rotp (6.3.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.22.0)
@@ -354,7 +348,6 @@ DEPENDENCIES
   database_cleaner
   debug
   devise (~> 4.9)
-  devise-two-factor (~> 5.1)
   importmap-rails
   jbuilder
   mailcatcher (~> 0.2.4)
@@ -374,4 +367,4 @@ RUBY VERSION
    ruby 3.3.3p89
 
 BUNDLED WITH
-   2.5.9
+   2.5.11

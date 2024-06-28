@@ -75,10 +75,6 @@ gem "devise", "~> 4.9"
 
 gem "omniauth", "~> 2.1"
 
+gem "thin", "~> 1.7"
+
 gem "mailcatcher", "~> 0.2.4"
-
-gem 'thin', '~> 1.7'
-
-
-
-gem "devise-two-factor", "~> 5.1"
