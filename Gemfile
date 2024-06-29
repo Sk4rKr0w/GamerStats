@@ -73,12 +73,14 @@ end
 
 gem "devise", "~> 4.9"
 
-gem "omniauth", "~> 2.1"
+gem "omniauth"
 
 gem "mailcatcher", "~> 0.2.4"
 
 gem 'thin', '~> 1.7'
 
-
-
 gem "devise-two-factor", "~> 5.1"
+
+gem 'omniauth-oauth2'
+
+gem "omniauth-rails_csrf_protection"

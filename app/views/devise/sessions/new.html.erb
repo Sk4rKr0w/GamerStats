@@ -24,6 +24,7 @@
     <span>Accedi con:</span>
     <br>
     <div class="login-svg-container">
+      <%= button_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, method: :post, data: { turbo: 'false' } %> <br />
       <%= image_tag 'google-icon.svg', width: 56, height: 56, alt: '', style: "margin: 5px;", class: 'login-icon' %>
       <%= image_tag 'facebook-icon.svg', width: 56, height: 56, alt: '', style: "margin: 5px;", class: 'login-icon' %>
       <%= image_tag 'twitter-icon.svg', width: 56, height: 56, alt: '', style: "margin: 5px;", class: 'login-icon' %>
