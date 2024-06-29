@@ -297,6 +297,9 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  config.omniauth :google_oauth2, "252481918303-e86p3fndh42eu9tvuq98u1jdkuos6pe7.apps.googleusercontent.com", "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", {
+    scope: 'userinfo.email, userinfo.profile'
+  }
 
   # ==> Hotwire/Turbo configuration
   # When using Devise with Hotwire/Turbo, the http status for error responses
