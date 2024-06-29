@@ -32,6 +32,10 @@ body {
     justify-content: center;
 }
 
+.patch-notes-south a {
+    text-decoration: none;
+}
+
 .patch-notes-card {
     background-color: #464646;
     border: 1px solid #000000;
