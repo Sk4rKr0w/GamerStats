@@ -23,16 +23,19 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0, 20]
-      user.nickname = auth.info.name  # Aggiungi il nickname se disponibile
+    user = where(email: auth.info.email).first_or_initialize do |new_user|
+      new_user.provider = auth.provider
+      new_user.uid = auth.uid
+      new_user.email = auth.info.email
+      new_user.password = Devise.friendly_token[0, 20]
+      # Se desideri aggiungere altre informazioni dall'auth hash, puoi farlo qui
     end
+    user.save(validate: false) if user.new_record?
+    user
   end
 
-  validates :nickname, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
-  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validates :password, presence: true, allow_blank: true
   validates :riot_id, uniqueness: true, allow_blank: true
   validates :battle_id, uniqueness: true, allow_blank: true
 

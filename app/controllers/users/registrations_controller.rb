@@ -8,17 +8,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
   
-    def update_resource(resource, params)
-      if params[:password].blank? && params[:password_confirmation].blank?
-        resource.update_without_password(params.except(:current_password))
-      else
-        resource.update_with_password(params)
-      end
+  def update_resource(resource, params)
+    if params[:password].blank? && params[:password_confirmation].blank?
+      resource.update_without_password(params.except(:current_password))
+    else
+      resource.update_with_password(params)
     end
+  end
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password, :password_confirmation])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:email, :password, :password_confirmation, :current_password])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password, :password_confirmation, :riot_id, :battle_id])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:email, :password, :password_confirmation, :current_password, :riot_id, :battle_id])
     end
 
   # GET /resource/sign_up
