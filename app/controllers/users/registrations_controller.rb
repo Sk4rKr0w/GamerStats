@@ -4,6 +4,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
+
+  protected
+
+  def update_resource(resource, params)
+    if params[:password].blank? && params[:password_confirmation].blank? && params[:current_password].blank?
+      resource.update_without_password(params.except(:current_password))
+    else
+      resource.update_with_password(params)
+    end
+  end
+
   # GET /resource/sign_up
   # def new
   #   super

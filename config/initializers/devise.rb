@@ -297,8 +297,16 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-  config.omniauth :google_oauth2, Rails.application.credentials.dig(:google_oauth_client_id), Rails.application.credentials.dig(:google_oauth_client_secret), {}
+  config.omniauth :google_oauth2, Rails.application.credentials.dig(:google_oauth_client_id), Rails.application.credentials.dig(:google_oauth_client_secret), {
+    scope: 'email,profile',
+    redirect_uri: 'http://localhost:3000/users/auth/google_oauth2/callback',
+    prompt: 'select_account',
+    image_aspect_ratio: 'square',
+    image_size: 50,
+    provider_ignores_state: true
+  }
 
+  config.omniauth_path_prefix = '/users/auth'
   # ==> Hotwire/Turbo configuration
   # When using Devise with Hotwire/Turbo, the http status for error responses
   # and some redirects must match the following. The default in Devise for existing
