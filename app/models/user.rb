@@ -4,36 +4,27 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, omniauth_providers: [:google_oauth2]
 
-
-  
    def generate_two_factor_code
       self.two_factor_code = rand(100000..999999).to_s
       self.two_factor_expires_at = 10.minutes.from_now
       update_columns(two_factor_code: two_factor_code, two_factor_expires_at: two_factor_expires_at)
     end
-      
+
     def send_two_factor_code
       generate_two_factor_code
       UserMailer.two_factor_code(self).deliver_now
     end
-      
+
     def verify_two_factor_code(code)
       return false if two_factor_expires_at < Time.current
       self.two_factor_code == code
     end
 
-    def self.from_omniauth(access_token)
-      data = access_token.info
-      user = User.where(email: data['email']).first
-  
-      unless user
-        user = User.create(
-          name: data['name'],
-          email: data['email'],
-          password: Devise.friendly_token[0, 20]
-        )
+    def self.from_omniauth(auth)
+      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+        user.email = auth.info.email
+        user.password = Devise.friendly_token[0, 20]
       end
-      user
     end
 
 
