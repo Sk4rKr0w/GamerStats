@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'contacts/new'
+  get 'contacts/create'
   devise_for :users, controllers: {
   sessions: 'users/sessions',
-  omniauth_callbacks: 'users/omniauth_callbacks'
+  omniauth_callbacks: 'users/omniauth_callbacks',
+  registrations: 'users/registrations'
 }
 
 devise_scope :user do
@@ -18,7 +21,7 @@ end
 
   get 'home', to: 'home#index'
   get 'about', to: 'about#index'
-  get 'contact_us', to: 'contact_us#index'
+  get 'contacts', to: 'contacts#new'
   get 'my_squad', to: 'my_squad#index'
 
   get 'leaderboard', to: 'leaderboard#index'
@@ -32,7 +35,7 @@ end
 
   post 'signup', to: 'users#create', as: 'signup'
 
-
+  resources :contacts, only: [:new, :create]
 
   # Defines the root path route ("/")
   root "home#index"
