@@ -1,0 +1,24 @@
+<h1>Player Ratings for <%= @champion_name %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Score</th>
+      <th scope="col">Nickname</th>
+      <th scope="col">Winrate</th>
+      <th scope="col">Tier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player["score"] %></td>
+        <td><%= player["nickname"] %></td>
+        <td><%= number_to_percentage(player["winrate"], precision: 2) %></td>
+        <td><%= player["tier"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back to Champions', champions_path, class: 'btn btn-secondary' %>
