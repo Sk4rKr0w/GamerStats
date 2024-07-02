@@ -1,9 +1,27 @@
 <h1>Champions Rating</h1>
+<div>
+  <label for="champion-select">Select Champion:</label>
+  <select id="champion-select" name="champion">
+    <option value="">Choose a champion</option>
+    <% @champions.each do |champion| %>
+      <option value="<%= champion['id'] %>"><%= champion['name'] %></option>
+    <% end %>
+  </select>
+  <%= link_to "Show Rating", "#", id: "show-rating-link", class: "btn btn-primary" %>
+</div>
 
-<%= form_with url: champions_path(:id), method: :get, local: true do %>
-  <div class="form-group">
-    <%= label_tag :champion, "Select Champion:" %>
-    <%= select_tag :id, options_for_select(@champions.map { |champion| [champion["name"], champion["id"]] }), prompt: "Choose a champion" %>
-  </div>
-  <%= submit_tag "Show Rating", class: "btn btn-primary" %>
-<% end %>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const selectElement = document.getElementById("champion-select");
+    const linkElement = document.getElementById("show-rating-link");
+
+    selectElement.addEventListener("change", function() {
+      const championId = selectElement.value;
+      if (championId) {
+        linkElement.href = `/champions/${championId}`;
+      } else {
+        linkElement.href = "#";
+      }
+    });
+  });
+</script>

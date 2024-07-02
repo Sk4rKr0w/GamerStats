@@ -1,12 +1,17 @@
 class ChampionsController < ApplicationController
   def index
     @champions = fetch_champions
+    logger.debug("Fetched champions: #{@champions}")
   end
 
   def show
     @champion_id = params[:id]
     @champion_name = fetch_champion_name(@champion_id)
     @players = fetch_players_for_champion(@champion_id).sort_by { |player| -player['score'] }
+
+    logger.debug("Champion ID: #{@champion_id}")
+    logger.debug("Champion Name: #{@champion_name}")
+    logger.debug("Players: #{@players}")
   end
 
   private
@@ -28,19 +33,8 @@ class ChampionsController < ApplicationController
   def fetch_players_for_champion(champion_id)
     response = RestClient.get("http://localhost:5000/champions/#{champion_id}/players")
     JSON.parse(response.body)
-    rescue RestClient::ExceptionWithResponse => e
+  rescue RestClient::ExceptionWithResponse => e
     Rails.logger.error("Error fetching players for champion #{champion_id}: #{e.response}")
     []
   end
-
-  def show
-    @champion_id = params[:id]
-    @champion_name = fetch_champion_name(@champion_id)
-    @players = fetch_players_for_champion(@champion_id).sort_by { |player| -player['score'] }
-  
-    logger.debug("Champion ID: #{@champion_id}")
-    logger.debug("Champion Name: #{@champion_name}")
-    logger.debug("Players: #{@players}")
-  end
-  
 end
