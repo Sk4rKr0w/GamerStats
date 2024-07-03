@@ -84,3 +84,15 @@ gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "omniauth"
 
 gem "omniauth-google-oauth2"
+
+gem 'httparty'
+
+gem 'http'
+
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'rest-client'
+
+gem "bootstrap", "~> 5.0.2"
+
+gem "jquery-rails"

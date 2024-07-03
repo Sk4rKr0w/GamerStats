@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  get 'champions/index'
   get 'contacts/new'
   get 'contacts/create'
   devise_for :users, controllers: {
   sessions: 'users/sessions',
   omniauth_callbacks: 'users/omniauth_callbacks',
-  registrations: 'users/registrations'
+  registrations: 'users/registrations',
 }
 
 devise_scope :user do
@@ -24,18 +25,25 @@ end
   get 'contacts', to: 'contacts#new'
   get 'my_squad', to: 'my_squad#index'
 
-  get 'leaderboard', to: 'leaderboard#index'
+  get 'leaderboards', to: 'leaderboards#index'  
   get 'insights', to: 'insights#index'
   get 'patch_notes', to: 'patch_notes#index'
   get 'items', to: 'items#index'
-  get 'champion_ratings', to: 'champion_ratings#index'
+  get 'champion_masteries', to: 'champions#champion_masteries', as: 'champion_masteries'
+  get 'champions/:id', to: 'champions#show', as: 'champion'
   get 'squads', to: 'squads#index'
 
   get 'profile', to: 'profile#index'
 
   post 'signup', to: 'users#create', as: 'signup'
 
+
+
+
   resources :contacts, only: [:new, :create]
+  resources :leaderboards, only: [:index]
+  resources :champions, only: [:index, :show]
+  
 
   # Defines the root path route ("/")
   root "home#index"

@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Mastery Data for <%= params[:riot_id] %> - <%= params[:tagline] %></h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Mastery Points</th>
+        <th>Champion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @mastery_data.present? %>
+        <% @mastery_data.each do |data| %>
+          <tr>
+            <td><%= data["championPoints"] %></td>
+            <td><%= data["championName"] %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td colspan="2">No data available</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
