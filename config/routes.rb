@@ -29,7 +29,7 @@ end
   get 'insights', to: 'insights#index'
   get 'patch_notes', to: 'patch_notes#index'
   get 'items', to: 'items#index'
-  get 'champions', to: 'champions#index'
+  get 'champion_masteries', to: 'champions#champion_masteries', as: 'champion_masteries'
   get 'champions/:id', to: 'champions#show', as: 'champion'
   get 'squads', to: 'squads#index'
 
@@ -44,7 +44,6 @@ end
   resources :leaderboards, only: [:index]
   resources :champions, only: [:index, :show]
   
-
 
   # Defines the root path route ("/")
   root "home#index"

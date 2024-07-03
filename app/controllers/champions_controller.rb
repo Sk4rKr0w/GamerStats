@@ -1,40 +1,46 @@
+require 'httparty'
+
 class ChampionsController < ApplicationController
+  before_action :set_champion_list, only: [:index]
+
   def index
-    @champions = fetch_champions
-    logger.debug("Fetched champions: #{@champions}")
   end
 
-  def show
-    @champion_id = params[:id]
-    @champion_name = fetch_champion_name(@champion_id)
-    @players = fetch_players_for_champion(@champion_id).sort_by { |player| -player['score'] }
+  def champion_masteries
+    riot_id = params[:riot_id]
+    tagline = params[:tagline]
 
-    logger.debug("Champion ID: #{@champion_id}")
-    logger.debug("Champion Name: #{@champion_name}")
-    logger.debug("Players: #{@players}")
+    # Ottenere il PUUID usando RiotID e tagline
+    puuid_response = HTTParty.get("https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/#{riot_id}/#{tagline}?api_key=#{ENV['RIOT_API_KEY']}")
+    puuid_data = JSON.parse(puuid_response.body)
+
+    if puuid_data["puuid"]
+      puuid = puuid_data["puuid"]
+      @mastery_data = get_mastery_data(puuid)
+
+      # Ordinare i campioni in base ai punti maestria in ordine decrescente
+      @mastery_data.sort_by! { |data| -data["championPoints"] }
+    else
+      flash[:alert] = "Invalid Riot ID or Tagline"
+      redirect_to champions_path and return
+    end
   end
 
   private
 
-  def fetch_champions
-    response = RestClient.get("http://localhost:5000/champions")
-    JSON.parse(response.body).map { |key, value| { "id" => key, "name" => value["name"] } }
-  rescue RestClient::ExceptionWithResponse => e
-    Rails.logger.error("Error fetching champions: #{e.response}")
-    []
+  def set_champion_list
+    response = HTTParty.get("http://ddragon.leagueoflegends.com/cdn/#{latest_patch}/data/en_US/champion.json")
+    @champions = JSON.parse(response.body)["data"]
   end
 
-  def fetch_champion_name(champion_id)
-    champions = fetch_champions
-    champion = champions.find { |c| c["id"] == champion_id }
-    champion ? champion["name"] : "Unknown Champion"
-  end
-
-  def fetch_players_for_champion(champion_id)
-    response = RestClient.get("http://localhost:5000/champions/#{champion_id}/players")
+  def get_mastery_data(puuid)
+    region = 'euw1' # Esempio: 'na1'
+    response = HTTParty.get("https://#{region}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/#{puuid}?api_key=#{ENV['RIOT_API_KEY']}")
     JSON.parse(response.body)
-  rescue RestClient::ExceptionWithResponse => e
-    Rails.logger.error("Error fetching players for champion #{champion_id}: #{e.response}")
-    []
+  end
+
+  def latest_patch
+    response = HTTParty.get("https://ddragon.leagueoflegends.com/api/versions.json")
+    JSON.parse(response.body).first
   end
 end
