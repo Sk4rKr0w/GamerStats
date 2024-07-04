@@ -89,7 +89,19 @@ form .field {
     cursor: pointer;
 }
 
+.links a:nth-of-type(2) {
+    background-color: rgb(5, 116, 252);
+}
+
 .links a:last-of-type:hover {
+    background-color: rgb(253, 85, 85);
+}
+
+.links a:nth-of-type(2):hover {
+    background-color: rgb(69, 152, 255);
+}
+
+.links a:last-of-type {
     background-color: rgb(255, 66, 66);
 }
 
