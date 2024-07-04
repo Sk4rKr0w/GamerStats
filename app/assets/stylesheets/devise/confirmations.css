@@ -34,7 +34,7 @@ form .field {
     border: none;
     outline: none;
     border-radius: 2px;
-    padding: 5px 20px;
+    padding: 5px 20px 5px 10px;
     margin: 0px 10px;
     font-size: 15px;
 }
