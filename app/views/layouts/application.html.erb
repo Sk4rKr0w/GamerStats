@@ -48,35 +48,35 @@
             <div class="sidebar" id="sidebar-left">
                 <div class="sidebar-top">
                     <%= link_to home_path, class: "logo" do %>
-                        <%= image_tag('logo.png') %>
+                        <%= image_tag('application/logo.png') %>
                     <% end %>
                     <%= link_to leaderboards_path do %>
-                        <%= image_tag 'leaderboard-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                        <%= image_tag 'application/leaderboard-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                         Leaderboard
                     <% end %>
 
                     <%= link_to insights_path do %>
-                        <%= image_tag 'insights-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                        <%= image_tag 'application/insights-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                         Insights
                     <% end %>
 
                     <%= link_to patch_notes_path do %>
-                        <%= image_tag 'patch_notes-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                        <%= image_tag 'application/patch_notes-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                         Patch Notes
                     <% end %>
 
                     <%= link_to items_path do %>
-                        <%= image_tag 'items-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                        <%= image_tag 'application/items-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                         Items
                     <% end %>
 
                     <%= link_to champions_path do %>
-                        <%= image_tag 'champion_ratings-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                        <%= image_tag 'application/champion_ratings-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                         Champion Ratings
                     <% end %>
 
                     <%= link_to squads_path do %>
-                        <%= image_tag 'squads-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                        <%= image_tag 'application/squads-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                         Squads
                     <% end %>
                 </div>
@@ -85,7 +85,7 @@
                     <% if user_signed_in? %>
                         <div>
                             <%= link_to edit_user_registration_path do %>
-                                <%= image_tag 'profile-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                                <%= image_tag 'application/profile-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                                 Profile
                             <% end %>
                         </div>
@@ -103,7 +103,7 @@
             <div class="mobile-top">
 
                 <%= link_to home_path, class: "logo" do %>
-                    <%= image_tag('logo.png') %>
+                    <%= image_tag('application/logo.png') %>
                 <% end %>
 
                 <div class="hamburger-icon" onclick=toggleSidebar()>
@@ -115,32 +115,32 @@
             <div class="mobile-bottom" id="mobile-bottom">
                 <div class="mobile-left" id="mobile-left">
                     <%= link_to leaderboards_path do %>
-                        <%= image_tag 'leaderboard-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
+                        <%= image_tag 'application/leaderboard-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
                         Leaderboard
                     <% end %>
 
                     <%= link_to insights_path do %>
-                        <%= image_tag 'insights-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
+                        <%= image_tag 'application/insights-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
                         Insights
                     <% end %>
 
                     <%= link_to patch_notes_path do %>
-                        <%= image_tag 'patch_notes-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
+                        <%= image_tag 'application/patch_notes-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
                         Patch Notes
                     <% end %>
 
                     <%= link_to items_path do %>
-                        <%= image_tag 'items-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
+                        <%= image_tag 'application/items-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
                         Items
                     <% end %>
 
                     <%= link_to champions_path do %>
-                        <%= image_tag 'champion_ratings-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
+                        <%= image_tag 'application/champion_ratings-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
                         Champion Ratings
                     <% end %>
 
                     <%= link_to squads_path do %>
-                        <%= image_tag 'squads-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
+                        <%= image_tag 'application/squads-icon.svg', width: 18, height: 18, alt: '', style: 'margin-left: 5px;' %>
                         Squads
                     <% end %>
 
@@ -149,43 +149,43 @@
                 <div class="mobile-right" id="mobile-right">
                     <%= link_to home_path do %>
                         Home
-                        <%= image_tag 'home-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                        <%= image_tag 'application/home-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                     <% end %>
 
                     <%= link_to about_path do %>
                         About
-                        <%= image_tag 'about-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                        <%= image_tag 'application/about-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                     <% end %>
 
                     <%= link_to contacts_path do %>
                         Contact Us
-                        <%= image_tag 'contact_us-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                        <%= image_tag 'application/contact_us-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                     <% end %>
 
                     <% if user_signed_in? %>
                         <div>
                             <%= link_to destroy_user_session_path, method: :delete do %>
                                 Logout
-                                <%= image_tag 'login-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                                <%= image_tag 'application/login-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                             <% end %>
                         </div>
                     <% else %>
                         <div>
                             <%= link_to "Login", new_user_session_path %>
-                            <%= image_tag 'login-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                            <%= image_tag 'application/login-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                         </div>
                     <% end %>
 
                     <%= link_to my_squad_path do %>
                         My Squad
-                        <%= image_tag 'my_squad-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                        <%= image_tag 'application/my_squad-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                     <% end %>
 
                     <% if user_signed_in? %>
                         <div>
                             <%= link_to edit_user_registration_path do %>
                                 Profile
-                                <%= image_tag 'profile-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+                                <%= image_tag 'application/profile-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                             <% end %>
                         </div>
                     <% end %>

@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(bg_about.png);
+    background-image: url(/assets/about/bg_about.png);
     background-position: center;
     background-size: cover;
     left: 100px;

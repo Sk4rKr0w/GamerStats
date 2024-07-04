@@ -6,7 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(bg_home.jpg);
+    background-image: url(/assets/home/bg_home.jpg);
     background-position: center;
     background-size: contain;
 }

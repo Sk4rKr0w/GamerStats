@@ -1,0 +1,21 @@
+.item-container {
+    margin-left: 15%;
+    padding: 10px;
+    height: 100vh;
+}
+
+.item-container h1 {
+    color: red;
+    text-align: center;
+}
+
+.image-gallery img {
+    border-radius: 15px;
+    margin: 5px;
+    transition: 0.2s ease;
+    border: 1px solid rgb(124, 123, 123);
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+}
