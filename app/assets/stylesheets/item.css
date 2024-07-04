@@ -9,13 +9,40 @@
     text-align: center;
 }
 
+.image-gallery {
+    background-color: #121212;
+    border-radius: 15px;
+    padding: 5px;
+    width: 95%;
+}
+
 .image-gallery img {
     border-radius: 15px;
     margin: 5px;
     transition: 0.2s ease;
-    border: 1px solid rgb(124, 123, 123);
+    border: 2px solid rgb(124, 123, 123);
 }
 
 .image-gallery img:hover {
     transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+    .item-container {
+        margin: 0;
+    }
+
+    .image-gallery {
+        width: 100%;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .item-container {
+        margin: 0;
+    }
+
+    .image-gallery {
+        width: 100%;
+    }
 }
