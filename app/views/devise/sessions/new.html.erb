@@ -1,3 +1,6 @@
+<%= stylesheet_link_tag 'users/sessions' %>
+
+
 <div class="login-section" id="login-section">
   <div class="login-north-container">
     <h1>Login</h1>
@@ -22,19 +25,17 @@
     </div>
 
     <div class="login-mid-south-container">
+      <%- if devise_mapping.omniauthable? %>
+        <%- resource_class.omniauth_providers.each do |provider| %>
+          <%= form_with url: omniauth_authorize_path(resource_name, provider), method: :post, data: { turbo: "false" }, class: 'oauth-form' do |f| %>
+            <%= f.submit "Login", type: "image", src: url_for("/assets/web_dark_rd_SI@1x.png"), class: 'oauth-button' %>
+          <% end %>
+        <% end %>
+      <% end %>
       <%= f.submit "Sign In" %>
       <%= link_to "Non hai un account? Registrati!", new_user_registration_path %>
     </div>
   <% end %>
-
-  <div class="login-south-container">
-    <span>Accedi con:</span>
-    <br>
-    <div class="login-svg-container">
-      <%= button_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, method: :post, data: { turbo: 'false' } %>
-      <%= image_tag 'google-icon.svg', width: 56, height: 56, alt: '', style: "margin: 5px;", class: 'login-icon' %>
-    </div>
-  </div>
 
   <div class="devise-links">
     <%- if controller_name != 'sessions' %>

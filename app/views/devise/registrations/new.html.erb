@@ -1,12 +1,14 @@
+<%= stylesheet_link_tag 'users/registrations' %>
+
 <div class="signup-section" id="signup-section">
     <div class="signup-north-container">
       <h1>Registrati</h1>
     </div>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'signup-mid-container' }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'signup-south-container' }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="signup-mid-north-container">
+      <div class="signup-south-north-container">
 
           <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'e.g. MarcoRossi@gmail.com' %>
@@ -14,7 +16,7 @@
           <%= f.label :password %>
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
+          <% end %>
           <%= f.password_field :password, autocomplete: "new-password", placeholder: '******' %>
 
           <%= f.label :password_confirmation %>
@@ -25,11 +27,11 @@
 
           <%= f.label :battle_id %>
           <%= f.text_field :battle_id %>
-        </div>
+      </div>
 
-        <div class="signup-mid-south-container">
-          <%= f.submit "Sign Up" %>
-          <%= link_to "Hai già un account? Accedi!", new_user_session_path %>
-        </div>
+      <div class="signup-south-south-container">
+        <%= f.submit "Sign Up" %>
+        <%= link_to "Hai già un account? Accedi!", new_user_session_path %>
+      </div>
     <% end %>
 </div>

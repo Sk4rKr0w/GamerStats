@@ -44,10 +44,7 @@
     padding: 10px 20px;
     background-color: #000000;
     border: 1px solid rgb(122, 122, 122);
-}
-
-.contact-container-south {
-    height: 90%;
+    border-radius: 10px;
 }
 
 .contact-form-north {
@@ -60,7 +57,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(-30px);
 }
 
 .contact-container form {
@@ -79,20 +75,20 @@
     flex-direction: column;
 }
 
-.contact-container .row {
+.contact-container div {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     margin-bottom: 10px;
 }
 
-.contact-container .row label {
+.contact-container label {
     flex: 1;
     margin-right: 10px;
     font-weight: bold;
 }
 
-.contact-container .row input[type="text"],
-.contact-container .row input[type="email"] {
+.contact-container input[type="text"],
+.contact-container input[type="email"] {
     flex: 1;
     padding: 10px;
     margin: 10px 10px 10px 0px;
@@ -145,15 +141,14 @@
     background-color: #0032b1;
 }
 
-/* Per migliorare il layout su dispositivi mobili */
 @media (max-width: 600px) {
-    .contact-container .row label {
+    .contact-container label {
         margin-right: 0;
         margin-bottom: 5px;
     }
 
-    .contact-container .row input[type="text"],
-    .contact-container .row input[type="email"] {
+    .contact-container input[type="text"],
+    .contact-container input[type="email"] {
         width: 100%;
     }
 
@@ -161,7 +156,7 @@
         width: 100%;
     }
 
-    .contact-container .row label {
+    .contact-container label {
         flex: 2;
         margin-right: 10px;
         font-weight: bold;
