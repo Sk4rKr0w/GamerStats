@@ -286,25 +286,18 @@ nav {
 .login-north-container,
 .signup-north-container {
     width: 82.5%;
-    height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.signup-north-container {
-    height: 0%;
-}
-
 .login-mid-container,
 .signup-mid-container {
     width: 100%;
-    height: 60%;
 }
 
 .login-south-container {
     width: 100%;
-    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -356,7 +349,7 @@ nav {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.login-mid-north-container input,
+.login-mid-north-container div input,
 .signup-mid-north-container input {
     padding: 12px;
     border-radius: 5px;
@@ -778,10 +771,7 @@ nav {
     padding: 10px 20px;
     background-color: #000000;
     border: 1px solid rgb(122, 122, 122);
-}
-
-.contact-container-south {
-    height: 90%;
+    border-radius: 10px;
 }
 
 .contact-form-north {
@@ -794,7 +784,6 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(-30px);
 }
 
 .contact-container form {
@@ -813,20 +802,20 @@ nav {
     flex-direction: column;
 }
 
-.contact-container .row {
+.contact-container div {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     margin-bottom: 10px;
 }
 
-.contact-container .row label {
+.contact-container label {
     flex: 1;
     margin-right: 10px;
     font-weight: bold;
 }
 
-.contact-container .row input[type="text"],
-.contact-container .row input[type="email"] {
+.contact-container input[type="text"],
+.contact-container input[type="email"] {
     flex: 1;
     padding: 10px;
     margin: 10px 10px 10px 0px;
@@ -881,13 +870,13 @@ nav {
 
 /* Per migliorare il layout su dispositivi mobili */
 @media (max-width: 600px) {
-    .contact-container .row label {
+    .contact-container label {
         margin-right: 0;
         margin-bottom: 5px;
     }
 
-    .contact-container .row input[type="text"],
-    .contact-container .row input[type="email"] {
+    .contact-container input[type="text"],
+    .contact-container input[type="email"] {
         width: 100%;
     }
 
@@ -895,7 +884,7 @@ nav {
         width: 100%;
     }
 
-    .contact-container .row label {
+    .contact-container label {
         flex: 2;
         margin-right: 10px;
         font-weight: bold;
@@ -940,7 +929,6 @@ nav {
         margin-top: 70px;
     }
 }
-
 
 @media (max-width: 480px) {
     .invisible {
@@ -1018,7 +1006,6 @@ nav {
         height: -webkit-fill-available;
         align-items: center;
     }
-
 
     /*
     *= require bootstrap
