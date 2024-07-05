@@ -7,7 +7,7 @@
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %>
 <% end %>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
@@ -17,7 +17,7 @@
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
     <%= form_with url: omniauth_authorize_path(resource_name, provider), method: :post, data: { turbo: "false" }, class: 'oauth-form' do |f| %>
-      <%= f.submit "Login", type: "image", src: url_for("/assets/btn_google_signin_light_normal_web.png"), class: 'oauth-button' %>
+      <%= f.submit "Login", type: "image", src: url_for("/assets/google_sign_in/web_dark_rd_SI@1x.png"), class: 'oauth-button' %>
     <% end %>
   <% end %>
 <% end %>

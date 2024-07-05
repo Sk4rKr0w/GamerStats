@@ -42,7 +42,7 @@ end
 
 
   resources :contacts, only: [:new, :create]
-  resources :leaderboards, only: [:index]
+  resources :leaderboards, only: [:new, :index]
   resources :champions, only: [:index, :show]
 
 
