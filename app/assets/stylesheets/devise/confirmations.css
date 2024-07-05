@@ -2,7 +2,7 @@ body {
     background: linear-gradient(to right, black 50%, rgb(245, 58, 58) 50%);
 }
 
-form {
+.confirmation-container {
     width: 480px;
     display: flex;
     flex-direction: column;
@@ -111,6 +111,14 @@ form .field {
 
 .actions .oauth-button {
     margin: 10px;
+}
+
+.actions form input:nth-child(2) {
+    transition: 0.2s ease;
+}
+
+.actions form input:nth-child(2):hover {
+    transform: scale(1.2);
 }
 
 @media (max-width: 480px) {
