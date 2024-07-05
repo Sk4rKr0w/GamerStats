@@ -1,0 +1,63 @@
+<%= stylesheet_link_tag 'patch_notes' %>
+
+    <div class="patch-notes-container">
+        <div class="patch-notes lol">
+            <div class="patch-notes-north">
+                <h1>League of Legends</h1>
+            </div>
+
+            <div class="patch-notes-south">
+                <% @patch_notes.select { |patch_note| patch_note.game == "League of Legends" }.first(3).each do |patch_note| %>
+                    <a href="<%= patch_note.link_path %>">
+                        <div class="patch-notes-card">
+                            <%= image_tag(patch_note.image_path, alt: "patch_notes_img") %>
+                            <span>
+                                <h3><%= patch_note.title %></h3>
+                                <%= patch_note.description %>
+                            </span>
+                        </div>
+                    </a>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="patch-notes ow">
+            <div class="patch-notes-north">
+            <h1>Overwatch</h1>
+            </div>
+
+            <div class="patch-notes-south">
+                <% @patch_notes.select { |patch_note| patch_note.game == "Overwatch" }.first(3).each do |patch_note| %>
+                    <a href="<%= patch_note.link_path %>">
+                        <div class="patch-notes-card">
+                            <%= image_tag(patch_note.image_path, alt: "patch_notes_img") %>
+                            <span>
+                                <h3><%= patch_note.title %></h3>
+                                <%= patch_note.description %>
+                            </span>
+                        </div>
+                    </a>
+                <% end %>
+            </div>
+        </div>
+
+        <div class="patch-notes vl">
+            <div class="patch-notes-north">
+            <h1>Valorant</h1>
+            </div>
+
+            <div class="patch-notes-south">
+                <% @patch_notes.select { |patch_note| patch_note.game == "Valorant" }.first(3).each do |patch_note| %>
+                    <a href="<%= patch_note.link_path %>">
+                        <div class="patch-notes-card">
+                            <%= image_tag(patch_note.image_path, alt: "patch_notes_img") %>
+                            <span>
+                                <h3><%= patch_note.title %></h3>
+                                <%= patch_note.description %>
+                            </span>
+                        </div>
+                    </a>
+                <% end %>
+            </div>
+        </div>
+    </div>

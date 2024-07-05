@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'champions/index'
+  get 'contacts/new'
+  get 'contacts/create'
+  resources :items, only: [:index]
+  devise_for :users, controllers: {
+  sessions: 'users/sessions',
+  omniauth_callbacks: 'users/omniauth_callbacks',
+  registrations: 'users/registrations',
+}
+
+devise_scope :user do
+  get 'users/two_factor', to: 'users/sessions#two_factor', as: 'user_two_factor'
+  post 'users/two_factor', to: 'users/sessions#verify_two_factor'
+end
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -7,19 +23,28 @@ Rails.application.routes.draw do
 
   get 'home', to: 'home#index'
   get 'about', to: 'about#index'
-  get 'contact_us', to: 'contact_us#index'
+  get 'contacts', to: 'contacts#new'
   get 'my_squad', to: 'my_squad#index'
 
-  get 'leaderboard', to: 'leaderboard#index'
+  get 'leaderboards', to: 'leaderboards#index'
   get 'insights', to: 'insights#index'
   get 'patch_notes', to: 'patch_notes#index'
   get 'items', to: 'items#index'
-  get 'champion_ratings', to: 'champion_ratings#index'
+  get 'champion_masteries', to: 'champions#champion_masteries', as: 'champion_masteries'
+  get 'champions/:id', to: 'champions#show', as: 'champion'
   get 'squads', to: 'squads#index'
 
   get 'profile', to: 'profile#index'
 
   post 'signup', to: 'users#create', as: 'signup'
+
+
+
+
+  resources :contacts, only: [:new, :create]
+  resources :leaderboards, only: [:index]
+  resources :champions, only: [:index, :show]
+
 
   # Defines the root path route ("/")
   root "home#index"
