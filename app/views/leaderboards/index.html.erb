@@ -1,29 +1,12 @@
-<!-- app/views/leaderboards/index.html.erb -->
-<h1>League of Legends Leaderboard</h1>
-
-<% if @lol_leaderboard %>
-  <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Punteggio (LP)</th>
-        <th>Nome del Giocatore</th>
-        <th>Winrate (%)</th>
-        <th>Tier</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @lol_leaderboard['entries'].each_with_index do |player, index| %>
-        <tr>
-          <td><%= index + 1 %></td>
-          <td><%= player['leaguePoints'] %></td>
-          <td><%= player['summonerName'] %></td>
-          <td><%= player['winRate'] %></td>
-          <td><%= @lol_leaderboard['tier'] %> <%= player['rank'] %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
-  <p>Unable to fetch League of Legends leaderboard.</p>
-<% end %>
+<h1>Seleziona Server e Continente</h1>
+<div>
+  <%= form_with url: leaderboards_show_path, method: :get, local: true do |form| %>
+    <%= form.label :server, "Server" %>
+    <%= form.select :server, options_for_select([['EUW1', 'euw1'], ['NA1', 'na1'], ['KR', 'kr'], ['EUNE1', 'eun1']], @server) %>
+  
+    <%= form.label :continent, "Continente" %>
+    <%= form.select :continent, options_for_select([['Europe', 'europe'], ['North America', 'north_america'], ['Asia', 'asia']], @continent) %>
+  
+    <%= form.submit "Mostra Classifica", class: 'btn btn-primary' %>
+  <% end %>
+</div>
