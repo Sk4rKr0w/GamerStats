@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'champions/index'
   get 'contacts/new'
   get 'contacts/create'
+  resources :items, only: [:index]
   devise_for :users, controllers: {
   sessions: 'users/sessions',
   omniauth_callbacks: 'users/omniauth_callbacks',
@@ -25,7 +26,7 @@ end
   get 'contacts', to: 'contacts#new'
   get 'my_squad', to: 'my_squad#index'
 
-  get 'leaderboards', to: 'leaderboards#index'  
+  get 'leaderboards', to: 'leaderboards#index'
   get 'insights', to: 'insights#index'
   get 'patch_notes', to: 'patch_notes#index'
   get 'items', to: 'items#index'
@@ -43,7 +44,7 @@ end
   resources :contacts, only: [:new, :create]
   resources :leaderboards, only: [:index]
   resources :champions, only: [:index, :show]
-  
+
 
   # Defines the root path route ("/")
   root "home#index"

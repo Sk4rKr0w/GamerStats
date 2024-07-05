@@ -1,0 +1,130 @@
+body {
+    background: linear-gradient(to right, black 50%, rgb(245, 58, 58) 50%);
+}
+
+form {
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(32, 32, 32);
+    border-radius: 10px;
+    border: 2px solid black;
+    transition: 1s ease;
+}
+
+form .field {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    background-color: #141414;
+    border-radius: 10px;
+}
+
+.field-north {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.field-north input {
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    padding: 5px 20px 5px 10px;
+    margin: 0px 10px;
+    font-size: 15px;
+}
+
+.field-south input {
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-family: "Abel", sans-serif;
+    background-color: #2c2c2c;
+    color: white;
+    border: none;
+    margin: 10px 0;
+    font-size: 17px;
+    transition: 0.5s ease;
+}
+
+.field-south input:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.actions .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links a {
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-family: "Abel", sans-serif;
+    background-color: #2c2c2c;
+    color: white;
+    border: none;
+    margin: 10px 5px;
+    font-size: 17px;
+    transition: 0.5s ease;
+}
+
+.links a:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.links a:nth-of-type(2) {
+    background-color: rgb(5, 116, 252);
+}
+
+.links a:last-of-type:hover {
+    background-color: rgb(253, 85, 85);
+}
+
+.links a:nth-of-type(2):hover {
+    background-color: rgb(69, 152, 255);
+}
+
+.links a:last-of-type {
+    background-color: rgb(255, 66, 66);
+}
+
+.actions .oauth-button {
+    margin: 10px;
+}
+
+@media (max-width: 480px) {
+    form {
+        transform: scale(0.95);
+    }
+
+    .links a {
+        padding: 10px 15px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+}
