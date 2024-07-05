@@ -45,8 +45,9 @@ end
 
 
   resources :contacts, only: [:new, :create]
- # resources :leaderboards, only: [:index, :show]
+  # resources :leaderboards, only: [:index, :show]
   resources :champions, only: [:index, :show]
+  resources :items, only: [:index, :show]
 
 
   # Defines the root path route ("/")
