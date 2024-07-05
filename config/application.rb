@@ -28,5 +28,8 @@ module GamerStats
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    # Add the path to the DataDragon assets
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'dragontail-14.13.1', '14.13.1', 'img', 'item')
+    config.assets.compile = true
   end
 end

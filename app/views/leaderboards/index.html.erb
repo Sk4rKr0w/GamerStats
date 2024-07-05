@@ -1,19 +1,25 @@
+<!-- app/views/leaderboards/index.html.erb -->
 <h1>League of Legends Leaderboard</h1>
+
+<%= render 'server_menu' %>
+
 <% if @lol_leaderboard %>
   <table>
     <thead>
       <tr>
+        <th>#</th>
         <th>Punteggio (LP)</th>
-        <th>ID del Giocatore</th>
+        <th>Nome del Giocatore</th>
         <th>Winrate (%)</th>
         <th>Tier</th>
       </tr>
     </thead>
     <tbody>
-      <% @lol_leaderboard['entries'].each do |player| %>
+      <% @lol_leaderboard['entries'].each_with_index do |player, index| %>
         <tr>
+          <td><%= index + 1 %></td>
           <td><%= player['leaguePoints'] %></td>
-          <td><%= player['summonerId'] %></td>
+          <td><%= player['summonerName'] %></td>
           <td><%= player['winRate'] %></td>
           <td><%= @lol_leaderboard['tier'] %> <%= player['rank'] %></td>
         </tr>

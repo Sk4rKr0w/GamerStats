@@ -3,21 +3,25 @@
   <table class="table">
     <thead>
       <tr>
+        <th>#</th>
         <th>Mastery Points</th>
         <th>Champion</th>
+        <th>Mastery Level</th>
       </tr>
     </thead>
     <tbody>
       <% if @mastery_data.present? %>
-        <% @mastery_data.each do |data| %>
+        <% @mastery_data.each_with_index do |data, index| %>
           <tr>
+            <td><%= index + 1 %></td>
             <td><%= data["championPoints"] %></td>
-            <td><%= data["championName"] %></td>
+            <td><%= @champion_names[data["championId"]] %></td>
+            <td><%= data["championLevel"] %></td>
           </tr>
         <% end %>
       <% else %>
         <tr>
-          <td colspan="2">No data available</td>
+          <td colspan="5">No data available</td>
         </tr>
       <% end %>
     </tbody>
