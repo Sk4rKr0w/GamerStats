@@ -1,13 +1,18 @@
+<!-- app/views/items/index.html.erb -->
 <%= stylesheet_link_tag "items" %>
 
 <div class="item-container">
-    <h1>League of Legends Items</h1>
+  <h1>League of Legends Items</h1>
 
-    <!-- AGGIUNGERE BARRA RICERCA OGGETTI -->
+  <!-- AGGIUNGERE BARRA RICERCA OGGETTI -->
 
-    <div class="image-gallery">
-        <% @images.each do |image_path| %>
-            <%= image_tag image_path.gsub('app/assets/images/', ''), class: 'item-image' %>
-        <% end %>
-    </div>
+  <div class="image-gallery">
+    <% @items.each do |item_id, item| %>
+      <% image_path = @images.find { |path| path.include?(item_id) } %>
+      <% next unless image_path %>
+      <%= link_to item_path(item_id) do %>
+        <%= image_tag image_path.gsub('app/assets/images/', ''), class: 'item-image', data: { id: item_id, name: item["name"], description: item["description"], cost: item["gold"]["total"] } %>
+      <% end %>
+    <% end %>
+  </div>
 </div>

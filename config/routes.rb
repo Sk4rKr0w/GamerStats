@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'leaderboards/index'
+  get 'leaderboards/show'
   get 'champions/index'
   get 'contacts/new'
   get 'contacts/create'
@@ -27,6 +29,7 @@ end
   get 'my_squad', to: 'my_squad#index'
 
   get 'leaderboards', to: 'leaderboards#index'
+  get 'leaderboards/show', to: 'leaderboards#show', as: 'leaderboard_show'
   get 'insights', to: 'insights#index'
   get 'patch_notes', to: 'patch_notes#index'
   get 'items', to: 'items#index'
@@ -42,8 +45,9 @@ end
 
 
   resources :contacts, only: [:new, :create]
-  resources :leaderboards, only: [:index]
+  # resources :leaderboards, only: [:index, :show]
   resources :champions, only: [:index, :show]
+  resources :items, only: [:index, :show]
 
 
   # Defines the root path route ("/")
