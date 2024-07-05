@@ -1,3 +1,7 @@
+body {
+    background: linear-gradient(to right, black 50%, rgb(245, 58, 58) 50%);
+}
+
 form {
     width: 480px;
     display: flex;
@@ -107,4 +111,20 @@ form .field {
 
 .actions .oauth-button {
     margin: 10px;
+}
+
+@media (max-width: 480px) {
+    form {
+        transform: scale(0.95);
+    }
+
+    .links a {
+        padding: 10px 15px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
 }

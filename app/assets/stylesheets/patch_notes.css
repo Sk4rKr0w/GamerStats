@@ -1,9 +1,5 @@
 body {
-    background: linear-gradient(
-        to bottom right,
-        rgb(245, 58, 58) 50%,
-        black 50%
-    );
+    background: linear-gradient(to right, rgb(245, 58, 58) 50%, black 100%);
 }
 
 .patch-notes-container {
