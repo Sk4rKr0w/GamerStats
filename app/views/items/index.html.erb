@@ -10,9 +10,14 @@
     <% @items.each do |item_id, item| %>
       <% image_path = @images.find { |path| path.include?(item_id) } %>
       <% next unless image_path %>
-      <%= link_to item_path(item_id) do %>
-        <%= image_tag image_path.gsub('app/assets/images/', ''), class: 'item-image', data: { id: item_id, name: item["name"], description: item["description"], cost: item["gold"]["total"] } %>
-      <% end %>
+      <%= image_tag image_path.gsub('app/assets/images/', ''), class: 'item-image', data: { id: item_id, name: item["name"], description: item["description"], cost: item["gold"]["total"], image_path: image_path.gsub('app/assets/images/', '') } %>
     <% end %>
   </div>
+</div>
+
+<div id="item-details" style="display:none;">
+  <h2 id="item-name"></h2>
+  <%= image_tag("", id: "item-image", alt: "Item Image") %>
+  <p id="item-description"></p>
+  <p id="item-cost"></p>
 </div>
