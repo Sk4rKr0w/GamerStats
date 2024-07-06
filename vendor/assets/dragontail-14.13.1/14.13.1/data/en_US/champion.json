@@ -4,6 +4,12 @@
     "version": "14.13.1",
     "data": {
         "Aatrox": {
+            "tier": "D",
+            "winrate": "49.45%",
+            "pickrate": "8.4%",
+            "banrate": "13.7%",
+            "matches": "644.228", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Aatrox",
             "key": "266",
@@ -46,6 +52,12 @@
             }
         },
         "Ahri": {
+            "tier": "C",
+            "winrate": "49.67%",
+            "pickrate": "9.7%",
+            "banrate": "11.7%",
+            "matches": "746.332", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Ahri",
             "key": "103",
@@ -88,6 +100,12 @@
             }
         },
         "Akali": {
+            "tier": "D",
+            "winrate": "48.62%",
+            "pickrate": "6.3%",
+            "banrate": "14.6%",
+            "matches": "484.298", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Akali",
             "key": "84",
@@ -130,6 +148,12 @@
             }
         },
         "Akshan": {
+            "tier": "S",
+            "winrate": "51.36%",
+            "pickrate": "2.1%",
+            "banrate": "5.1%",
+            "matches": "159.640", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Akshan",
             "key": "166",
@@ -172,6 +196,12 @@
             }
         },
         "Alistar": {
+            "tier": "A",
+            "winrate": "50.48%",
+            "pickrate": "4.5%",
+            "banrate": "1.7%",
+            "matches": "344.424", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Alistar",
             "key": "12",
@@ -214,6 +244,12 @@
             }
         },
         "Amumu": {
+            "tier": "S+",
+            "winrate": "52.5%",
+            "pickrate": "5.8%",
+            "banrate": "2.4%",
+            "matches": "442.733", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Amumu",
             "key": "32",
@@ -256,6 +292,12 @@
             }
         },
         "Anivia": {
+            "tier": "S",
+            "winrate": "52.25%",
+            "pickrate": "1.6%",
+            "banrate": "1.2%",
+            "matches": "123.009", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Anivia",
             "key": "34",
@@ -303,6 +345,12 @@
             }
         },
         "Annie": {
+            "tier": "A",
+            "winrate": "50.72%",
+            "pickrate": "1.4%",
+            "banrate": "0.6%",
+            "matches": "109.694", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Annie",
             "key": "1",
@@ -345,6 +393,12 @@
             }
         },
         "Aphelios": {
+            "tier": "D",
+            "winrate": "47.09%",
+            "pickrate": "3.3%",
+            "banrate": "0.8%",
+            "matches": "254.496", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Aphelios",
             "key": "523",
@@ -387,6 +441,12 @@
             }
         },
         "Ashe": {
+            "tier": "S+",
+            "winrate": "50.5%",
+            "pickrate": "11.7%",
+            "banrate": "12.5%",
+            "matches": "903.612", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Ashe",
             "key": "22",
@@ -429,6 +489,12 @@
             }
         },
         "AurelionSol": {
+            "tier": "S",
+            "winrate": "50.99%",
+            "pickrate": "3.5%",
+            "banrate": "2.7%",
+            "matches": "273.165", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "AurelionSol",
             "key": "136",
@@ -471,6 +537,12 @@
             }
         },
         "Azir": {
+            "tier": "D",
+            "winrate": "45.99%",
+            "pickrate": "2.1%",
+            "banrate": "0.4%",
+            "matches": "160.795", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Azir",
             "key": "268",
@@ -513,6 +585,12 @@
             }
         },
         "Bard": {
+            "tier": "B",
+            "winrate": "49.36%",
+            "pickrate": "1.8%",
+            "banrate": "0.3%",
+            "matches": "137.065", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Bard",
             "key": "432",
@@ -555,6 +633,12 @@
             }
         },
         "Belveth": {
+            "tier": "A",
+            "winrate": "50.21%",
+            "pickrate": "2.4%",
+            "banrate": "3.6%",
+            "matches": "182.215", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Belveth",
             "key": "200",
@@ -597,6 +681,12 @@
             }
         },
         "Blitzcrank": {
+            "tier": "B",
+            "winrate": "49.7%",
+            "pickrate": "6.9%",
+            "banrate": "27.3%",
+            "matches": "531.179", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Blitzcrank",
             "key": "53",
@@ -639,6 +729,12 @@
             }
         },
         "Brand": {
+            "tier": "S+",
+            "winrate": "50.94%",
+            "pickrate": "5.3%",
+            "banrate": "20.0%",
+            "matches": "408.441", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Brand",
             "key": "63",
@@ -681,6 +777,12 @@
             }
         },
         "Braum": {
+            "tier": "S+",
+            "winrate": "51.29%",
+            "pickrate": "4.0%",
+            "banrate": "1.6%",
+            "matches": "309.099", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Braum",
             "key": "201",
@@ -723,6 +825,12 @@
             }
         },
         "Briar": {
+            "tier": "S+",
+            "winrate": "52.11%",
+            "pickrate": "4.3%",
+            "banrate": "9.0%",
+            "matches": "334.031", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Briar",
             "key": "233",
@@ -765,6 +873,12 @@
             }
         },
         "Caitlyn": {
+            "tier": "B",
+            "winrate": "49.8%",
+            "pickrate": "18.1%",
+            "banrate": "26.0%",
+            "matches": "1.392.513", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Caitlyn",
             "key": "51",
@@ -807,6 +921,12 @@
             }
         },
         "Camille": {
+            "tier": "A",
+            "winrate": "50.06%",
+            "pickrate": "3.8%",
+            "banrate": "3.8%",
+            "matches": "290.310", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Camille",
             "key": "164",
@@ -849,6 +969,12 @@
             }
         },
         "Cassiopeia": {
+            "tier": "S",
+            "winrate": "51.46%",
+            "pickrate": "2.0%",
+            "banrate": "2.2%",
+            "matches": "151.311", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Cassiopeia",
             "key": "69",
@@ -891,6 +1017,12 @@
             }
         },
         "Chogath": {
+            "tier": "B",
+            "winrate": "49.49%",
+            "pickrate": "2.2%",
+            "banrate": "0.8%",
+            "matches": "166.146", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Chogath",
             "key": "31",
@@ -933,6 +1065,12 @@
             }
         },
         "Corki": {
+            "tier": "D",
+            "winrate": "46.81%",
+            "pickrate": "3.4%",
+            "banrate": "2.8%",
+            "matches": "263.117", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Corki",
             "key": "42",
@@ -975,6 +1113,12 @@
             }
         },
         "Darius": {
+            "tier": "D",
+            "winrate": "49.29%",
+            "pickrate": "8.8%",
+            "banrate": "20.6%",
+            "matches": "677.989", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Darius",
             "key": "122",
@@ -1017,6 +1161,12 @@
             }
         },
         "Diana": {
+            "tier": "A",
+            "winrate": "50.41%",
+            "pickrate": "5.7%",
+            "banrate": "3.3%",
+            "matches": "437.299", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Diana",
             "key": "131",
@@ -1059,6 +1209,12 @@
             }
         },
         "Draven": {
+            "tier": "D",
+            "winrate": "49.07%",
+            "pickrate": "4.6%",
+            "banrate": "15.4%",
+            "matches": "352.899", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Draven",
             "key": "119",
@@ -1101,6 +1257,12 @@
             }
         },
         "DrMundo": {
+            "tier": "S+",
+            "winrate": "52.46%",
+            "pickrate": "5.8%",
+            "banrate": "4.2%",
+            "matches": "445.939", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "DrMundo",
             "key": "36",
@@ -1143,6 +1305,12 @@
             }
         },
         "Ekko": {
+            "tier": "A",
+            "winrate": "50.13%",
+            "pickrate": "3.7%",
+            "banrate": "1.8%",
+            "matches": "286.661", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Ekko",
             "key": "245",
@@ -1185,6 +1353,12 @@
             }
         },
         "Elise": {
+            "tier": "A",
+            "winrate": "49.76%",
+            "pickrate": "1.4%",
+            "banrate": "0.7%",
+            "matches": "105.952", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Elise",
             "key": "60",
@@ -1227,6 +1401,12 @@
             }
         },
         "Evelynn": {
+            "tier": "C",
+            "winrate": "48.71%",
+            "pickrate": "2.6%",
+            "banrate": "3.5%",
+            "matches": "198.125", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Evelynn",
             "key": "28",
@@ -1269,6 +1449,12 @@
             }
         },
         "Ezreal": {
+            "tier": "D",
+            "winrate": "49.4%",
+            "pickrate": "20.8%",
+            "banrate": "9.8%",
+            "matches": "1.597.667", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Ezreal",
             "key": "81",
@@ -1311,6 +1497,12 @@
             }
         },
         "Fiddlesticks": {
+            "tier": "A",
+            "winrate": "50.77%",
+            "pickrate": "2.8%",
+            "banrate": "1.6%",
+            "matches": "215.265", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Fiddlesticks",
             "key": "9",
@@ -1353,6 +1545,12 @@
             }
         },
         "Fiora": {
+            "tier": "B",
+            "winrate": "49.93%",
+            "pickrate": "3.5%",
+            "banrate": "4.9%",
+            "matches": "273.092", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Fiora",
             "key": "114",
@@ -1395,6 +1593,12 @@
             }
         },
         "Fizz": {
+            "tier": "S+",
+            "winrate": "50.7%",
+            "pickrate": "4.7%",
+            "banrate": "8.8%",
+            "matches": "364.710", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Fizz",
             "key": "105",
@@ -1437,6 +1641,12 @@
             }
         },
         "Galio": {
+            "tier": "S+",
+            "winrate": "52.38%",
+            "pickrate": "3.3%",
+            "banrate": "1.7%",
+            "matches": "256.675", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Galio",
             "key": "3",
@@ -1479,6 +1689,12 @@
             }
         },
         "Gangplank": {
+            "tier": "D",
+            "winrate": "47.76%",
+            "pickrate": "2.4%",
+            "banrate": "1.2%",
+            "matches": "186.239", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Gangplank",
             "key": "41",
@@ -1521,6 +1737,12 @@
             }
         },
         "Garen": {
+            "tier": "S+",
+            "winrate": "51.65%",
+            "pickrate": "9.2%",
+            "banrate": "6.8%",
+            "matches": "710.174", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Garen",
             "key": "86",
@@ -1563,6 +1785,12 @@
             }
         },
         "Gnar": {
+            "tier": "B",
+            "winrate": "49.08%",
+            "pickrate": "2.5%",
+            "banrate": "0.5%",
+            "matches": "193.998", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Gnar",
             "key": "150",
@@ -1605,6 +1833,12 @@
             }
         },
         "Gragas": {
+            "tier": "B",
+            "winrate": "48.81%",
+            "pickrate": "2.2%",
+            "banrate": "1.5%",
+            "matches": "168.990", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Gragas",
             "key": "79",
@@ -1647,6 +1881,12 @@
             }
         },
         "Graves": {
+            "tier": "D",
+            "winrate": "49.11%",
+            "pickrate": "5.7%",
+            "banrate": "2.7%",
+            "matches": "442.590", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Graves",
             "key": "104",
@@ -1689,6 +1929,12 @@
             }
         },
         "Gwen": {
+            "tier": "B",
+            "winrate": "49.55%",
+            "pickrate": "2.5%",
+            "banrate": "1.7%",
+            "matches": "196.115", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Gwen",
             "key": "887",
@@ -1731,6 +1977,12 @@
             }
         },
         "Hecarim": {
+            "tier": "D",
+            "winrate": "48.62%",
+            "pickrate": "3.4%",
+            "banrate": "1.8%",
+            "matches": "260.386", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Hecarim",
             "key": "120",
@@ -1773,6 +2025,12 @@
             }
         },
         "Heimerdinger": {
+            "tier": "A",
+            "winrate": "50.93%",
+            "pickrate": "1.8%",
+            "banrate": "2.5%",
+            "matches": "142.350", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Heimerdinger",
             "key": "74",
@@ -1815,6 +2073,12 @@
             }
         },
         "Hwei": {
+            "tier": "D",
+            "winrate": "48.55%",
+            "pickrate": "5.7%",
+            "banrate": "10.8%",
+            "matches": "437.245", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Hwei",
             "key": "910",
@@ -1857,6 +2121,12 @@
             }
         },
         "Illaoi": {
+            "tier": "S+",
+            "winrate": "51.26%",
+            "pickrate": "4.6%",
+            "banrate": "14.1%",
+            "matches": "356.030", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Illaoi",
             "key": "420",
@@ -1899,6 +2169,12 @@
             }
         },
         "Irelia": {
+            "tier": "S",
+            "winrate": "50.14%",
+            "pickrate": "3.6%",
+            "banrate": "9.9%",
+            "matches": "280.176", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Irelia",
             "key": "39",
@@ -1941,6 +2217,12 @@
             }
         },
         "Ivern": {
+            "tier": "A",
+            "winrate": "50.54%",
+            "pickrate": "1.0%",
+            "banrate": "0.5%",
+            "matches": "74.441", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Ivern",
             "key": "427",
@@ -1983,6 +2265,12 @@
             }
         },
         "Janna": {
+            "tier": "S",
+            "winrate": "51.57%",
+            "pickrate": "2.9%",
+            "banrate": "1.1%",
+            "matches": "221.980", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Janna",
             "key": "40",
@@ -2025,6 +2313,12 @@
             }
         },
         "JarvanIV": {
+            "tier": "A",
+            "winrate": "50.74%",
+            "pickrate": "3.6%",
+            "banrate": "0.7%",
+            "matches": "275.633", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "JarvanIV",
             "key": "59",
@@ -2067,6 +2361,12 @@
             }
         },
         "Jax": {
+            "tier": "C",
+            "winrate": "49.97%",
+            "pickrate": "5.6%",
+            "banrate": "9.1%",
+            "matches": "430.552", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Jax",
             "key": "24",
@@ -2109,6 +2409,12 @@
             }
         },
         "Jayce": {
+            "tier": "D",
+            "winrate": "47.33%",
+            "pickrate": "2.2%",
+            "banrate": "1.4%",
+            "matches": "170.028", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Jayce",
             "key": "126",
@@ -2151,6 +2457,12 @@
             }
         },
         "Jhin": {
+            "tier": "S+",
+            "winrate": "50.83%",
+            "pickrate": "16.5%",
+            "banrate": "6.7%",
+            "matches": "1.268.107", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Jhin",
             "key": "202",
@@ -2193,6 +2505,12 @@
             }
         },
         "Jinx": {
+            "tier": "S+",
+            "winrate": "51.22%",
+            "pickrate": "16.4%",
+            "banrate": "7.7%",
+            "matches": "1.259.458", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Jinx",
             "key": "222",
@@ -2235,6 +2553,12 @@
             }
         },
         "Kaisa": {
+            "tier": "S+",
+            "winrate": "50.77%",
+            "pickrate": "33.7%",
+            "banrate": "11.5%",
+            "matches": "507.456", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Kaisa",
             "key": "145",
@@ -2277,6 +2601,12 @@
             }
         },
         "Kalista": {
+            "tier": "D",
+            "winrate": "47.25%",
+            "pickrate": "1.5%",
+            "banrate": "0.6%",
+            "matches": "114.154", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Kalista",
             "key": "429",
@@ -2319,6 +2649,12 @@
             }
         },
         "Karma": {
+            "tier": "A",
+            "winrate": "50.03%",
+            "pickrate": "5.6%",
+            "banrate": "2.1%",
+            "matches": "431.705", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Karma",
             "key": "43",
@@ -2361,6 +2697,12 @@
             }
         },
         "Karthus": {
+            "tier": "D",
+            "winrate": "48.17%",
+            "pickrate": "2.8%",
+            "banrate": "1.6%",
+            "matches": "218.107", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Karthus",
             "key": "30",
@@ -2403,6 +2745,12 @@
             }
         },
         "Kassadin": {
+            "tier": "B",
+            "winrate": "49.36%",
+            "pickrate": "1.5%",
+            "banrate": "1.6%",
+            "matches": "113.442", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Kassadin",
             "key": "38",
@@ -2445,6 +2793,12 @@
             }
         },
         "Katarina": {
+            "tier": "D",
+            "winrate": "48.37%",
+            "pickrate": "5.8%",
+            "banrate": "5.8%",
+            "matches": "443.735", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Katarina",
             "key": "55",
@@ -2487,6 +2841,12 @@
             }
         },
         "Kayle": {
+            "tier": "S",
+            "winrate": "51.79%",
+            "pickrate": "3.4%",
+            "banrate": "1.6%",
+            "matches": "261.078", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Kayle",
             "key": "10",
@@ -2529,6 +2889,12 @@
             }
         },
         "Kayn": {
+            "tier": "S",
+            "winrate": "50.01%",
+            "pickrate": "7.5%",
+            "banrate": "5.4%",
+            "matches": "579.316", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Kayn",
             "key": "141",
@@ -2571,6 +2937,12 @@
             }
         },
         "Kennen": {
+            "tier": "B",
+            "winrate": "49.63%",
+            "pickrate": "1.8%",
+            "banrate": "1.0%",
+            "matches": "141.485", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Kennen",
             "key": "85",
@@ -2613,6 +2985,12 @@
             }
         },
         "Khazix": {
+            "tier": "B",
+            "winrate": "49.93%",
+            "pickrate": "8.1%",
+            "banrate": "6.2%",
+            "matches": "620.953", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Khazix",
             "key": "121",
@@ -2655,6 +3033,12 @@
             }
         },
         "Kindred": {
+            "tier": "B",
+            "winrate": "49.21%",
+            "pickrate": "3.3%",
+            "banrate": "1.8%",
+            "matches": "252.010", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Kindred",
             "key": "203",
@@ -2697,6 +3081,12 @@
             }
         },
         "Kled": {
+            "tier": "A",
+            "winrate": "51.35%",
+            "pickrate": "1.4%",
+            "banrate": "0.9%",
+            "matches": "108.171", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Kled",
             "key": "240",
@@ -2739,6 +3129,12 @@
             }
         },
         "KogMaw": {
+            "tier": "S",
+            "winrate": "51.99%",
+            "pickrate": "2.5%",
+            "banrate": "0.9%",
+            "matches": "190.555", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "KogMaw",
             "key": "96",
@@ -2781,6 +3177,12 @@
             }
         },
         "KSante": {
+            "tier": "D",
+            "winrate": "45.38%",
+            "pickrate": "2.9%",
+            "banrate": "1.6%",
+            "matches": "223.737", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "KSante",
             "key": "897",
@@ -2823,6 +3225,12 @@
             }
         },
         "Leblanc": {
+            "tier": "D",
+            "winrate": "49.48%",
+            "pickrate": "8.9%",
+            "banrate": "16.0%",
+            "matches": "682.410", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Leblanc",
             "key": "7",
@@ -2865,6 +3273,12 @@
             }
         },
         "LeeSin": {
+            "tier": "D",
+            "winrate": "48.5%",
+            "pickrate": "13.3%",
+            "banrate": "12.0%",
+            "matches": "1.022.607", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "LeeSin",
             "key": "64",
@@ -2907,6 +3321,12 @@
             }
         },
         "Leona": {
+            "tier": "S+",
+            "winrate": "51.99%",
+            "pickrate": "11.9%",
+            "banrate": "15.2%",
+            "matches": "916.843", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Leona",
             "key": "89",
@@ -2949,6 +3369,12 @@
             }
         },
         "Lillia": {
+            "tier": "S+",
+            "winrate": "52.48%",
+            "pickrate": "8.2%",
+            "banrate": "13.4%",
+            "matches": "628.154", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Lillia",
             "key": "876",
@@ -2991,6 +3417,12 @@
             }
         },
         "Lissandra": {
+            "tier": "A",
+            "winrate": "50.29%",
+            "pickrate": "2.8%",
+            "banrate": "1.2%",
+            "matches": "212.443", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Lissandra",
             "key": "127",
@@ -3033,6 +3465,12 @@
             }
         },
         "Lucian": {
+            "tier": "D",
+            "winrate": "48.87%",
+            "pickrate": "8.3%",
+            "banrate": "2.6%",
+            "matches": "640.693", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Lucian",
             "key": "236",
@@ -3075,6 +3513,12 @@
             }
         },
         "Lulu": {
+            "tier": "S+",
+            "winrate": "50.23%",
+            "pickrate": "7.2%",
+            "banrate": "4.4%",
+            "matches": "557.118", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Lulu",
             "key": "117",
@@ -3117,6 +3561,12 @@
             }
         },
         "Lux": {
+            "tier": "S+",
+            "winrate": "50.26%",
+            "pickrate": "14.1%",
+            "banrate": "16.0%",
+            "matches": "1.085.672", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Lux",
             "key": "99",
@@ -3159,6 +3609,12 @@
             }
         },
         "Malphite": {
+            "tier": "S",
+            "winrate": "50.73%",
+            "pickrate": "5.3%",
+            "banrate": "9.8%",
+            "matches": "407.991", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Malphite",
             "key": "54",
@@ -3201,6 +3657,12 @@
             }
         },
         "Malzahar": {
+            "tier": "S+",
+            "winrate": "51.57%",
+            "pickrate": "5.1%",
+            "banrate": "8.1%",
+            "matches": "391.124", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Malzahar",
             "key": "90",
@@ -3243,6 +3705,12 @@
             }
         },
         "Maokai": {
+            "tier": "A",
+            "winrate": "50.71%",
+            "pickrate": "2.2%",
+            "banrate": "0.5%",
+            "matches": "167.467", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Maokai",
             "key": "57",
@@ -3285,6 +3753,12 @@
             }
         },
         "MasterYi": {
+            "tier": "S+",
+            "winrate": "50.11%",
+            "pickrate": "7.8%",
+            "banrate": "16.2%",
+            "matches": "600.451", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "MasterYi",
             "key": "11",
@@ -3327,6 +3801,12 @@
             }
         },
         "Milio": {
+            "tier": "S",
+            "winrate": "50.53%",
+            "pickrate": "4.6%",
+            "banrate": "2.0%",
+            "matches": "355.093", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Milio",
             "key": "902",
@@ -3369,6 +3849,12 @@
             }
         },
         "MissFortune": {
+            "tier": "S+",
+            "winrate": "51.54%",
+            "pickrate": "15.3%",
+            "banrate": "5.3%",
+            "matches": "1.178.596", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "MissFortune",
             "key": "21",
@@ -3411,6 +3897,12 @@
             }
         },
         "MonkeyKing": {
+            "tier": "B",
+            "winrate": "49.65%",
+            "pickrate": "1.4%",
+            "banrate": "0.3%",
+            "matches": "111.479", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "MonkeyKing",
             "key": "62",
@@ -3453,6 +3945,12 @@
             }
         },
         "Mordekaiser": {
+            "tier": "S+",
+            "winrate": "51.41%",
+            "pickrate": "8.1%",
+            "banrate": "15.9%",
+            "matches": "622.011", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Mordekaiser",
             "key": "82",
@@ -3495,6 +3993,12 @@
             }
         },
         "Morgana": {
+            "tier": "A",
+            "winrate": "49.86%",
+            "pickrate": "7.8%",
+            "banrate": "25.5%",
+            "matches": "599.585", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Morgana",
             "key": "25",
@@ -3537,6 +4041,12 @@
             }
         },
         "Naafiri": {
+            "tier": "S+",
+            "winrate": "52.87%",
+            "pickrate": "3.5%",
+            "banrate": "4.8%",
+            "matches": "270.613", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Naafiri",
             "key": "950",
@@ -3579,6 +4089,12 @@
             }
         },
         "Nami": {
+            "tier": "S+",
+            "winrate": "51.58%",
+            "pickrate": "7.4%",
+            "banrate": "1.1%",
+            "matches": "573.040", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Nami",
             "key": "267",
@@ -3621,6 +4137,12 @@
             }
         },
         "Nasus": {
+            "tier": "S",
+            "winrate": "51.67%",
+            "pickrate": "6.7%",
+            "banrate": "6.1%",
+            "matches": "519.505", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Nasus",
             "key": "75",
@@ -3663,6 +4185,12 @@
             }
         },
         "Nautilus": {
+            "tier": "B",
+            "winrate": "49.69%",
+            "pickrate": "11.5%",
+            "banrate": "17.2%",
+            "matches": "885.998", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Nautilus",
             "key": "111",
@@ -3705,6 +4233,12 @@
             }
         },
         "Neeko": {
+            "tier": "B",
+            "winrate": "49.14%",
+            "pickrate": "2.5%",
+            "banrate": "1.5%",
+            "matches": "195.889", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Neeko",
             "key": "518",
@@ -3747,6 +4281,12 @@
             }
         },
         "Nidalee": {
+            "tier": "D",
+            "winrate": "48.43%",
+            "pickrate": "5.6%",
+            "banrate": "5.0%",
+            "matches": "428.115", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Nidalee",
             "key": "76",
@@ -3789,6 +4329,12 @@
             }
         },
         "Nilah": {
+            "tier": "S",
+            "winrate": "51.75%",
+            "pickrate": "1.4",
+            "banrate": "2.3%",
+            "matches": "110.582", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Nilah",
             "key": "895",
@@ -3831,6 +4377,12 @@
             }
         },
         "Nocturne": {
+            "tier": "S+",
+            "winrate": "52.43%",
+            "pickrate": "8.6%",
+            "banrate": "13.1%",
+            "matches": "663.657", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Nocturne",
             "key": "56",
@@ -3873,6 +4425,12 @@
             }
         },
         "Nunu": {
+            "tier": "B",
+            "winrate": "49.01%",
+            "pickrate": "2.6%",
+            "banrate": "0.5%",
+            "matches": "201.242", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Nunu",
             "key": "20",
@@ -3915,6 +4473,12 @@
             }
         },
         "Olaf": {
+            "tier": "B",
+            "winrate": "49.13%",
+            "pickrate": "1.3%",
+            "banrate": "1.0%",
+            "matches": "96.821", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Olaf",
             "key": "2",
@@ -3957,6 +4521,12 @@
             }
         },
         "Orianna": {
+            "tier": "D",
+            "winrate": "48.68%",
+            "pickrate": "2.8%",
+            "banrate": "0.5%",
+            "matches": "214.481", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Orianna",
             "key": "61",
@@ -3999,6 +4569,12 @@
             }
         },
         "Ornn": {
+            "tier": "A",
+            "winrate": "50.65%",
+            "pickrate": "3.1%",
+            "banrate": "0.5%",
+            "matches": "240.170", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Ornn",
             "key": "516",
@@ -4041,6 +4617,12 @@
             }
         },
         "Pantheon": {
+            "tier": "C",
+            "winrate": "48.66%",
+            "pickrate": "2.7%",
+            "banrate": "2.2%",
+            "matches": "204.433", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Pantheon",
             "key": "80",
@@ -4083,6 +4665,12 @@
             }
         },
         "Poppy": {
+            "tier": "S",
+            "winrate": "52.06%",
+            "pickrate": "2.0%",
+            "banrate": "2.8%",
+            "matches": "151.875", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Poppy",
             "key": "78",
@@ -4125,6 +4713,12 @@
             }
         },
         "Pyke": {
+            "tier": "D",
+            "winrate": "49.23%",
+            "pickrate": "6.6%",
+            "banrate": "15.6%",
+            "matches": "504.814", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Pyke",
             "key": "555",
@@ -4167,6 +4761,12 @@
             }
         },
         "Qiyana": {
+            "tier": "C",
+            "winrate": "47.72%",
+            "pickrate": "1.4%",
+            "banrate": "0.3%",
+            "matches": "107.828", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Qiyana",
             "key": "246",
@@ -4209,6 +4809,12 @@
             }
         },
         "Quinn": {
+            "tier": "A",
+            "winrate": "50.59%",
+            "pickrate": "2.1%",
+            "banrate": "1.5%",
+            "matches": "162.499", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Quinn",
             "key": "133",
@@ -4251,6 +4857,12 @@
             }
         },
         "Rakan": {
+            "tier": "B",
+            "winrate": "49.83%",
+            "pickrate": "3.4%",
+            "banrate": "0.6%",
+            "matches": "262.866", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Rakan",
             "key": "497",
@@ -4293,6 +4905,12 @@
             }
         },
         "Rammus": {
+            "tier": "S+",
+            "winrate": "52.09%",
+            "pickrate": "2.7%",
+            "banrate": "7.9%",
+            "matches": "207.348", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Rammus",
             "key": "33",
@@ -4335,6 +4953,12 @@
             }
         },
         "RekSai": {
+            "tier": "B",
+            "winrate": "49.7%",
+            "pickrate": "1.0%",
+            "banrate": "0.8%",
+            "matches": "77.100", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "RekSai",
             "key": "421",
@@ -4377,6 +5001,12 @@
             }
         },
         "Rell": {
+            "tier": "A",
+            "winrate": "50.5%",
+            "pickrate": "3.2%",
+            "banrate": "1.4%",
+            "matches": "249.845", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Rell",
             "key": "526",
@@ -4419,6 +5049,12 @@
             }
         },
         "Renata": {
+            "tier": "B",
+            "winrate": "49.24%",
+            "pickrate": "1.1%",
+            "banrate": "0.3%",
+            "matches": "81.977", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Renata",
             "key": "888",
@@ -4461,6 +5097,12 @@
             }
         },
         "Renekton": {
+            "tier": "B",
+            "winrate": "49.72%",
+            "pickrate": "4.8%",
+            "banrate": "2.8%",
+            "matches": "368.048", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Renekton",
             "key": "58",
@@ -4503,6 +5145,12 @@
             }
         },
         "Rengar": {
+            "tier": "D",
+            "winrate": "45.34%",
+            "pickrate": "2.0%",
+            "banrate": "2.0%",
+            "matches": "152.825", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Rengar",
             "key": "107",
@@ -4545,6 +5193,12 @@
             }
         },
         "Riven": {
+            "tier": "C",
+            "winrate": "48.88%",
+            "pickrate": "3.1%",
+            "banrate": "0.8%",
+            "matches": "237.171", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Riven",
             "key": "92",
@@ -4587,6 +5241,12 @@
             }
         },
         "Rumble": {
+            "tier": "C",
+            "winrate": "48.62%",
+            "pickrate": "2.8%",
+            "banrate": "3.1%",
+            "matches": "212.872", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Rumble",
             "key": "68",
@@ -4629,6 +5289,12 @@
             }
         },
         "Ryze": {
+            "tier": "B",
+            "winrate": "49.35%",
+            "pickrate": "1.4%",
+            "banrate": "0.2%",
+            "matches": "107.327", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Ryze",
             "key": "13",
@@ -4671,6 +5337,12 @@
             }
         },
         "Samira": {
+            "tier": "D",
+            "winrate": "48.91%",
+            "pickrate": "5.7%",
+            "banrate": "14.8%",
+            "matches": "440.323", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Samira",
             "key": "360",
@@ -4713,6 +5385,12 @@
             }
         },
         "Sejuani": {
+            "tier": "A",
+            "winrate": "50.21%",
+            "pickrate": "3.7%",
+            "banrate": "0.5%",
+            "matches": "287.678", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Sejuani",
             "key": "113",
@@ -4755,6 +5433,12 @@
             }
         },
         "Senna": {
+            "tier": "D",
+            "winrate": "48.32%",
+            "pickrate": "5.6%",
+            "banrate": "2.0%",
+            "matches": "434.756", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Senna",
             "key": "235",
@@ -4797,6 +5481,12 @@
             }
         },
         "Seraphine": {
+            "tier": "A",
+            "winrate": "50.01%",
+            "pickrate": "6.2%",
+            "banrate": "1.9%",
+            "matches": "477.966", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Seraphine",
             "key": "147",
@@ -4839,6 +5529,12 @@
             }
         },
         "Sett": {
+            "tier": "S+",
+            "winrate": "52.11%",
+            "pickrate": "8.9%",
+            "banrate": "5.2%",
+            "matches": "681.795", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Sett",
             "key": "875",
@@ -4881,6 +5577,12 @@
             }
         },
         "Shaco": {
+            "tier": "B",
+            "winrate": "49.57%",
+            "pickrate": "6.9%",
+            "banrate": "33.1%",
+            "matches": "528.941", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Shaco",
             "key": "35",
@@ -4923,6 +5625,12 @@
             }
         },
         "Shen": {
+            "tier": "A",
+            "winrate": "50.31%",
+            "pickrate": "2.6%",
+            "banrate": "0.4%",
+            "matches": "201.016", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Shen",
             "key": "98",
@@ -4965,6 +5673,12 @@
             }
         },
         "Shyvana": {
+            "tier": "S",
+            "winrate": "52.53%",
+            "pickrate": "3.6%",
+            "banrate": "1.0%",
+            "matches": "274.661", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Shyvana",
             "key": "102",
@@ -5007,6 +5721,12 @@
             }
         },
         "Singed": {
+            "tier": "A",
+            "winrate": "50.98%",
+            "pickrate": "1.2%",
+            "banrate": "0.3%",
+            "matches": "95.058", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Singed",
             "key": "27",
@@ -5049,6 +5769,12 @@
             }
         },
         "Sion": {
+            "tier": "B",
+            "winrate": "49.66%",
+            "pickrate": "2.5%",
+            "banrate": "0.9%",
+            "matches": "190.776", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Sion",
             "key": "14",
@@ -5091,6 +5817,12 @@
             }
         },
         "Sivir": {
+            "tier": "B",
+            "winrate": "50.24%",
+            "pickrate": "3.2%",
+            "banrate": "0.6%",
+            "matches": "244.914", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Sivir",
             "key": "15",
@@ -5133,6 +5865,12 @@
             }
         },
         "Skarner": {
+            "tier": "D",
+            "winrate": "44.16%",
+            "pickrate": "1.6%",
+            "banrate": "13.0%",
+            "matches": "126.874", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Skarner",
             "key": "72",
@@ -5175,6 +5913,12 @@
             }
         },
         "Smolder": {
+            "tier": "C",
+            "winrate": "49.33%",
+            "pickrate": "4.5%",
+            "banrate": "2.0%",
+            "matches": "344.364", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Smolder",
             "key": "901",
@@ -5217,6 +5961,12 @@
             }
         },
         "Sona": {
+            "tier": "A",
+            "winrate": "51.59%",
+            "pickrate": "2.7%",
+            "banrate": "0.2%",
+            "matches": "208.023", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Sona",
             "key": "37",
@@ -5259,6 +6009,12 @@
             }
         },
         "Soraka": {
+            "tier": "S",
+            "winrate": "50.89%",
+            "pickrate": "4.2%",
+            "banrate": "1.4%",
+            "matches": "332.164", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Soraka",
             "key": "16",
@@ -5301,6 +6057,12 @@
             }
         },
         "Swain": {
+            "tier": "B",
+            "winrate": "49.59%",
+            "pickrate": "2.9%",
+            "banrate": "1.7%",
+            "matches": "220.451", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Swain",
             "key": "50",
@@ -5343,6 +6105,12 @@
             }
         },
         "Sylas": {
+            "tier": "S+",
+            "winrate": "50.78%",
+            "pickrate": "7.5%",
+            "banrate": "11.4%",
+            "matches": "580.824", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Sylas",
             "key": "517",
@@ -5385,6 +6153,12 @@
             }
         },
         "Syndra": {
+            "tier": "B",
+            "winrate": "49.54%",
+            "pickrate": "3.8%",
+            "banrate": "2.0%",
+            "matches": "294.921", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Syndra",
             "key": "134",
@@ -5427,6 +6201,12 @@
             }
         },
         "TahmKench": {
+            "tier": "A",
+            "winrate": "50.98%",
+            "pickrate": "2.9%",
+            "banrate": "2.1%",
+            "matches": "221.495", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "TahmKench",
             "key": "223",
@@ -5469,6 +6249,12 @@
             }
         },
         "Taliyah": {
+            "tier": "C",
+            "winrate": "47.85%",
+            "pickrate": "1.9%",
+            "banrate": "2.3%",
+            "matches": "143.307", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Taliyah",
             "key": "163",
@@ -5511,6 +6297,12 @@
             }
         },
         "Talon": {
+            "tier": "C",
+            "winrate": "49.1%",
+            "pickrate": "2.4%",
+            "banrate": "0.8%",
+            "matches": "181.773", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Talon",
             "key": "91",
@@ -5553,6 +6345,12 @@
             }
         },
         "Taric": {
+            "tier": "A",
+            "winrate": "52.69%",
+            "pickrate": "1.2%",
+            "banrate": "0.3%",
+            "matches": "91.849", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Taric",
             "key": "44",
@@ -5595,6 +6393,12 @@
             }
         },
         "Teemo": {
+            "tier": "S",
+            "winrate": "50.14%",
+            "pickrate": "5.4%",
+            "banrate": "11.1%",
+            "matches": "412.518", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Teemo",
             "key": "17",
@@ -5637,6 +6441,12 @@
             }
         },
         "Thresh": {
+            "tier": "C",
+            "winrate": "49.69%",
+            "pickrate": "10.5%",
+            "banrate": "3.7%",
+            "matches": "808.320", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Thresh",
             "key": "412",
@@ -5679,6 +6489,12 @@
             }
         },
         "Tristana": {
+            "tier": "S",
+            "winrate": "50.22%",
+            "pickrate": "8.2%",
+            "banrate": "11.1%",
+            "matches": "634.974", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Tristana",
             "key": "18",
@@ -5721,6 +6537,12 @@
             }
         },
         "Trundle": {
+            "tier": "A",
+            "winrate": "50.7%",
+            "pickrate": "2.5%",
+            "banrate": "1.9%",
+            "matches": "193.409", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Trundle",
             "key": "48",
@@ -5763,6 +6585,12 @@
             }
         },
         "Tryndamere": {
+            "tier": "A",
+            "winrate": "49.99%",
+            "pickrate": "3.7%",
+            "banrate": "4.6%",
+            "matches": "284.162", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Tryndamere",
             "key": "23",
@@ -5805,6 +6633,12 @@
             }
         },
         "TwistedFate": {
+            "tier": "C",
+            "winrate": "48.99%",
+            "pickrate": "2.7%",
+            "banrate": "2.2%",
+            "matches": "206.014", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "TwistedFate",
             "key": "4",
@@ -5847,6 +6681,12 @@
             }
         },
         "Twitch": {
+            "tier": "S",
+            "winrate": "50.65%",
+            "pickrate": "3.7%",
+            "banrate": "4.2%",
+            "matches": "281.455", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Twitch",
             "key": "29",
@@ -5889,6 +6729,12 @@
             }
         },
         "Udyr": {
+            "tier": "A",
+            "winrate": "51.05%",
+            "pickrate": "2.8%",
+            "banrate": "1.5%",
+            "matches": "215.222", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Udyr",
             "key": "77",
@@ -5931,6 +6777,12 @@
             }
         },
         "Urgot": {
+            "tier": "S",
+            "winrate": "51.64%",
+            "pickrate": "2.7%",
+            "banrate": "1.2%",
+            "matches": "211.201", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Urgot",
             "key": "6",
@@ -5973,6 +6825,12 @@
             }
         },
         "Varus": {
+            "tier": "D",
+            "winrate": "46.45%",
+            "pickrate": "4.1%",
+            "banrate": "0.8%",
+            "matches": "312.476", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Varus",
             "key": "110",
@@ -6015,6 +6873,12 @@
             }
         },
         "Vayne": {
+            "tier": "B",
+            "winrate": "49.83%",
+            "pickrate": "5.3%",
+            "banrate": "9.3%",
+            "matches": "410.297", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Vayne",
             "key": "67",
@@ -6057,6 +6921,12 @@
             }
         },
         "Veigar": {
+            "tier": "S+",
+            "winrate": "51.34%",
+            "pickrate": "6.1%",
+            "banrate": "3.9%",
+            "matches": "465.958", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Veigar",
             "key": "45",
@@ -6099,6 +6969,12 @@
             }
         },
         "Velkoz": {
+            "tier": "A",
+            "winrate": "50.68%",
+            "pickrate": "2.6%",
+            "banrate": "0.7%",
+            "matches": "199.056", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Velkoz",
             "key": "161",
@@ -6141,6 +7017,12 @@
             }
         },
         "Vex": {
+            "tier": "S+",
+            "winrate": "51.34%",
+            "pickrate": "4.7%",
+            "banrate": "5.4%",
+            "matches": "359.211", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Vex",
             "key": "711",
@@ -6183,6 +7065,12 @@
             }
         },
         "Vi": {
+            "tier": "B",
+            "winrate": "49.43%",
+            "pickrate": "4.5%",
+            "banrate": "1.2%",
+            "matches": "343.008", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Vi",
             "key": "254",
@@ -6225,6 +7113,12 @@
             }
         },
         "Viego": {
+            "tier": "S",
+            "winrate": "50.48%",
+            "pickrate": "10.3%",
+            "banrate": "6.6%",
+            "matches": "796.318", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Viego",
             "key": "234",
@@ -6267,6 +7161,12 @@
             }
         },
         "Viktor": {
+            "tier": "S",
+            "winrate": "51.37%",
+            "pickrate": "2.7%",
+            "banrate": "1.0%",
+            "matches": "210.551", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Viktor",
             "key": "112",
@@ -6309,6 +7209,12 @@
             }
         },
         "Vladimir": {
+            "tier": "A",
+            "winrate": "50.32%",
+            "pickrate": "2.07%",
+            "banrate": "3.4%",
+            "matches": "205.233", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Vladimir",
             "key": "8",
@@ -6351,6 +7257,12 @@
             }
         },
         "Volibear": {
+            "tier": "S",
+            "winrate": "50.96%",
+            "pickrate": "6.1%",
+            "banrate": "8.2%",
+            "matches": "466.944", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Volibear",
             "key": "106",
@@ -6393,6 +7305,12 @@
             }
         },
         "Warwick": {
+            "tier": "S+",
+            "winrate": "51.55%",
+            "pickrate": "6.2%",
+            "banrate": "5.7%",
+            "matches": "475.831", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Warwick",
             "key": "19",
@@ -6435,6 +7353,12 @@
             }
         },
         "Xayah": {
+            "tier": "B",
+            "winrate": "49.84%",
+            "pickrate": "4.2%",
+            "banrate": "0.6%",
+            "matches": "325.014", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Xayah",
             "key": "498",
@@ -6477,6 +7401,12 @@
             }
         },
         "Xerath": {
+            "tier": "S+",
+            "winrate": "50.81%",
+            "pickrate": "4.9%",
+            "banrate": "9.2%",
+            "matches": "379.102", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Xerath",
             "key": "101",
@@ -6519,6 +7449,12 @@
             }
         },
         "XinZhao": {
+            "tier": "A",
+            "winrate": "50.6%",
+            "pickrate": "3.8%",
+            "banrate": "0.9%",
+            "matches": "294.643", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "XinZhao",
             "key": "5",
@@ -6561,6 +7497,12 @@
             }
         },
         "Yasuo": {
+            "tier": "D",
+            "winrate": "49.07%",
+            "pickrate": "10.5%",
+            "banrate": "22.8%",
+            "matches": "808.279", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Yasuo",
             "key": "157",
@@ -6603,6 +7545,12 @@
             }
         },
         "Yone": {
+            "tier": "D",
+            "winrate": "49.41%",
+            "pickrate": "7.8%",
+            "banrate": "10.3%",
+            "matches": "600.710", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Yone",
             "key": "777",
@@ -6645,6 +7593,12 @@
             }
         },
         "Yorick": {
+            "tier": "S+",
+            "winrate": "52.34%",
+            "pickrate": "5.2%",
+            "banrate": "7.8%",
+            "matches": "369.834", 
+            "role" : "Top",
             "version": "14.13.1",
             "id": "Yorick",
             "key": "83",
@@ -6687,6 +7641,12 @@
             }
         },
         "Yuumi": {
+            "tier": "D",
+            "winrate": "48.75%",
+            "pickrate": "5.3%",
+            "banrate": "3.9%",
+            "matches": "409.946", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Yuumi",
             "key": "350",
@@ -6729,6 +7689,12 @@
             }
         },
         "Zac": {
+            "tier": "B",
+            "winrate": "49.69%",
+            "pickrate": "3.3%",
+            "banrate": "2.3%",
+            "matches": "251.740", 
+            "role" : "Jungle",
             "version": "14.13.1",
             "id": "Zac",
             "key": "154",
@@ -6771,6 +7737,12 @@
             }
         },
         "Zed": {
+            "tier": "D",
+            "winrate": "48.03%",
+            "pickrate": "7.3%",
+            "banrate": "21.7%",
+            "matches": "558.686", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Zed",
             "key": "238",
@@ -6813,6 +7785,12 @@
             }
         },
         "Zeri": {
+            "tier": "B",
+            "winrate": "49.77%",
+            "pickrate": "7.3%",
+            "banrate": "2.1%",
+            "matches": "563.694", 
+            "role" : "Adc",
             "version": "14.13.1",
             "id": "Zeri",
             "key": "221",
@@ -6855,6 +7833,12 @@
             }
         },
         "Ziggs": {
+            "tier": "B",
+            "winrate": "49.4%",
+            "pickrate": "1.7%",
+            "banrate": "0.5%",
+            "matches": "127.421", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Ziggs",
             "key": "115",
@@ -6897,6 +7881,12 @@
             }
         },
         "Zilean": {
+            "tier": "A",
+            "winrate": "50.47%",
+            "pickrate": "1.8%",
+            "banrate": "0.4%",
+            "matches": "136.154", 
+            "role" : "Support",
             "version": "14.13.1",
             "id": "Zilean",
             "key": "26",
@@ -6939,6 +7929,12 @@
             }
         },
         "Zoe": {
+            "tier": "C",
+            "winrate": "48.62%",
+            "pickrate": "2.0%",
+            "banrate": "1.0%",
+            "matches": "151.662", 
+            "role" : "Mid",
             "version": "14.13.1",
             "id": "Zoe",
             "key": "142",
@@ -6981,6 +7977,12 @@
             }
         },
         "Zyra": {
+            "tier": "S+",
+            "winrate": "51.85%",
+            "pickrate": "5.8%",
+            "banrate": "8.7%",
+            "matches": "449.343", 
+            "role": "Support",
             "version": "14.13.1",
             "id": "Zyra",
             "key": "143",
