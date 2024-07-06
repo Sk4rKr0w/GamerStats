@@ -451,6 +451,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jquery-rails
+  json
   mailcatcher (~> 0.2.4)
   omniauth
   omniauth-google-oauth2
