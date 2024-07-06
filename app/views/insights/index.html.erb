@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Insights</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0e101c;
+      color: #ffffff;
+    }
+    .table {
+      width: 100%;
+      margin-top: 20px;
+    }
+    .table-header, .table-row {
+      display: flex;
+      padding: 15px 0;
+      align-items: center;
+    }
+    .table-header {
+      background-color: #1c1f2e;
+    }
+    .table-row:nth-child(even) {
+      background-color: #1c1f2e;
+    }
+    .table-row:nth-child(odd) {
+      background-color: #2b2e44;
+    }
+    .table-cell {
+      flex: 1;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+    }
+    .champion-img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+    .winrate-bar, .pickrate-bar, .banrate-bar {
+      height: 10px;
+      display: inline-block;
+    }
+    .winrate-bar {
+      background-color: #4caf50;
+    }
+    .pickrate-bar {
+      background-color: #2196f3;
+    }
+    .banrate-bar {
+      background-color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <h1>Insights</h1>
+  <div class="table">
+    <div class="table-header">
+      <div class="table-cell">Tier</div>
+      <div class="table-cell">Champion</div>
+      <div class="table-cell">Winrate</div>
+      <div class="table-cell">Pickrate</div>
+      <div class="table-cell">Banrate</div>
+      <div class="table-cell">Matches</div>
+      <div class="table-cell">Lane</div>
+    </div>
+    <% @insights.each do |insight| %>
+      <div class="table-row">
+        <div class="table-cell"><%= insight[:tier] %></div>
+        <div class="table-cell">
+          <img class="champion-img" src="<%= asset_path("champion/#{insight[:champion]}.png") %>" alt="<%= insight[:champion] %>">
+          <%= insight[:champion] %>
+        </div>
+        <div class="table-cell">
+          <%= insight[:winrate] %>
+          <div class="winrate-bar" style="width: <%= insight[:winrate].to_i %>%"></div>
+        </div>
+        <div class="table-cell">
+          <%= insight[:pickrate] %>
+          <div class="pickrate-bar" style="width: <%= insight[:pickrate].to_i %>%"></div>
+        </div>
+        <div class="table-cell">
+          <%= insight[:banrate] %>
+          <div class="banrate-bar" style="width: <%= insight[:banrate].to_i %>%"></div>
+        </div>
+        <div class="table-cell"><%= insight[:matches] %></div>
+        <div class="table-cell"><%= insight[:lane] %></div>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>
