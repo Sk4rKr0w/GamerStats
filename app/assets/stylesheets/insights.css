@@ -204,4 +204,8 @@
     .table-header .table-cell:nth-child(2) {
         width: 50px;
     }
+
+    .champion-details {
+        transform: scale(0.65) translateY(15px);
+    }
 }

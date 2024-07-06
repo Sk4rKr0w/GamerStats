@@ -30,7 +30,7 @@ function toggleChampions() {
 
     championInvisible.style.display = "none";
     championInvisible.style.zIndex = "-1";
-    insightsContainer.style.display = "block";
+    insightsContainer.style.display = "flex";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
