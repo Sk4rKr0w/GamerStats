@@ -1,9 +1,0 @@
-<!-- app/views/items/show.html.erb -->
-<%= stylesheet_link_tag "items" %>
-
-<div class="item-details-container">
-  <h1><%= @item["name"] %></h1>
-  <%= image_tag @image_path.gsub('app/assets/images/', ''), class: 'item-image' %>
-  <p><%= @item["description"] %></p>
-  <p>Cost: <%= @item["gold"]["total"] %></p>
-</div>

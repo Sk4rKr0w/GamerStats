@@ -31,5 +31,6 @@ module GamerStats
     # Add the path to the DataDragon assets
     config.assets.paths << Rails.root.join('vendor', 'assets', 'dragontail-14.13.1', '14.13.1', 'img', 'item')
     config.assets.compile = true
+
   end
 end

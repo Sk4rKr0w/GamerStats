@@ -1,19 +1,22 @@
 // app/assets/javascripts/custom_script.js
 document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll(".item-image");
-    const itemDetails = document.getElementById("item-details");
+    const itemInvisible = document.getElementById("item-invisible");
     const itemName = document.getElementById("item-name");
     const itemImage = document.getElementById("item-image");
     const itemDescription = document.getElementById("item-description");
     const itemCost = document.getElementById("item-cost");
+    const itemContainer = document.getElementById("item-container");
 
     items.forEach((item) => {
         item.addEventListener("click", function () {
             itemName.textContent = this.dataset.name;
-            itemDescription.textContent = this.dataset.description;
+            itemDescription.innerHTML = this.dataset.description;
             itemCost.textContent = `Cost: ${this.dataset.cost}`;
             itemImage.src = `/assets/${this.dataset.imagePath}`;
-            itemDetails.style.display = "block";
+            itemInvisible.style.display = "flex";
+            itemInvisible.style.zIndex = "1";
+            itemContainer.style.display = "none";
         });
     });
 });
@@ -21,6 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
 var sideCounter = 0;
 var loginCounter = 0;
 var signUpCounter = 0;
+
+function toggleItem() {
+    const itemInvisible = document.getElementById("item-invisible");
+    const itemContainer = document.getElementById("item-container");
+
+    itemInvisible.style.display = "none";
+    itemInvisible.style.zIndex = "-2";
+    itemContainer.style.display = "block";
+}
 
 function toggleSidebar() {
     var mobileLeft = document.getElementById("mobile-left");
