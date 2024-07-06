@@ -1,4 +1,38 @@
 // app/assets/javascripts/custom_script.js
+document.addEventListener("DOMContentLoaded", () => {
+    const champions = document.querySelectorAll(".table-row");
+    const championInvisible = document.getElementById("champion-invisible");
+    const championName = document.getElementById("champion-name");
+    const championTitle = document.getElementById("champion-title");
+    const championLore = document.getElementById("champion-lore");
+    const championImage = document.getElementById("champion-image");
+    const insightsContainer = document.getElementById("insights-container");
+
+    champions.forEach((champion) => {
+        champion.addEventListener("click", function () {
+            const dataset = this.dataset;
+
+            championName.textContent = dataset.name;
+            championTitle.textContent = dataset.title;
+            championLore.textContent = dataset.lore;
+            championImage.src = `/assets/${dataset.imagePath}`;
+
+            championInvisible.style.display = "flex";
+            championInvisible.style.zIndex = "1";
+            insightsContainer.style.display = "none";
+        });
+    });
+});
+
+function toggleChampions() {
+    const championInvisible = document.getElementById("champion-invisible");
+    const insightsContainer = document.getElementById("insights-container");
+
+    championInvisible.style.display = "none";
+    championInvisible.style.zIndex = "-1";
+    insightsContainer.style.display = "block";
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll(".item-image");
     const itemInvisible = document.getElementById("item-invisible");
@@ -21,10 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-var sideCounter = 0;
-var loginCounter = 0;
-var signUpCounter = 0;
-
 function toggleItem() {
     const itemInvisible = document.getElementById("item-invisible");
     const itemContainer = document.getElementById("item-container");
@@ -33,6 +63,10 @@ function toggleItem() {
     itemInvisible.style.zIndex = "-2";
     itemContainer.style.display = "block";
 }
+
+var sideCounter = 0;
+var loginCounter = 0;
+var signUpCounter = 0;
 
 function toggleSidebar() {
     var mobileLeft = document.getElementById("mobile-left");

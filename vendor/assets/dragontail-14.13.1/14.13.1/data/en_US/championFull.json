@@ -4,6 +4,12 @@
     "version": "14.13.1",
     "data": {
         "Aatrox": {
+            "tier": "D",
+            "winrate": "49.45%",
+            "pickrate": "8.4%",
+            "banrate": "13.7%",
+            "matches": "644.228",
+            "role": "Top",
             "id": "Aatrox",
             "key": "266",
             "name": "Aatrox",
@@ -392,6 +398,12 @@
             "recommended": []
         },
         "Ahri": {
+            "tier": "C",
+            "winrate": "49.67%",
+            "pickrate": "9.7%",
+            "banrate": "11.7%",
+            "matches": "746.332",
+            "role": "Mid",
             "id": "Ahri",
             "key": "103",
             "name": "Ahri",
@@ -821,6 +833,12 @@
             "recommended": []
         },
         "Akali": {
+            "tier": "D",
+            "winrate": "48.62%",
+            "pickrate": "6.3%",
+            "banrate": "14.6%",
+            "matches": "484.298",
+            "role": "Mid",
             "id": "Akali",
             "key": "84",
             "name": "Akali",
@@ -1257,6 +1275,12 @@
             "recommended": []
         },
         "Akshan": {
+            "tier": "S",
+            "winrate": "51.36%",
+            "pickrate": "2.1%",
+            "banrate": "5.1%",
+            "matches": "159.640",
+            "role": "Mid",
             "id": "Akshan",
             "key": "166",
             "name": "Akshan",
@@ -1598,6 +1622,12 @@
             "recommended": []
         },
         "Alistar": {
+            "tier": "A",
+            "winrate": "50.48%",
+            "pickrate": "4.5%",
+            "banrate": "1.7%",
+            "matches": "344.424",
+            "role": "Support",
             "id": "Alistar",
             "key": "12",
             "name": "Alistar",
@@ -2013,6 +2043,12 @@
             "recommended": []
         },
         "Amumu": {
+            "tier": "S+",
+            "winrate": "52.5%",
+            "pickrate": "5.8%",
+            "banrate": "2.4%",
+            "matches": "442.733",
+            "role": "Jungle",
             "id": "Amumu",
             "key": "32",
             "name": "Amumu",
@@ -2412,6 +2448,12 @@
             "recommended": []
         },
         "Anivia": {
+            "tier": "S",
+            "winrate": "52.25%",
+            "pickrate": "1.6%",
+            "banrate": "1.2%",
+            "matches": "123.009",
+            "role": "Mid",
             "id": "Anivia",
             "key": "34",
             "name": "Anivia",
@@ -2817,6 +2859,12 @@
             "recommended": []
         },
         "Annie": {
+            "tier": "A",
+            "winrate": "50.72%",
+            "pickrate": "1.4%",
+            "banrate": "0.6%",
+            "matches": "109.694",
+            "role": "Mid",
             "id": "Annie",
             "key": "1",
             "name": "Annie",
@@ -3240,6 +3288,12 @@
             "recommended": []
         },
         "Aphelios": {
+            "tier": "D",
+            "winrate": "47.09%",
+            "pickrate": "3.3%",
+            "banrate": "0.8%",
+            "matches": "254.496",
+            "role": "Adc",
             "id": "Aphelios",
             "key": "523",
             "name": "Aphelios",
@@ -3571,6 +3625,12 @@
             "recommended": []
         },
         "Ashe": {
+            "tier": "S+",
+            "winrate": "50.5%",
+            "pickrate": "11.7%",
+            "banrate": "12.5%",
+            "matches": "903.612",
+            "role": "Adc",
             "id": "Ashe",
             "key": "22",
             "name": "Ashe",
@@ -4000,6 +4060,12 @@
             "recommended": []
         },
         "AurelionSol": {
+            "tier": "S",
+            "winrate": "50.99%",
+            "pickrate": "3.5%",
+            "banrate": "2.7%",
+            "matches": "273.165",
+            "role": "Mid",
             "id": "AurelionSol",
             "key": "136",
             "name": "Aurelion Sol",
@@ -4360,6 +4426,12 @@
             "recommended": []
         },
         "Azir": {
+            "tier": "D",
+            "winrate": "45.99%",
+            "pickrate": "2.1%",
+            "banrate": "0.4%",
+            "matches": "160.795",
+            "role": "Mid",
             "id": "Azir",
             "key": "268",
             "name": "Azir",
@@ -4725,6 +4797,12 @@
             "recommended": []
         },
         "Bard": {
+            "tier": "B",
+            "winrate": "49.36%",
+            "pickrate": "1.8%",
+            "banrate": "0.3%",
+            "matches": "137.065",
+            "role": "Support",
             "id": "Bard",
             "key": "432",
             "name": "Bard",
@@ -5079,6 +5157,12 @@
             "recommended": []
         },
         "Belveth": {
+            "tier": "A",
+            "winrate": "50.21%",
+            "pickrate": "2.4%",
+            "banrate": "3.6%",
+            "matches": "182.215",
+            "role": "Jungle",
             "id": "Belveth",
             "key": "200",
             "name": "Bel'Veth",
@@ -5419,6 +5503,12 @@
             "recommended": []
         },
         "Blitzcrank": {
+            "tier": "B",
+            "winrate": "49.7%",
+            "pickrate": "6.9%",
+            "banrate": "27.3%",
+            "matches": "531.179",
+            "role": "Support",
             "id": "Blitzcrank",
             "key": "53",
             "name": "Blitzcrank",
@@ -5822,6 +5912,12 @@
             "recommended": []
         },
         "Brand": {
+            "tier": "S+",
+            "winrate": "50.94%",
+            "pickrate": "5.3%",
+            "banrate": "20.0%",
+            "matches": "408.441",
+            "role": "Support",
             "id": "Brand",
             "key": "63",
             "name": "Brand",
@@ -6221,6 +6317,12 @@
             "recommended": []
         },
         "Braum": {
+            "tier": "S+",
+            "winrate": "51.29%",
+            "pickrate": "4.0%",
+            "banrate": "1.6%",
+            "matches": "309.099",
+            "role": "Support",
             "id": "Braum",
             "key": "201",
             "name": "Braum",
@@ -6598,6 +6700,12 @@
             "recommended": []
         },
         "Briar": {
+            "tier": "S+",
+            "winrate": "52.11%",
+            "pickrate": "4.3%",
+            "banrate": "9.0%",
+            "matches": "334.031",
+            "role": "Jungle",
             "id": "Briar",
             "key": "233",
             "name": "Briar",
@@ -6936,6 +7044,12 @@
             "recommended": []
         },
         "Caitlyn": {
+            "tier": "B",
+            "winrate": "49.8%",
+            "pickrate": "18.1%",
+            "banrate": "26.0%",
+            "matches": "1.392.513",
+            "role": "Adc",
             "id": "Caitlyn",
             "key": "51",
             "name": "Caitlyn",
@@ -7359,6 +7473,12 @@
             "recommended": []
         },
         "Camille": {
+            "tier": "A",
+            "winrate": "50.06%",
+            "pickrate": "3.8%",
+            "banrate": "3.8%",
+            "matches": "290.310",
+            "role": "Top",
             "id": "Camille",
             "key": "164",
             "name": "Camille",
@@ -7731,6 +7851,12 @@
             "recommended": []
         },
         "Cassiopeia": {
+            "tier": "S",
+            "winrate": "51.46%",
+            "pickrate": "2.0%",
+            "banrate": "2.2%",
+            "matches": "151.311",
+            "role": "Mid",
             "id": "Cassiopeia",
             "key": "69",
             "name": "Cassiopeia",
@@ -8105,6 +8231,12 @@
             "recommended": []
         },
         "Chogath": {
+            "tier": "B",
+            "winrate": "49.49%",
+            "pickrate": "2.2%",
+            "banrate": "0.8%",
+            "matches": "166.146",
+            "role": "Top",
             "id": "Chogath",
             "key": "31",
             "name": "Cho'Gath",
@@ -8493,6 +8625,12 @@
             "recommended": []
         },
         "Corki": {
+            "tier": "D",
+            "winrate": "46.81%",
+            "pickrate": "3.4%",
+            "banrate": "2.8%",
+            "matches": "263.117",
+            "role": "Mid",
             "id": "Corki",
             "key": "42",
             "name": "Corki",
@@ -8880,6 +9018,12 @@
             "recommended": []
         },
         "Darius": {
+            "tier": "D",
+            "winrate": "49.29%",
+            "pickrate": "8.8%",
+            "banrate": "20.6%",
+            "matches": "677.989",
+            "role": "Top",
             "id": "Darius",
             "key": "122",
             "name": "Darius",
@@ -9278,6 +9422,12 @@
             "recommended": []
         },
         "Diana": {
+            "tier": "A",
+            "winrate": "50.41%",
+            "pickrate": "5.7%",
+            "banrate": "3.3%",
+            "matches": "437.299",
+            "role": "Jungle",
             "id": "Diana",
             "key": "131",
             "name": "Diana",
@@ -9679,6 +9829,12 @@
             "recommended": []
         },
         "Draven": {
+            "tier": "D",
+            "winrate": "49.07%",
+            "pickrate": "4.6%",
+            "banrate": "15.4%",
+            "matches": "352.899",
+            "role": "Adc",
             "id": "Draven",
             "key": "119",
             "name": "Draven",
@@ -10073,6 +10229,12 @@
             "recommended": []
         },
         "DrMundo": {
+            "tier": "S+",
+            "winrate": "52.46%",
+            "pickrate": "5.8%",
+            "banrate": "4.2%",
+            "matches": "445.939",
+            "role": "Top",
             "id": "DrMundo",
             "key": "36",
             "name": "Dr. Mundo",
@@ -10474,6 +10636,12 @@
             "recommended": []
         },
         "Ekko": {
+            "tier": "A",
+            "winrate": "50.13%",
+            "pickrate": "3.7%",
+            "banrate": "1.8%",
+            "matches": "286.661",
+            "role": "Jungle",
             "id": "Ekko",
             "key": "245",
             "name": "Ekko",
@@ -10876,6 +11044,12 @@
             "recommended": []
         },
         "Elise": {
+            "tier": "A",
+            "winrate": "49.76%",
+            "pickrate": "1.4%",
+            "banrate": "0.7%",
+            "matches": "105.952",
+            "role": "Jungle",
             "id": "Elise",
             "key": "60",
             "name": "Elise",
@@ -11263,6 +11437,12 @@
             "recommended": []
         },
         "Evelynn": {
+            "tier": "C",
+            "winrate": "48.71%",
+            "pickrate": "2.6%",
+            "banrate": "3.5%",
+            "matches": "198.125",
+            "role": "Jungle",
             "id": "Evelynn",
             "key": "28",
             "name": "Evelynn",
@@ -11691,6 +11871,12 @@
             "recommended": []
         },
         "Ezreal": {
+            "tier": "D",
+            "winrate": "49.4%",
+            "pickrate": "20.8%",
+            "banrate": "9.8%",
+            "matches": "1.597.667",
+            "role": "Adc",
             "id": "Ezreal",
             "key": "81",
             "name": "Ezreal",
@@ -12132,6 +12318,12 @@
             "recommended": []
         },
         "Fiddlesticks": {
+            "tier": "A",
+            "winrate": "50.77%",
+            "pickrate": "2.8%",
+            "banrate": "1.6%",
+            "matches": "215.265",
+            "role": "Jungle",
             "id": "Fiddlesticks",
             "key": "9",
             "name": "Fiddlesticks",
@@ -12514,6 +12706,12 @@
             "recommended": []
         },
         "Fiora": {
+            "tier": "B",
+            "winrate": "49.93%",
+            "pickrate": "3.5%",
+            "banrate": "4.9%",
+            "matches": "273.092",
+            "role": "Top",
             "id": "Fiora",
             "key": "114",
             "name": "Fiora",
@@ -12929,6 +13127,12 @@
             "recommended": []
         },
         "Fizz": {
+            "tier": "S+",
+            "winrate": "50.7%",
+            "pickrate": "4.7%",
+            "banrate": "8.8%",
+            "matches": "364.710",
+            "role": "Mid",
             "id": "Fizz",
             "key": "105",
             "name": "Fizz",
@@ -13347,6 +13551,12 @@
             "recommended": []
         },
         "Galio": {
+            "tier": "S+",
+            "winrate": "52.38%",
+            "pickrate": "3.3%",
+            "banrate": "1.7%",
+            "matches": "256.675",
+            "role": "Mid",
             "id": "Galio",
             "key": "3",
             "name": "Galio",
@@ -13722,6 +13932,12 @@
             "recommended": []
         },
         "Gangplank": {
+            "tier": "D",
+            "winrate": "47.76%",
+            "pickrate": "2.4%",
+            "banrate": "1.2%",
+            "matches": "186.239",
+            "role": "Top",
             "id": "Gangplank",
             "key": "41",
             "name": "Gangplank",
@@ -14128,6 +14344,12 @@
             "recommended": []
         },
         "Garen": {
+            "tier": "S+",
+            "winrate": "51.65%",
+            "pickrate": "9.2%",
+            "banrate": "6.8%",
+            "matches": "710.174",
+            "role": "Top",
             "id": "Garen",
             "key": "86",
             "name": "Garen",
@@ -14532,6 +14754,12 @@
             "recommended": []
         },
         "Gnar": {
+            "tier": "B",
+            "winrate": "49.08%",
+            "pickrate": "2.5%",
+            "banrate": "0.5%",
+            "matches": "193.998",
+            "role": "Top",
             "id": "Gnar",
             "key": "150",
             "name": "Gnar",
@@ -14930,6 +15158,12 @@
             "recommended": []
         },
         "Gragas": {
+            "tier": "B",
+            "winrate": "48.81%",
+            "pickrate": "2.2%",
+            "banrate": "1.5%",
+            "matches": "168.990",
+            "role": "Top",
             "id": "Gragas",
             "key": "79",
             "name": "Gragas",
@@ -15324,6 +15558,12 @@
             "recommended": []
         },
         "Graves": {
+            "tier": "D",
+            "winrate": "49.11%",
+            "pickrate": "5.7%",
+            "banrate": "2.7%",
+            "matches": "442.590",
+            "role": "Jungle",
             "id": "Graves",
             "key": "104",
             "name": "Graves",
@@ -15729,6 +15969,12 @@
             "recommended": []
         },
         "Gwen": {
+            "tier": "B",
+            "winrate": "49.55%",
+            "pickrate": "2.5%",
+            "banrate": "1.7%",
+            "matches": "196.115",
+            "role": "Top",
             "id": "Gwen",
             "key": "887",
             "name": "Gwen",
@@ -16078,6 +16324,12 @@
             "recommended": []
         },
         "Hecarim": {
+            "tier": "D",
+            "winrate": "48.62%",
+            "pickrate": "3.4%",
+            "banrate": "1.8%",
+            "matches": "260.386",
+            "role": "Jungle",
             "id": "Hecarim",
             "key": "120",
             "name": "Hecarim",
@@ -16467,6 +16719,12 @@
             "recommended": []
         },
         "Heimerdinger": {
+            "tier": "A",
+            "winrate": "50.93%",
+            "pickrate": "1.8%",
+            "banrate": "2.5%",
+            "matches": "142.350",
+            "role": "Top",
             "id": "Heimerdinger",
             "key": "74",
             "name": "Heimerdinger",
@@ -16843,6 +17101,12 @@
             "recommended": []
         },
         "Hwei": {
+            "tier": "D",
+            "winrate": "48.55%",
+            "pickrate": "5.7%",
+            "banrate": "10.8%",
+            "matches": "437.245",
+            "role": "Mid",
             "id": "Hwei",
             "key": "910",
             "name": "Hwei",
@@ -17208,6 +17472,12 @@
             "recommended": []
         },
         "Illaoi": {
+            "tier": "S+",
+            "winrate": "51.26%",
+            "pickrate": "4.6%",
+            "banrate": "14.1%",
+            "matches": "356.030",
+            "role": "Top",
             "id": "Illaoi",
             "key": "420",
             "name": "Illaoi",
@@ -17560,6 +17830,12 @@
             "recommended": []
         },
         "Irelia": {
+            "tier": "S",
+            "winrate": "50.14%",
+            "pickrate": "3.6%",
+            "banrate": "9.9%",
+            "matches": "280.176",
+            "role": "Mid",
             "id": "Irelia",
             "key": "39",
             "name": "Irelia",
@@ -17969,6 +18245,12 @@
             "recommended": []
         },
         "Ivern": {
+            "tier": "A",
+            "winrate": "50.54%",
+            "pickrate": "1.0%",
+            "banrate": "0.5%",
+            "matches": "74.441",
+            "role": "Jungle",
             "id": "Ivern",
             "key": "427",
             "name": "Ivern",
@@ -18324,6 +18606,12 @@
             "recommended": []
         },
         "Janna": {
+            "tier": "S",
+            "winrate": "51.57%",
+            "pickrate": "2.9%",
+            "banrate": "1.1%",
+            "matches": "221.980",
+            "role": "Support",
             "id": "Janna",
             "key": "40",
             "name": "Janna",
@@ -18754,6 +19042,12 @@
             "recommended": []
         },
         "JarvanIV": {
+            "tier": "A",
+            "winrate": "50.74%",
+            "pickrate": "3.6%",
+            "banrate": "0.7%",
+            "matches": "275.633",
+            "role": "Jungle",
             "id": "JarvanIV",
             "key": "59",
             "name": "Jarvan IV",
@@ -19161,6 +19455,12 @@
             "recommended": []
         },
         "Jax": {
+            "tier": "C",
+            "winrate": "49.97%",
+            "pickrate": "5.6%",
+            "banrate": "9.1%",
+            "matches": "430.552",
+            "role": "Top",
             "id": "Jax",
             "key": "24",
             "name": "Jax",
@@ -19589,6 +19889,12 @@
             "recommended": []
         },
         "Jayce": {
+            "tier": "D",
+            "winrate": "47.33%",
+            "pickrate": "2.2%",
+            "banrate": "1.4%",
+            "matches": "170.028",
+            "role": "Top",
             "id": "Jayce",
             "key": "126",
             "name": "Jayce",
@@ -19952,6 +20258,12 @@
             "recommended": []
         },
         "Jhin": {
+            "tier": "S+",
+            "winrate": "50.83%",
+            "pickrate": "16.5%",
+            "banrate": "6.7%",
+            "matches": "1.268.107",
+            "role": "Adc",
             "id": "Jhin",
             "key": "202",
             "name": "Jhin",
@@ -20340,6 +20652,12 @@
             "recommended": []
         },
         "Jinx": {
+            "tier": "S+",
+            "winrate": "51.22%",
+            "pickrate": "16.4%",
+            "banrate": "7.7%",
+            "matches": "1.259.458",
+            "role": "Adc",
             "id": "Jinx",
             "key": "222",
             "name": "Jinx",
@@ -20745,6 +21063,12 @@
             "recommended": []
         },
         "Kaisa": {
+            "tier": "S+",
+            "winrate": "50.77%",
+            "pickrate": "33.7%",
+            "banrate": "11.5%",
+            "matches": "507.456",
+            "role": "Adc",
             "id": "Kaisa",
             "key": "145",
             "name": "Kai'Sa",
@@ -21147,6 +21471,12 @@
             "recommended": []
         },
         "Kalista": {
+            "tier": "D",
+            "winrate": "47.25%",
+            "pickrate": "1.5%",
+            "banrate": "0.6%",
+            "matches": "114.154",
+            "role": "Adc",
             "id": "Kalista",
             "key": "429",
             "name": "Kalista",
@@ -21509,6 +21839,12 @@
             "recommended": []
         },
         "Karma": {
+            "tier": "A",
+            "winrate": "50.03%",
+            "pickrate": "5.6%",
+            "banrate": "2.1%",
+            "matches": "431.705",
+            "role": "Support",
             "id": "Karma",
             "key": "43",
             "name": "Karma",
@@ -21933,6 +22269,12 @@
             "recommended": []
         },
         "Karthus": {
+            "tier": "D",
+            "winrate": "48.17%",
+            "pickrate": "2.8%",
+            "banrate": "1.6%",
+            "matches": "218.107",
+            "role": "Jungle",
             "id": "Karthus",
             "key": "30",
             "name": "Karthus",
@@ -22306,6 +22648,12 @@
             "recommended": []
         },
         "Kassadin": {
+            "tier": "B",
+            "winrate": "49.36%",
+            "pickrate": "1.5%",
+            "banrate": "1.6%",
+            "matches": "113.442",
+            "role": "Mid",
             "id": "Kassadin",
             "key": "38",
             "name": "Kassadin",
@@ -22696,6 +23044,12 @@
             "recommended": []
         },
         "Katarina": {
+            "tier": "D",
+            "winrate": "48.37%",
+            "pickrate": "5.8%",
+            "banrate": "5.8%",
+            "matches": "443.735",
+            "role": "Mid",
             "id": "Katarina",
             "key": "55",
             "name": "Katarina",
@@ -23112,6 +23466,12 @@
             "recommended": []
         },
         "Kayle": {
+            "tier": "S",
+            "winrate": "51.79%",
+            "pickrate": "3.4%",
+            "banrate": "1.6%",
+            "matches": "261.078",
+            "role": "Top",
             "id": "Kayle",
             "key": "10",
             "name": "Kayle",
@@ -23548,6 +23908,12 @@
             "recommended": []
         },
         "Kayn": {
+            "tier": "S",
+            "winrate": "50.01%",
+            "pickrate": "7.5%",
+            "banrate": "5.4%",
+            "matches": "579.316",
+            "role": "Jungle",
             "id": "Kayn",
             "key": "141",
             "name": "Kayn",
@@ -23905,6 +24271,12 @@
             "recommended": []
         },
         "Kennen": {
+            "tier": "B",
+            "winrate": "49.63%",
+            "pickrate": "1.8%",
+            "banrate": "1.0%",
+            "matches": "141.485",
+            "role": "Top",
             "id": "Kennen",
             "key": "85",
             "name": "Kennen",
@@ -24300,6 +24672,12 @@
             "recommended": []
         },
         "Khazix": {
+            "tier": "B",
+            "winrate": "49.93%",
+            "pickrate": "8.1%",
+            "banrate": "6.2%",
+            "matches": "620.953",
+            "role": "Jungle",
             "id": "Khazix",
             "key": "121",
             "name": "Kha'Zix",
@@ -24665,6 +25043,12 @@
             "recommended": []
         },
         "Kindred": {
+            "tier": "B",
+            "winrate": "49.21%",
+            "pickrate": "3.3%",
+            "banrate": "1.8%",
+            "matches": "252.010",
+            "role": "Jungle",
             "id": "Kindred",
             "key": "203",
             "name": "Kindred",
@@ -25023,6 +25407,12 @@
             "recommended": []
         },
         "Kled": {
+            "tier": "A",
+            "winrate": "51.35%",
+            "pickrate": "1.4%",
+            "banrate": "0.9%",
+            "matches": "108.171",
+            "role": "Top",
             "id": "Kled",
             "key": "240",
             "name": "Kled",
@@ -25382,6 +25772,12 @@
             "recommended": []
         },
         "KogMaw": {
+            "tier": "S",
+            "winrate": "51.99%",
+            "pickrate": "2.5%",
+            "banrate": "0.9%",
+            "matches": "190.555",
+            "role": "Adc",
             "id": "KogMaw",
             "key": "96",
             "name": "Kog'Maw",
@@ -25795,6 +26191,12 @@
             "recommended": []
         },
         "KSante": {
+            "tier": "D",
+            "winrate": "45.38%",
+            "pickrate": "2.9%",
+            "banrate": "1.6%",
+            "matches": "223.737",
+            "role": "Top",
             "id": "KSante",
             "key": "897",
             "name": "K'Sante",
@@ -26149,6 +26551,12 @@
             "recommended": []
         },
         "Leblanc": {
+            "tier": "D",
+            "winrate": "49.48%",
+            "pickrate": "8.9%",
+            "banrate": "16.0%",
+            "matches": "682.410",
+            "role": "Mid",
             "id": "Leblanc",
             "key": "7",
             "name": "LeBlanc",
@@ -26552,6 +26960,12 @@
             "recommended": []
         },
         "LeeSin": {
+            "tier": "D",
+            "winrate": "48.5%",
+            "pickrate": "13.3%",
+            "banrate": "12.0%",
+            "matches": "1.022.607",
+            "role": "Jungle",
             "id": "LeeSin",
             "key": "64",
             "name": "Lee Sin",
@@ -26981,6 +27395,12 @@
             "recommended": []
         },
         "Leona": {
+            "tier": "S+",
+            "winrate": "51.99%",
+            "pickrate": "11.9%",
+            "banrate": "15.2%",
+            "matches": "916.843",
+            "role": "Support",
             "id": "Leona",
             "key": "89",
             "name": "Leona",
@@ -27393,6 +27813,12 @@
             "recommended": []
         },
         "Lillia": {
+            "tier": "S+",
+            "winrate": "52.48%",
+            "pickrate": "8.2%",
+            "banrate": "13.4%",
+            "matches": "628.154",
+            "role": "Jungle",
             "id": "Lillia",
             "key": "876",
             "name": "Lillia",
@@ -27730,6 +28156,12 @@
             "recommended": []
         },
         "Lissandra": {
+            "tier": "A",
+            "winrate": "50.29%",
+            "pickrate": "2.8%",
+            "banrate": "1.2%",
+            "matches": "212.443",
+            "role": "Mid",
             "id": "Lissandra",
             "key": "127",
             "name": "Lissandra",
@@ -28109,6 +28541,12 @@
             "recommended": []
         },
         "Lucian": {
+            "tier": "D",
+            "winrate": "48.87%",
+            "pickrate": "8.3%",
+            "banrate": "2.6%",
+            "matches": "640.693",
+            "role": "Adc",
             "id": "Lucian",
             "key": "236",
             "name": "Lucian",
@@ -28506,6 +28944,12 @@
             "recommended": []
         },
         "Lulu": {
+            "tier": "S+",
+            "winrate": "50.23%",
+            "pickrate": "7.2%",
+            "banrate": "4.4%",
+            "matches": "557.118",
+            "role": "Support",
             "id": "Lulu",
             "key": "117",
             "name": "Lulu",
@@ -28905,6 +29349,12 @@
             "recommended": []
         },
         "Lux": {
+            "tier": "S+",
+            "winrate": "50.26%",
+            "pickrate": "14.1%",
+            "banrate": "16.0%",
+            "matches": "1.085.672",
+            "role": "Support",
             "id": "Lux",
             "key": "99",
             "name": "Lux",
@@ -29352,6 +29802,12 @@
             "recommended": []
         },
         "Malphite": {
+            "tier": "S",
+            "winrate": "50.73%",
+            "pickrate": "5.3%",
+            "banrate": "9.8%",
+            "matches": "407.991",
+            "role": "Top",
             "id": "Malphite",
             "key": "54",
             "name": "Malphite",
@@ -29758,6 +30214,12 @@
             "recommended": []
         },
         "Malzahar": {
+            "tier": "S+",
+            "winrate": "51.57%",
+            "pickrate": "5.1%",
+            "banrate": "8.1%",
+            "matches": "391.124",
+            "role": "Mid",
             "id": "Malzahar",
             "key": "90",
             "name": "Malzahar",
@@ -30166,6 +30628,12 @@
             "recommended": []
         },
         "Maokai": {
+            "tier": "A",
+            "winrate": "50.71%",
+            "pickrate": "2.2%",
+            "banrate": "0.5%",
+            "matches": "167.467",
+            "role": "Support",
             "id": "Maokai",
             "key": "57",
             "name": "Maokai",
@@ -30553,6 +31021,12 @@
             "recommended": []
         },
         "MasterYi": {
+            "tier": "S+",
+            "winrate": "50.11%",
+            "pickrate": "7.8%",
+            "banrate": "16.2%",
+            "matches": "600.451",
+            "role": "Jungle",
             "id": "MasterYi",
             "key": "11",
             "name": "Master Yi",
@@ -30969,6 +31443,12 @@
             "recommended": []
         },
         "Milio": {
+            "tier": "S",
+            "winrate": "50.53%",
+            "pickrate": "4.6%",
+            "banrate": "2.0%",
+            "matches": "355.093",
+            "role": "Support",
             "id": "Milio",
             "key": "902",
             "name": "Milio",
@@ -31307,6 +31787,12 @@
             "recommended": []
         },
         "MissFortune": {
+            "tier": "S+",
+            "winrate": "51.54%",
+            "pickrate": "15.3%",
+            "banrate": "5.3%",
+            "matches": "1.178.596",
+            "role": "Adc",
             "id": "MissFortune",
             "key": "21",
             "name": "Miss Fortune",
@@ -31747,6 +32233,12 @@
             "recommended": []
         },
         "MonkeyKing": {
+            "tier": "B",
+            "winrate": "49.65%",
+            "pickrate": "1.4%",
+            "banrate": "0.3%",
+            "matches": "111.479",
+            "role": "Jungle",
             "id": "MonkeyKing",
             "key": "62",
             "name": "Wukong",
@@ -32128,6 +32620,12 @@
             "recommended": []
         },
         "Mordekaiser": {
+            "tier": "S+",
+            "winrate": "51.41%",
+            "pickrate": "8.1%",
+            "banrate": "15.9%",
+            "matches": "622.011",
+            "role": "Top",
             "id": "Mordekaiser",
             "key": "82",
             "name": "Mordekaiser",
@@ -32513,6 +33011,12 @@
             "recommended": []
         },
         "Morgana": {
+            "tier": "A",
+            "winrate": "49.86%",
+            "pickrate": "7.8%",
+            "banrate": "25.5%",
+            "matches": "599.585",
+            "role": "Support",
             "id": "Morgana",
             "key": "25",
             "name": "Morgana",
@@ -32929,6 +33433,12 @@
             "recommended": []
         },
         "Naafiri": {
+            "tier": "S+",
+            "winrate": "52.87%",
+            "pickrate": "3.5%",
+            "banrate": "4.8%",
+            "matches": "270.613",
+            "role": "Mid",
             "id": "Naafiri",
             "key": "950",
             "name": "Naafiri",
@@ -33287,6 +33797,12 @@
             "recommended": []
         },
         "Nami": {
+            "tier": "S+",
+            "winrate": "51.58%",
+            "pickrate": "7.4%",
+            "banrate": "1.1%",
+            "matches": "573.040",
+            "role": "Support",
             "id": "Nami",
             "key": "267",
             "name": "Nami",
@@ -33685,6 +34201,12 @@
             "recommended": []
         },
         "Nasus": {
+            "tier": "S",
+            "winrate": "51.67%",
+            "pickrate": "6.7%",
+            "banrate": "6.1%",
+            "matches": "519.505",
+            "role": "Top",
             "id": "Nasus",
             "key": "75",
             "name": "Nasus",
@@ -34087,6 +34609,12 @@
             "recommended": []
         },
         "Nautilus": {
+            "tier": "B",
+            "winrate": "49.69%",
+            "pickrate": "11.5%",
+            "banrate": "17.2%",
+            "matches": "885.998",
+            "role": "Support",
             "id": "Nautilus",
             "key": "111",
             "name": "Nautilus",
@@ -34474,6 +35002,12 @@
             "recommended": []
         },
         "Neeko": {
+            "tier": "B",
+            "winrate": "49.14%",
+            "pickrate": "2.5%",
+            "banrate": "1.5%",
+            "matches": "195.889",
+            "role": "Support",
             "id": "Neeko",
             "key": "518",
             "name": "Neeko",
@@ -34855,6 +35389,12 @@
             "recommended": []
         },
         "Nidalee": {
+            "tier": "D",
+            "winrate": "48.43%",
+            "pickrate": "5.6%",
+            "banrate": "5.0%",
+            "matches": "428.115",
+            "role": "Jungle",
             "id": "Nidalee",
             "key": "76",
             "name": "Nidalee",
@@ -35285,6 +35825,12 @@
             "recommended": []
         },
         "Nilah": {
+            "tier": "S",
+            "winrate": "51.75%",
+            "pickrate": "1.4",
+            "banrate": "2.3%",
+            "matches": "110.582",
+            "role": "Adc",
             "id": "Nilah",
             "key": "895",
             "name": "Nilah",
@@ -35611,6 +36157,12 @@
             "recommended": []
         },
         "Nocturne": {
+            "tier": "S+",
+            "winrate": "52.43%",
+            "pickrate": "8.6%",
+            "banrate": "13.1%",
+            "matches": "663.657",
+            "role": "Jungle",
             "id": "Nocturne",
             "key": "56",
             "name": "Nocturne",
@@ -36001,6 +36553,12 @@
             "recommended": []
         },
         "Nunu": {
+            "tier": "B",
+            "winrate": "49.01%",
+            "pickrate": "2.6%",
+            "banrate": "0.5%",
+            "matches": "201.242",
+            "role": "Jungle",
             "id": "Nunu",
             "key": "20",
             "name": "Nunu & Willump",
@@ -36398,6 +36956,12 @@
             "recommended": []
         },
         "Olaf": {
+            "tier": "B",
+            "winrate": "49.13%",
+            "pickrate": "1.3%",
+            "banrate": "1.0%",
+            "matches": "96.821",
+            "role": "Top",
             "id": "Olaf",
             "key": "2",
             "name": "Olaf",
@@ -36784,6 +37348,12 @@
             "recommended": []
         },
         "Orianna": {
+            "tier": "D",
+            "winrate": "48.68%",
+            "pickrate": "2.8%",
+            "banrate": "0.5%",
+            "matches": "214.481",
+            "role": "Mid",
             "id": "Orianna",
             "key": "61",
             "name": "Orianna",
@@ -37184,6 +37754,12 @@
             "recommended": []
         },
         "Ornn": {
+            "tier": "A",
+            "winrate": "50.65%",
+            "pickrate": "3.1%",
+            "banrate": "0.5%",
+            "matches": "240.170",
+            "role": "Top",
             "id": "Ornn",
             "key": "516",
             "name": "Ornn",
@@ -37534,6 +38110,12 @@
             "recommended": []
         },
         "Pantheon": {
+            "tier": "C",
+            "winrate": "48.66%",
+            "pickrate": "2.7%",
+            "banrate": "2.2%",
+            "matches": "204.433",
+            "role": "Support",
             "id": "Pantheon",
             "key": "80",
             "name": "Pantheon",
@@ -37928,6 +38510,12 @@
             "recommended": []
         },
         "Poppy": {
+            "tier": "S",
+            "winrate": "52.06%",
+            "pickrate": "2.0%",
+            "banrate": "2.8%",
+            "matches": "151.875",
+            "role": "Support",
             "id": "Poppy",
             "key": "78",
             "name": "Poppy",
@@ -38331,6 +38919,12 @@
             "recommended": []
         },
         "Pyke": {
+            "tier": "D",
+            "winrate": "49.23%",
+            "pickrate": "6.6%",
+            "banrate": "15.6%",
+            "matches": "504.814",
+            "role": "Support",
             "id": "Pyke",
             "key": "555",
             "name": "Pyke",
@@ -38701,6 +39295,12 @@
             "recommended": []
         },
         "Qiyana": {
+            "tier": "C",
+            "winrate": "47.72%",
+            "pickrate": "1.4%",
+            "banrate": "0.3%",
+            "matches": "107.828",
+            "role": "Mid",
             "id": "Qiyana",
             "key": "246",
             "name": "Qiyana",
@@ -39059,6 +39659,12 @@
             "recommended": []
         },
         "Quinn": {
+            "tier": "A",
+            "winrate": "50.59%",
+            "pickrate": "2.1%",
+            "banrate": "1.5%",
+            "matches": "162.499",
+            "role": "Top",
             "id": "Quinn",
             "key": "133",
             "name": "Quinn",
@@ -39421,6 +40027,12 @@
             "recommended": []
         },
         "Rakan": {
+            "tier": "B",
+            "winrate": "49.83%",
+            "pickrate": "3.4%",
+            "banrate": "0.6%",
+            "matches": "262.866",
+            "role": "Support",
             "id": "Rakan",
             "key": "497",
             "name": "Rakan",
@@ -39810,6 +40422,12 @@
             "recommended": []
         },
         "Rammus": {
+            "tier": "S+",
+            "winrate": "52.09%",
+            "pickrate": "2.7%",
+            "banrate": "7.9%",
+            "matches": "207.348",
+            "role": "Jungle",
             "id": "Rammus",
             "key": "33",
             "name": "Rammus",
@@ -40196,6 +40814,12 @@
             "recommended": []
         },
         "RekSai": {
+            "tier": "B",
+            "winrate": "49.7%",
+            "pickrate": "1.0%",
+            "banrate": "0.8%",
+            "matches": "77.100",
+            "role": "Jungle",
             "id": "RekSai",
             "key": "421",
             "name": "Rek'Sai",
@@ -40551,6 +41175,12 @@
             "recommended": []
         },
         "Rell": {
+            "tier": "A",
+            "winrate": "50.5%",
+            "pickrate": "3.2%",
+            "banrate": "1.4%",
+            "matches": "249.845",
+            "role": "Support",
             "id": "Rell",
             "key": "526",
             "name": "Rell",
@@ -40879,6 +41509,12 @@
             "recommended": []
         },
         "Renata": {
+            "tier": "B",
+            "winrate": "49.24%",
+            "pickrate": "1.1%",
+            "banrate": "0.3%",
+            "matches": "81.977",
+            "role": "Support",
             "id": "Renata",
             "key": "888",
             "name": "Renata Glasc",
@@ -41216,6 +41852,12 @@
             "recommended": []
         },
         "Renekton": {
+            "tier": "B",
+            "winrate": "49.72%",
+            "pickrate": "4.8%",
+            "banrate": "2.8%",
+            "matches": "368.048",
+            "role": "Top",
             "id": "Renekton",
             "key": "58",
             "name": "Renekton",
@@ -41627,6 +42269,12 @@
             "recommended": []
         },
         "Rengar": {
+            "tier": "D",
+            "winrate": "45.34%",
+            "pickrate": "2.0%",
+            "banrate": "2.0%",
+            "matches": "152.825",
+            "role": "Jungle",
             "id": "Rengar",
             "key": "107",
             "name": "Rengar",
@@ -42001,6 +42649,12 @@
             "recommended": []
         },
         "Riven": {
+            "tier": "C",
+            "winrate": "48.88%",
+            "pickrate": "3.1%",
+            "banrate": "0.8%",
+            "matches": "237.171",
+            "role": "Top",
             "id": "Riven",
             "key": "92",
             "name": "Riven",
@@ -42423,6 +43077,12 @@
             "recommended": []
         },
         "Rumble": {
+            "tier": "C",
+            "winrate": "48.62%",
+            "pickrate": "2.8%",
+            "banrate": "3.1%",
+            "matches": "212.872",
+            "role": "Top",
             "id": "Rumble",
             "key": "68",
             "name": "Rumble",
@@ -42783,6 +43443,12 @@
             "recommended": []
         },
         "Ryze": {
+            "tier": "B",
+            "winrate": "49.35%",
+            "pickrate": "1.4%",
+            "banrate": "0.2%",
+            "matches": "107.327",
+            "role": "Mid",
             "id": "Ryze",
             "key": "13",
             "name": "Ryze",
@@ -43180,6 +43846,12 @@
             "recommended": []
         },
         "Samira": {
+            "tier": "D",
+            "winrate": "48.91%",
+            "pickrate": "5.7%",
+            "banrate": "14.8%",
+            "matches": "440.323",
+            "role": "Adc",
             "id": "Samira",
             "key": "360",
             "name": "Samira",
@@ -43515,6 +44187,12 @@
             "recommended": []
         },
         "Sejuani": {
+            "tier": "A",
+            "winrate": "50.21%",
+            "pickrate": "3.7%",
+            "banrate": "0.5%",
+            "matches": "287.678",
+            "role": "Jungle",
             "id": "Sejuani",
             "key": "113",
             "name": "Sejuani",
@@ -43915,6 +44593,12 @@
             "recommended": []
         },
         "Senna": {
+            "tier": "D",
+            "winrate": "48.32%",
+            "pickrate": "5.6%",
+            "banrate": "2.0%",
+            "matches": "434.756",
+            "role": "Support",
             "id": "Senna",
             "key": "235",
             "name": "Senna",
@@ -44290,6 +44974,12 @@
             "recommended": []
         },
         "Seraphine": {
+            "tier": "A",
+            "winrate": "50.01%",
+            "pickrate": "6.2%",
+            "banrate": "1.9%",
+            "matches": "477.966",
+            "role": "Support",
             "id": "Seraphine",
             "key": "147",
             "name": "Seraphine",
@@ -44664,6 +45354,12 @@
             "recommended": []
         },
         "Sett": {
+            "tier": "S+",
+            "winrate": "52.11%",
+            "pickrate": "8.9%",
+            "banrate": "5.2%",
+            "matches": "681.795",
+            "role": "Top",
             "id": "Sett",
             "key": "875",
             "name": "Sett",
@@ -45030,6 +45726,12 @@
             "recommended": []
         },
         "Shaco": {
+            "tier": "B",
+            "winrate": "49.57%",
+            "pickrate": "6.9%",
+            "banrate": "33.1%",
+            "matches": "528.941",
+            "role": "Jungle",
             "id": "Shaco",
             "key": "35",
             "name": "Shaco",
@@ -45436,6 +46138,12 @@
             "recommended": []
         },
         "Shen": {
+            "tier": "A",
+            "winrate": "50.31%",
+            "pickrate": "2.6%",
+            "banrate": "0.4%",
+            "matches": "201.016",
+            "role": "Top",
             "id": "Shen",
             "key": "98",
             "name": "Shen",
@@ -45829,6 +46537,12 @@
             "recommended": []
         },
         "Shyvana": {
+            "tier": "S",
+            "winrate": "52.53%",
+            "pickrate": "3.6%",
+            "banrate": "1.0%",
+            "matches": "274.661",
+            "role": "Jungle",
             "id": "Shyvana",
             "key": "102",
             "name": "Shyvana",
@@ -46205,6 +46919,12 @@
             "recommended": []
         },
         "Singed": {
+            "tier": "A",
+            "winrate": "50.98%",
+            "pickrate": "1.2%",
+            "banrate": "0.3%",
+            "matches": "95.058",
+            "role": "Top",
             "id": "Singed",
             "key": "27",
             "name": "Singed",
@@ -46597,6 +47317,12 @@
             "recommended": []
         },
         "Sion": {
+            "tier": "B",
+            "winrate": "49.66%",
+            "pickrate": "2.5%",
+            "banrate": "0.9%",
+            "matches": "190.776",
+            "role": "Top",
             "id": "Sion",
             "key": "14",
             "name": "Sion",
@@ -47000,6 +47726,12 @@
             "recommended": []
         },
         "Sivir": {
+            "tier": "B",
+            "winrate": "50.24%",
+            "pickrate": "3.2%",
+            "banrate": "0.6%",
+            "matches": "244.914",
+            "role": "Adc",
             "id": "Sivir",
             "key": "15",
             "name": "Sivir",
@@ -47426,6 +48158,12 @@
             "recommended": []
         },
         "Skarner": {
+            "tier": "D",
+            "winrate": "44.16%",
+            "pickrate": "1.6%",
+            "banrate": "13.0%",
+            "matches": "126.874",
+            "role": "Top",
             "id": "Skarner",
             "key": "72",
             "name": "Skarner",
@@ -47789,6 +48527,12 @@
             "recommended": []
         },
         "Smolder": {
+            "tier": "C",
+            "winrate": "49.33%",
+            "pickrate": "4.5%",
+            "banrate": "2.0%",
+            "matches": "344.364",
+            "role": "Adc",
             "id": "Smolder",
             "key": "901",
             "name": "Smolder",
@@ -48114,6 +48858,12 @@
             "recommended": []
         },
         "Sona": {
+            "tier": "A",
+            "winrate": "51.59%",
+            "pickrate": "2.7%",
+            "banrate": "0.2%",
+            "matches": "208.023",
+            "role": "Support",
             "id": "Sona",
             "key": "37",
             "name": "Sona",
@@ -48516,6 +49266,12 @@
             "recommended": []
         },
         "Soraka": {
+            "tier": "S",
+            "winrate": "50.89%",
+            "pickrate": "4.2%",
+            "banrate": "1.4%",
+            "matches": "332.164",
+            "role": "Support",
             "id": "Soraka",
             "key": "16",
             "name": "Soraka",
@@ -48951,6 +49707,12 @@
             "recommended": []
         },
         "Swain": {
+            "tier": "B",
+            "winrate": "49.59%",
+            "pickrate": "2.9%",
+            "banrate": "1.7%",
+            "matches": "220.451",
+            "role": "Support",
             "id": "Swain",
             "key": "50",
             "name": "Swain",
@@ -49334,6 +50096,12 @@
             "recommended": []
         },
         "Sylas": {
+            "tier": "S+",
+            "winrate": "50.78%",
+            "pickrate": "7.5%",
+            "banrate": "11.4%",
+            "matches": "580.824",
+            "role": "Mid",
             "id": "Sylas",
             "key": "517",
             "name": "Sylas",
@@ -49702,6 +50470,12 @@
             "recommended": []
         },
         "Syndra": {
+            "tier": "B",
+            "winrate": "49.54%",
+            "pickrate": "3.8%",
+            "banrate": "2.0%",
+            "matches": "294.921",
+            "role": "Mid",
             "id": "Syndra",
             "key": "134",
             "name": "Syndra",
@@ -50099,6 +50873,12 @@
             "recommended": []
         },
         "TahmKench": {
+            "tier": "A",
+            "winrate": "50.98%",
+            "pickrate": "2.9%",
+            "banrate": "2.1%",
+            "matches": "221.495",
+            "role": "Top",
             "id": "TahmKench",
             "key": "223",
             "name": "Tahm Kench",
@@ -50471,6 +51251,12 @@
             "recommended": []
         },
         "Taliyah": {
+            "tier": "C",
+            "winrate": "47.85%",
+            "pickrate": "1.9%",
+            "banrate": "2.3%",
+            "matches": "143.307",
+            "role": "Jungle",
             "id": "Taliyah",
             "key": "163",
             "name": "Taliyah",
@@ -50828,6 +51614,12 @@
             "recommended": []
         },
         "Talon": {
+            "tier": "C",
+            "winrate": "49.1%",
+            "pickrate": "2.4%",
+            "banrate": "0.8%",
+            "matches": "181.773",
+            "role": "Mid",
             "id": "Talon",
             "key": "91",
             "name": "Talon",
@@ -51217,6 +52009,12 @@
             "recommended": []
         },
         "Taric": {
+            "tier": "A",
+            "winrate": "52.69%",
+            "pickrate": "1.2%",
+            "banrate": "0.3%",
+            "matches": "91.849",
+            "role": "Support",
             "id": "Taric",
             "key": "44",
             "name": "Taric",
@@ -51566,6 +52364,12 @@
             "recommended": []
         },
         "Teemo": {
+            "tier": "S",
+            "winrate": "50.14%",
+            "pickrate": "5.4%",
+            "banrate": "11.1%",
+            "matches": "412.518",
+            "role": "Top",
             "id": "Teemo",
             "key": "17",
             "name": "Teemo",
@@ -51974,6 +52778,12 @@
             "recommended": []
         },
         "Thresh": {
+            "tier": "C",
+            "winrate": "49.69%",
+            "pickrate": "10.5%",
+            "banrate": "3.7%",
+            "matches": "808.320",
+            "role": "Support",
             "id": "Thresh",
             "key": "412",
             "name": "Thresh",
@@ -52394,6 +53204,12 @@
             "recommended": []
         },
         "Tristana": {
+            "tier": "S",
+            "winrate": "50.22%",
+            "pickrate": "8.2%",
+            "banrate": "11.1%",
+            "matches": "634.974",
+            "role": "Adc",
             "id": "Tristana",
             "key": "18",
             "name": "Tristana",
@@ -52810,6 +53626,12 @@
             "recommended": []
         },
         "Trundle": {
+            "tier": "A",
+            "winrate": "50.7%",
+            "pickrate": "2.5%",
+            "banrate": "1.9%",
+            "matches": "193.409",
+            "role": "Top",
             "id": "Trundle",
             "key": "48",
             "name": "Trundle",
@@ -53175,6 +53997,12 @@
             "recommended": []
         },
         "Tryndamere": {
+            "tier": "A",
+            "winrate": "49.99%",
+            "pickrate": "3.7%",
+            "banrate": "4.6%",
+            "matches": "284.162",
+            "role": "Top",
             "id": "Tryndamere",
             "key": "23",
             "name": "Tryndamere",
@@ -53571,6 +54399,12 @@
             "recommended": []
         },
         "TwistedFate": {
+            "tier": "C",
+            "winrate": "48.99%",
+            "pickrate": "2.7%",
+            "banrate": "2.2%",
+            "matches": "206.014",
+            "role": "Mid",
             "id": "TwistedFate",
             "key": "4",
             "name": "Twisted Fate",
@@ -53989,6 +54823,12 @@
             "recommended": []
         },
         "Twitch": {
+            "tier": "S",
+            "winrate": "50.65%",
+            "pickrate": "3.7%",
+            "banrate": "4.2%",
+            "matches": "281.455",
+            "role": "Adc",
             "id": "Twitch",
             "key": "29",
             "name": "Twitch",
@@ -54385,6 +55225,12 @@
             "recommended": []
         },
         "Udyr": {
+            "tier": "A",
+            "winrate": "51.05%",
+            "pickrate": "2.8%",
+            "banrate": "1.5%",
+            "matches": "215.222",
+            "role": "Jungle",
             "id": "Udyr",
             "key": "77",
             "name": "Udyr",
@@ -54745,6 +55591,12 @@
             "recommended": []
         },
         "Urgot": {
+            "tier": "S",
+            "winrate": "51.64%",
+            "pickrate": "2.7%",
+            "banrate": "1.2%",
+            "matches": "211.201",
+            "role": "Top",
             "id": "Urgot",
             "key": "6",
             "name": "Urgot",
@@ -55105,6 +55957,12 @@
             "recommended": []
         },
         "Varus": {
+            "tier": "D",
+            "winrate": "46.45%",
+            "pickrate": "4.1%",
+            "banrate": "0.8%",
+            "matches": "312.476",
+            "role": "Adc",
             "id": "Varus",
             "key": "110",
             "name": "Varus",
@@ -55512,6 +56370,12 @@
             "recommended": []
         },
         "Vayne": {
+            "tier": "B",
+            "winrate": "49.83%",
+            "pickrate": "5.3%",
+            "banrate": "9.3%",
+            "matches": "410.297",
+            "role": "Adc",
             "id": "Vayne",
             "key": "67",
             "name": "Vayne",
@@ -55936,6 +56800,12 @@
             "recommended": []
         },
         "Veigar": {
+            "tier": "S+",
+            "winrate": "51.34%",
+            "pickrate": "6.1%",
+            "banrate": "3.9%",
+            "matches": "465.958",
+            "role": "Mid",
             "id": "Veigar",
             "key": "45",
             "name": "Veigar",
@@ -56354,6 +57224,12 @@
             "recommended": []
         },
         "Velkoz": {
+            "tier": "A",
+            "winrate": "50.68%",
+            "pickrate": "2.6%",
+            "banrate": "0.7%",
+            "matches": "199.056",
+            "role": "Support",
             "id": "Velkoz",
             "key": "161",
             "name": "Vel'Koz",
@@ -56723,6 +57599,12 @@
             "recommended": []
         },
         "Vex": {
+            "tier": "S+",
+            "winrate": "51.34%",
+            "pickrate": "4.7%",
+            "banrate": "5.4%",
+            "matches": "359.211",
+            "role": "Mid",
             "id": "Vex",
             "key": "711",
             "name": "Vex",
@@ -57057,6 +57939,12 @@
             "recommended": []
         },
         "Vi": {
+            "tier": "B",
+            "winrate": "49.43%",
+            "pickrate": "4.5%",
+            "banrate": "1.2%",
+            "matches": "343.008",
+            "role": "Jungle",
             "id": "Vi",
             "key": "254",
             "name": "Vi",
@@ -57456,6 +58344,12 @@
             "recommended": []
         },
         "Viego": {
+            "tier": "S",
+            "winrate": "50.48%",
+            "pickrate": "10.3%",
+            "banrate": "6.6%",
+            "matches": "796.318",
+            "role": "Jungle",
             "id": "Viego",
             "key": "234",
             "name": "Viego",
@@ -57799,6 +58693,12 @@
             "recommended": []
         },
         "Viktor": {
+            "tier": "S",
+            "winrate": "51.37%",
+            "pickrate": "2.7%",
+            "banrate": "1.0%",
+            "matches": "210.551",
+            "role": "Mid",
             "id": "Viktor",
             "key": "112",
             "name": "Viktor",
@@ -58168,6 +59068,12 @@
             "recommended": []
         },
         "Vladimir": {
+            "tier": "A",
+            "winrate": "50.32%",
+            "pickrate": "2.07%",
+            "banrate": "3.4%",
+            "matches": "205.233",
+            "role": "Mid",
             "id": "Vladimir",
             "key": "8",
             "name": "Vladimir",
@@ -58556,6 +59462,12 @@
             "recommended": []
         },
         "Volibear": {
+            "tier": "S",
+            "winrate": "50.96%",
+            "pickrate": "6.1%",
+            "banrate": "8.2%",
+            "matches": "466.944",
+            "role": "Top",
             "id": "Volibear",
             "key": "106",
             "name": "Volibear",
@@ -58933,6 +59845,12 @@
             "recommended": []
         },
         "Warwick": {
+            "tier": "S+",
+            "winrate": "51.55%",
+            "pickrate": "6.2%",
+            "banrate": "5.7%",
+            "matches": "475.831",
+            "role": "Jungle",
             "id": "Warwick",
             "key": "19",
             "name": "Warwick",
@@ -59339,6 +60257,12 @@
             "recommended": []
         },
         "Xayah": {
+            "tier": "B",
+            "winrate": "49.84%",
+            "pickrate": "4.2%",
+            "banrate": "0.6%",
+            "matches": "325.014",
+            "role": "Adc",
             "id": "Xayah",
             "key": "498",
             "name": "Xayah",
@@ -59719,6 +60643,12 @@
             "recommended": []
         },
         "Xerath": {
+            "tier": "S+",
+            "winrate": "50.81%",
+            "pickrate": "4.9%",
+            "banrate": "9.2%",
+            "matches": "379.102",
+            "role": "Mid",
             "id": "Xerath",
             "key": "101",
             "name": "Xerath",
@@ -60107,6 +61037,12 @@
             "recommended": []
         },
         "XinZhao": {
+            "tier": "A",
+            "winrate": "50.6%",
+            "pickrate": "3.8%",
+            "banrate": "0.9%",
+            "matches": "294.643",
+            "role": "Jungle",
             "id": "XinZhao",
             "key": "5",
             "name": "Xin Zhao",
@@ -60483,6 +61419,12 @@
             "recommended": []
         },
         "Yasuo": {
+            "tier": "D",
+            "winrate": "49.07%",
+            "pickrate": "10.5%",
+            "banrate": "22.8%",
+            "matches": "808.279",
+            "role": "Mid",
             "id": "Yasuo",
             "key": "157",
             "name": "Yasuo",
@@ -60888,6 +61830,12 @@
             "recommended": []
         },
         "Yone": {
+            "tier": "D",
+            "winrate": "49.41%",
+            "pickrate": "7.8%",
+            "banrate": "10.3%",
+            "matches": "600.710",
+            "role": "Mid",
             "id": "Yone",
             "key": "777",
             "name": "Yone",
@@ -61247,6 +62195,12 @@
             "recommended": []
         },
         "Yorick": {
+            "tier": "S+",
+            "winrate": "52.34%",
+            "pickrate": "5.2%",
+            "banrate": "7.8%",
+            "matches": "369.834",
+            "role": "Top",
             "id": "Yorick",
             "key": "83",
             "name": "Yorick",
@@ -61618,6 +62572,12 @@
             "recommended": []
         },
         "Yuumi": {
+            "tier": "D",
+            "winrate": "48.75%",
+            "pickrate": "5.3%",
+            "banrate": "3.9%",
+            "matches": "409.946",
+            "role": "Support",
             "id": "Yuumi",
             "key": "350",
             "name": "Yuumi",
@@ -61986,6 +62946,12 @@
             "recommended": []
         },
         "Zac": {
+            "tier": "B",
+            "winrate": "49.69%",
+            "pickrate": "3.3%",
+            "banrate": "2.3%",
+            "matches": "251.740",
+            "role": "Jungle",
             "id": "Zac",
             "key": "154",
             "name": "Zac",
@@ -62339,6 +63305,12 @@
             "recommended": []
         },
         "Zed": {
+            "tier": "D",
+            "winrate": "48.03%",
+            "pickrate": "7.3%",
+            "banrate": "21.7%",
+            "matches": "558.686",
+            "role": "Mid",
             "id": "Zed",
             "key": "238",
             "name": "Zed",
@@ -62733,6 +63705,12 @@
             "recommended": []
         },
         "Zeri": {
+            "tier": "B",
+            "winrate": "49.77%",
+            "pickrate": "7.3%",
+            "banrate": "2.1%",
+            "matches": "563.694",
+            "role": "Adc",
             "id": "Zeri",
             "key": "221",
             "name": "Zeri",
@@ -63073,6 +64051,12 @@
             "recommended": []
         },
         "Ziggs": {
+            "tier": "B",
+            "winrate": "49.4%",
+            "pickrate": "1.7%",
+            "banrate": "0.5%",
+            "matches": "127.421",
+            "role": "Mid",
             "id": "Ziggs",
             "key": "115",
             "name": "Ziggs",
@@ -63471,6 +64455,12 @@
             "recommended": []
         },
         "Zilean": {
+            "tier": "A",
+            "winrate": "50.47%",
+            "pickrate": "1.8%",
+            "banrate": "0.4%",
+            "matches": "136.154",
+            "role": "Support",
             "id": "Zilean",
             "key": "26",
             "name": "Zilean",
@@ -63837,6 +64827,12 @@
             "recommended": []
         },
         "Zoe": {
+            "tier": "C",
+            "winrate": "48.62%",
+            "pickrate": "2.0%",
+            "banrate": "1.0%",
+            "matches": "151.662",
+            "role": "Mid",
             "id": "Zoe",
             "key": "142",
             "name": "Zoe",
@@ -64199,6 +65195,12 @@
             "recommended": []
         },
         "Zyra": {
+            "tier": "S+",
+            "winrate": "51.85%",
+            "pickrate": "5.8%",
+            "banrate": "8.7%",
+            "matches": "449.343",
+            "role": "Support",
             "id": "Zyra",
             "key": "143",
             "name": "Zyra",
