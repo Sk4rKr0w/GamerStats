@@ -24,7 +24,7 @@ class ChampionsController < ApplicationController
       @mastery_data.sort_by! { |data| -data["championPoints"] }
 
       # Limitare i campioni ai primi 20
-      @mastery_data = @mastery_data.first(20)
+      @mastery_data = @mastery_data.first(15)
 
       # Mappare gli ID dei campioni ai loro nomi
       @champion_names = get_champion_names
