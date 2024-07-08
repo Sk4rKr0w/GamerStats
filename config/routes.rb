@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'players/search'
+  get 'players/show'
   get 'leaderboards/index'
   get 'leaderboards/show'
   get 'champions/index'
@@ -41,7 +43,8 @@ end
 
   post 'signup', to: 'users#create', as: 'signup'
 
-
+  get 'search_player', to: 'players#search'
+  get 'player/show', to: 'players#show'
 
 
   resources :contacts, only: [:new, :create]
