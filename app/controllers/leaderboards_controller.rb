@@ -42,14 +42,15 @@ class LeaderboardsController < ApplicationController
     Rails.logger.info "URL per la richiesta API: #{url}"
 
     cached_response = @cache.read(url)
-    return cached_response if cached_response
+    return cached_response.first(100) if cached_response
 
     begin
       response = HTTParty.get(url)
       if response.success?
         Rails.logger.info "API League Response Success"
+        top_players = response.parsed_response['entries'].first(100)
         @cache.write(url, response.parsed_response)
-        return response.parsed_response
+        return response.parsed_response.merge('entries' => top_players)
       else
         handle_error(response)
         return nil
@@ -69,13 +70,16 @@ class LeaderboardsController < ApplicationController
   end
 
   def process_leaderboard_data
-    @lol_leaderboard['entries'].each do |player|
+    top_players = @lol_leaderboard['entries'].first(100)
+
+    top_players.each do |player|
       player['winRate'] = calculate_win_rate(player)
       player['summonerName'] = fetch_game_name(player['summonerId'])
       Rails.logger.info "Nome giocatore per #{player['summonerId']}: #{player['summonerName']}"
     end
-    @lol_leaderboard['entries'].sort_by! { |player| -player['leaguePoints'] }
-    @lol_leaderboard['entries'] = @lol_leaderboard['entries'].first(5)
+
+    top_players.sort_by! { |player| -player['leaguePoints'] }
+    @lol_leaderboard['entries'] = top_players
     Rails.logger.info "Classifica processata: #{@lol_leaderboard['entries']}"
   end
 
@@ -131,7 +135,7 @@ class LeaderboardsController < ApplicationController
     case response.code
     when 429
       Rails.logger.error "API Request failed: #{response.code} - #{response.message}. Too many requests, try again later."
-      sleep(10) # sleep for a while before retrying
+      sleep(10)
     else
       Rails.logger.error "API Request failed: #{response.code} - #{response.message}"
     end
