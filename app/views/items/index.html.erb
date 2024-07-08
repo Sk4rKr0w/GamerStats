@@ -1,26 +1,29 @@
 <!-- app/views/items/index.html.erb -->
 <%= stylesheet_link_tag "items" %>
 
-<div id="item-container", class="item-container">
+<div id="item-container" class="item-container">
     <h1>League of Legends Items</h1>
 
     <!-- AGGIUNGERE BARRA RICERCA OGGETTI -->
 
     <div class="image-gallery">
-        <% @items.each do |item_id, item| %> <% image_path = @images.find {
-        |path| path.include?(item_id) } %> <% next unless image_path %> <%=
-        image_tag image_path.gsub('app/assets/images/', ''), class:
-        'item-image', data: { id: item_id, name: item["name"], description:
-        item["description"], cost: item["gold"]["total"], image_path:
-        image_path.gsub('app/assets/images/', '') } %> <% end %>
+        <% @items.each do |item_id, item| %>
+            <% image_path = @images.find { |path| path.include?(item_id) } %>
+            <% next unless image_path %>
+            <%= image_tag image_path.gsub('app/assets/images/', '').gsub('.png', '.webp'),
+                class: 'item-image',
+                data: { id: item_id, name: item["name"], description: item["description"],
+                        cost: item["gold"]["total"],
+                        image_path: image_path.gsub('app/assets/images/', '').gsub('.png', '.webp') } %>
+        <% end %>
     </div>
 </div>
 
-<div id="item-invisible" , class="item-invisible">
-    <div id="item-details" , class="item-details">
+<div id="item-invisible" class="item-invisible">
+    <div id="item-details" class="item-details">
         <div class="item-details-north">
             <h2 id="item-name"></h2>
-            <%= image_tag("application/x-icon.svg", alt: "Item Image", onclick:'toggleItem()') %>
+            <%= image_tag("application/x-icon.svg", alt: "Item Image", onclick: 'toggleItem()') %>
         </div>
 
         <div class="item-details-mid">
