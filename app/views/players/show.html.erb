@@ -1,50 +1,110 @@
-<div class="player-info">
-  <% if @player_data %>
-    <h1 class="player-name"><%= @player_data['gameName'] %> <%= @player_data['tagLine'] %></h1>
-    <div class="player-details">
-      <p><strong>PUUID:</strong> <%= @player_data['puuid'] %></p>
-      <p><strong>Region:</strong> <%= @region.upcase %></p>
-      <% if @summoner_data.present? %>
-        <p><strong>ID:</strong> <%= @summoner_data['id'] %></p>
-        <p><strong>Summoner Level:</strong> <%= @summoner_data['summonerLevel'] %></p>
-        <% if @summoner_data['profileIconUrl'].present? %>
-          <p><strong>Profile Icon:</strong></p>
-          <%= image_tag @summoner_data['profileIconUrl'], class: 'profile-icon' %>
+<%= stylesheet_link_tag "show-player" %>
+
+<div class="player-container">
+    <div class="player-container-north">
+        <% if @player_data %>
+        <div class="player-container-north-left">
+            <% if @summoner_data['profileIconUrl'].present? %>
+                <%= image_tag @summoner_data['profileIconUrl'], class: 'profile-icon' %>
+            <% end %>
+        </div>
+        <div class="player-container-north-right">
+            <div class="player-container-nr-left">
+                <div class="nrrl-north">
+                    <h1 class="player-name">
+                        <%= @player_data['gameName'] %>#<%=
+                        @player_data['tagLine'] %>
+                    </h1>
+                </div>
+
+                <div class="nrrl-south">
+                    <p><strong>Region:</strong> <%= @region.upcase %></p>
+                    <% if @summoner_data.present? %>
+                    <p><strong>ID:</strong> <%= @summoner_data['id'] %></p>
+                    <p>
+                        <strong>Summoner Level:</strong> <%=
+                        @summoner_data['summonerLevel'] %>
+                    </p>
+
+                    <% end %>
+                </div>
+            </div>
+            <div class="player-container-nr-right">
+                <div class="nrr-north">
+                    <h1>Ranked Information</h1>
+                </div>
+                <div class="nrr-south">
+                    <% if @rank_data.present? %> <% @rank_data.each do |entry|
+                    %>
+                    <div class="nrrs-left">
+                        <p>
+                            <strong>Queue Type:</strong> <%= entry['queueType']
+                            %>
+                        </p>
+                        <p>
+                            <strong>Tier:</strong> <%= entry['tier'] %> <%=
+                            entry['rank'] %>
+                        </p>
+                        <p>
+                            <strong>League Points:</strong> <%=
+                            entry['leaguePoints'] %>
+                        </p>
+                    </div>
+                    <div class="nrrs-right">
+                        <p><strong>Wins:</strong> <%= entry['wins'] %></p>
+                        <p><strong>Losses:</strong> <%= entry['losses'] %></p>
+                        <p><strong>Win Ratio:</strong> <%= (entry['wins'].to_f / (entry['wins'].to_f + entry['losses'].to_f) * 100).round(0) %> %</p>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
         <% end %>
-      <% end %>
-      <% if @rank_data.present? %>
-        <h2>Ranked Information</h2>
-        <% @rank_data.each do |entry| %>
-          <p><strong>Queue Type:</strong> <%= entry['queueType'] %></p>
-          <p><strong>Tier:</strong> <%= entry['tier'] %> <%= entry['rank'] %></p>
-          <p><strong>League Points:</strong> <%= entry['leaguePoints'] %></p>
-          <p><strong>Wins:</strong> <%= entry['wins'] %></p>
-          <p><strong>Losses:</strong> <%= entry['losses'] %></p>
-          <p><strong>Win Ratio:</strong> <%= (entry['wins'].to_f / (entry['wins'].to_f + entry['losses'].to_f) * 100).round(0) %> %</p>
-        <% end %>
-      <% end %>
     </div>
-    <div class="match-history">
-      <h2>Match History</h2>
-      <% if @matches.any? %>
-        <ul>
-          <% @matches.each do |match| %>
-            <li>
-              <strong>Match ID:</strong> <%= match[:match_id] %><br>
-              <strong>Score:</strong> <%= match[:score] %><br>
-              <strong>Duration:</strong> <%= Time.at(match[:duration].to_i).utc.strftime("%M:%S") %><br>
-              <strong>Win:</strong> <%= match[:win] %><br>
-              <strong>Champion:</strong> <%= match[:champion_name] %><br>
-              <%= image_tag "champion/#{match[:champion_name]}.png", class: 'champion-icon' %>
-            </li>
-          <% end %>
-        </ul>
-        <p><strong>Win Rate (based on the latest 20 matches):</strong> <%= @win_rate %> %</p>
-      <% else %>
-        <p>No match data available.</p>
-      <% end %>
+
+    <div class="player-container-south">
+        <div class="match-history">
+            <% if @matches.any? %>
+            <h2>Match History</h2>
+            <p>
+                <strong>Win Rate (based on the latest 20 matches):</strong>
+                <%= @win_rate %> %
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Champion</th>
+                        <th>Match ID</th>
+                        <th>Score</th>
+                        <th>Duration</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @matches.each do |match| %>
+                    <tr>
+                        <td>
+                            <%= image_tag "champion/#{match[:champion_name]}.png", class: 'champion-icon' %> <%= match[:champion_name] %>
+                        </td>
+                        <td><%= match[:match_id] %></td>
+                        <td><%= match[:score] %></td>
+                        <td>
+                            <%=
+                            Time.at(match[:duration].to_i).utc.strftime("%M:%S")
+                            %>
+                        </td>
+                        <td><%= match[:win] %></td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            <% else %>
+            <p>No match data available.</p>
+            <% end %>
+        </div>
     </div>
-  <% else %>
+
+    <% else %>
     <p>No data available.</p>
-  <% end %>
+    <% end %>
 </div>
