@@ -152,6 +152,132 @@
 @media (max-width: 600px) {
     .player-container {
         margin: 0px;
-        transform: translateY(540px);
+        transform: translateY(415px);
+    }
+
+    .player-container-north {
+        flex-direction: column;
+        height: 600px;
+    }
+
+    .player-container-north-left,
+    .player-container-north-right {
+        width: 100%;
+    }
+
+    .player-container-north-left {
+        height: 30%;
+    }
+
+    .player-container-north-right {
+        height: 70%;
+    }
+
+    .player-container-north-right {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .nrrl-south {
+        width: 100%;
+        font-size: 14px;
+        margin: 5px 10px;
+    }
+
+    .nrrl-north {
+        width: auto;
+    }
+
+    .nrr-north {
+        width: auto;
+    }
+
+    .match-history p {
+        font-size: 16px;
+    }
+
+    .player-container-south {
+        padding: 10px;
+    }
+
+    .match-history td {
+        font-size: 12px;
+    }
+
+    .match-history th {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .match-history td {
+        text-align: center;
+    }
+
+    .match-history th,
+    .match-history td {
+        padding: 5px;
+    }
+
+    .match-history .champion-name {
+        display: none;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+    .player-container {
+        margin: 0px;
+        transform: translateY(415px);
+    }
+
+    .player-container-north-left {
+        width: 30%;
+    }
+
+    .player-container-north-right {
+        width: 70%;
+    }
+
+    .nrrl-south {
+        width: 100%;
+        font-size: 14px;
+        margin: 5px 10px;
+    }
+
+    .nrrl-north {
+        width: auto;
+    }
+
+    .nrr-north {
+        width: auto;
+    }
+
+    .match-history p {
+        font-size: 16px;
+    }
+
+    .player-container-south {
+        padding: 10px;
+    }
+
+    .match-history td {
+        font-size: 12px;
+    }
+
+    .match-history th {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .match-history td {
+        text-align: center;
+    }
+
+    .match-history th,
+    .match-history td {
+        padding: 5px;
+    }
+
+    .match-history .champion-name {
+        display: none;
     }
 }

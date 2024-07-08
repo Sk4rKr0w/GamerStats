@@ -21,13 +21,11 @@
                 data-name="<%= insight[:champion] %>"
                 data-title="<%= insight[:title] %>"
                 data-lore="<%= insight[:lore] %>"
-                data-image-path="champion/<%= insight[:champion] %>.png"
+                data-image-path="champion/<%= insight[:champion] %>.webp"
             >
                 <div class="table-cell"><%= insight[:tier] %></div>
                 <div class="table-cell">
-                    <img class="champion-img" src="<%=
-                    asset_path("champion/#{insight[:champion]}.png") %>"
-                    alt="<%= insight[:champion] %>"> <%= insight[:champion] %>
+                    <img class="champion-img" src="<%= asset_path("champion/#{insight[:champion]}.webp") %>" alt="<%= insight[:champion] %>"> <%= insight[:champion] %>
                 </div>
                 <div class="table-cell"><%= insight[:winrate] %></div>
                 <div class="table-cell"><%= insight[:pickrate] %></div>
@@ -35,6 +33,7 @@
                 <div class="table-cell"><%= insight[:matches] %></div>
                 <div class="table-cell"><%= insight[:lane] %></div>
             </div>
+
             <% end %>
         </div>
     </div>
@@ -44,8 +43,7 @@
     <div id="champion-details" class="champion-details">
         <div class="champion-details-north">
             <h2 id="champion-name"></h2>
-            <%= image_tag("application/x-icon.svg", alt: "champion Image",
-            onclick: 'toggleChampions()') %>
+            <%= image_tag("application/x-icon.svg", alt: "champion Image", onclick: 'toggleChampions()') %>
         </div>
         <div class="champion-details-mid">
             <%= image_tag("", id: "champion-image", alt: "champion Image") %>
@@ -56,3 +54,4 @@
         </div>
     </div>
 </div>
+
