@@ -1,9 +1,14 @@
+require 'net/http'
+require 'json'
+
 class PlayersController < ApplicationController
+
+  @images = Dir.glob('app/assets/images/profileicon/*')
+
   def search
     game_name = params[:game_name]
     tag_line = params[:tag_line]
     region = params[:region]
-    server = params[:server] # Nuovo parametro server
 
     api_region = get_api_region(region)
     api_key = 'RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9'
@@ -12,11 +17,12 @@ class PlayersController < ApplicationController
 
     if @player_data
       puuid = @player_data['puuid']
-      @summoner_data = fetch_summoner_data(server, puuid, api_key) # Utilizza il nuovo parametro server
+      @summoner_data = fetch_summoner_data(api_region, puuid, api_key)
       @match_ids = fetch_match_ids(api_region, puuid, api_key)
       @matches, @win_rate = fetch_match_details(api_region, @match_ids, puuid, api_key)
+      @rank_data = fetch_rank_data(api_region, @summoner_data['id'], api_key)
 
-      redirect_to player_show_path(player_data: @player_data, region: region, matches: @matches, win_rate: @win_rate, summoner_data: @summoner_data)
+      redirect_to player_show_path(player_data: @player_data, region: region, matches: @matches, win_rate: @win_rate, summoner_data: @summoner_data, rank_data: @rank_data)
     else
       flash[:alert] = "Player not found or API error"
       redirect_to root_path
@@ -29,6 +35,7 @@ class PlayersController < ApplicationController
     @matches = params[:matches] || []
     @win_rate = params[:win_rate] || 0.0
     @summoner_data = params[:summoner_data] || {}
+    @rank_data = params[:rank_data] || {}
   end
 
   private
@@ -49,8 +56,24 @@ class PlayersController < ApplicationController
     return JSON.parse(response.body) if response.code == "200"
   end
 
-  def fetch_summoner_data(server, puuid, api_key)
-    url = URI("https://#{server}/lol/summoner/v4/summoners/by-puuid/#{puuid}")
+  def fetch_summoner_data(api_region, puuid, api_key)
+    url = URI("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/#{puuid}")
+    response = perform_request(url, api_key)
+    if response.code == "200"
+      summoner_data = JSON.parse(response.body)
+      # Aggiungi l'id dell'immagine dell'utente ai dati del giocatore
+      summoner_data['profileIconUrl'] = profile_icon_url(summoner_data['profileIconId'])
+      return summoner_data
+    end
+  end
+
+  def profile_icon_url(profile_icon_id)
+    # Costruisci l'URL dell'immagine del profilo usando l'id dell'immagine
+    "/assets/profileicon/#{profile_icon_id}.png"
+  end
+
+  def fetch_rank_data(api_region, summoner_id, api_key)
+    url = URI("https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/#{summoner_id}")
     response = perform_request(url, api_key)
     return JSON.parse(response.body) if response.code == "200"
   end
@@ -85,7 +108,11 @@ class PlayersController < ApplicationController
           champion_name: champion_name
         }
       end
-    end
+
+    win_rate = calculate_win_rate(wins, matches.size)
+    [matches, win_rate]
+  end
+
 
     win_rate = calculate_win_rate(wins, matches.size)
     [matches, win_rate]
