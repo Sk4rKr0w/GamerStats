@@ -2,6 +2,10 @@ body {
     background: linear-gradient(to right, black 50%, rgb(245, 58, 58) 50%);
 }
 
+.main-content {
+    align-items: center;
+}
+
 .signup-section {
     width: 480px;
     display: flex;
@@ -141,6 +145,7 @@ body {
 
 @media (max-width: 480px) {
     .signup-section {
+        margin: 50px 0px 0px 0px;
         transform: scale(0.8);
     }
 }
@@ -151,7 +156,15 @@ body {
     }
     .signup-section {
         position: relative;
-        top: 20%;
+        margin: 250px 0px 0px 0px;
         transform: scale(0.7);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 910px) {
+    .signup-section {
+        position: relative;
+        margin: 150px 0px 0px 0px;
+        transform: scale(0.55);
     }
 }
