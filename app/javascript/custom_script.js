@@ -61,7 +61,7 @@ function toggleItem() {
 
     itemInvisible.style.display = "none";
     itemInvisible.style.zIndex = "-2";
-    itemContainer.style.display = "block";
+    itemContainer.style.display = "flex";
 }
 
 var sideCounter = 0;
