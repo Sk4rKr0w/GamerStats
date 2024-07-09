@@ -35,7 +35,7 @@
               <%= link_to "Login", new_user_session_path %>
             </div>
           <% end %>
-          <%= link_to 'My Squad', my_squad_path %>
+          <%= link_to 'My Squad', new_squads_path %>
         </ul>
       </div>
     </nav>
@@ -169,7 +169,7 @@
             </div>
           <% end %>
 
-          <%= link_to my_squad_path do %>
+          <%= link_to new_squads_path do %>
             My Squad
             <%= image_tag 'application/my_squad-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
           <% end %>

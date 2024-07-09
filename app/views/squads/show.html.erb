@@ -1,0 +1,17 @@
+<h1><%= @squad.name %></h1>
+
+<h3>Players</h3>
+<ul>
+  <% @squad.players.each do |player| %>
+    <li>
+      <%= player.riot_id %> (<%= player.game_tag %>) - PUUID: <%= player.puuid %>
+      <% if player.puuid.blank? %>
+        <p>Player details could not be fetched.</p>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= button_to "Save Squad", save_squad_path(@squad), method: :post %>
+
+<%= link_to 'Back to Squads', squads_path %>

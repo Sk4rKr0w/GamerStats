@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'squads/new'
+  get 'squads/create'
+  get 'squads/show'
   get 'players/search'
   get 'players/show'
   get 'leaderboards/index'
@@ -28,7 +31,6 @@ end
   get 'home', to: 'home#index'
   get 'about', to: 'about#index'
   get 'contacts', to: 'contacts#new'
-  get 'my_squad', to: 'my_squad#index'
 
   get 'leaderboards', to: 'leaderboards#index'
   get 'leaderboards/show', to: 'leaderboards#show', as: 'leaderboard_show'
@@ -37,7 +39,6 @@ end
   get 'items', to: 'items#index'
   get 'champion_masteries', to: 'champions#champion_masteries', as: 'champion_masteries'
   get 'champions/:id', to: 'champions#show', as: 'champion'
-  get 'squads', to: 'squads#index'
 
   get 'profile', to: 'profile#index'
 
@@ -45,12 +46,21 @@ end
 
   get 'search_player', to: 'players#search'
   get 'player/show', to: 'players#show'
+  get 'new_squads', to: 'squads#new'
+  get 'squads', to: 'squads#index'
+  post 'squads/:id/save', to: 'squads#save', as: 'save_squad'
 
 
   resources :contacts, only: [:new, :create]
   # resources :leaderboards, only: [:index, :show]
   resources :champions, only: [:index, :show]
   resources :items, only: [:index, :show]
+
+  resources :squads, only: [:new, :create, :show, :index] do
+    member do
+      post :save
+    end
+  end
 
 
   # Defines the root path route ("/")
