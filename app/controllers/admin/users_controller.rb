@@ -31,10 +31,11 @@ class Admin::UsersController < ApplicationController
     end
   
     def ban
-      @user = User.find(params[:id])
-      @user.update(banned: true)
-      redirect_to admin_users_path, notice: 'User was successfully banned.'
-    end
+        @user = User.find(params[:id])
+        ban_duration = params[:ban_duration].to_i.minutes
+        @user.update(banned_until: Time.current + ban_duration)
+        redirect_to admin_users_path, notice: 'User was successfully banned.'
+      end
   
     def warn
       @user = User.find(params[:id])

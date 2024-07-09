@@ -1,5 +1,18 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :check_banned
+
+  include Devise::Controllers::Helpers
+
+
+  private
+
+  def check_banned
+    if user_signed_in? && current_user.banned?
+      sign_out current_user
+      redirect_to new_user_session_path, alert: "Your account has been banned until #{current_user.banned_until}."
+    end
+  end
 
   protected
 

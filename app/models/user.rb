@@ -34,6 +34,10 @@ class User < ApplicationRecord
     user
   end
 
+  def banned?
+    banned_until.present? && banned_until > Time.current
+  end
+
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, allow_blank: true
   validates :riot_id, uniqueness: true, allow_blank: true
