@@ -1,36 +1,36 @@
 <%= stylesheet_link_tag 'users/sessions' %>
-<div class="login-section" id="login-section">
-  <div class="login-north-container">
-    <h1>Login</h1>
-  </div>
+  <div class="login-section" id="login-section">
+    <div class="login-north-container">
+      <h1>Login</h1>
+    </div>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-mid-container' }) do |f| %>
-    <%= devise_error_messages! %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'login-mid-container' }) do |f| %>
+      <%= devise_error_messages! %>
 
-    <div class="login-mid-north-container">
-      <div class="field">
-        <%= f.label :email %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'e.g. MarcoRossi@gmail.com' %>
+      <div class="login-mid-north-container">
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'e.g. MarcoRossi@gmail.com' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+
+
+        <%= link_to "Hai dimenticato la password?", new_password_path(resource_name), class: 'forgot-password-link' %>
       </div>
 
-      <div class="field">
-        <%= f.label :password %>
-        <%= f.password_field :password, autocomplete: "current-password" %>
+      <div class="login-mid-south-container">
+        <%= f.submit "Sign In" %>
+        <%= link_to "Non hai un account? Registrati!", new_user_registration_path %>
       </div>
+    <% end %>
 
-
-      <%= link_to "Hai dimenticato la password?", new_password_path(resource_name), class: 'forgot-password-link' %>
-    </div>
-
-    <div class="login-mid-south-container">
-      <%= f.submit "Sign In" %>
-      <%= link_to "Non hai un account? Registrati!", new_user_registration_path %>
-    </div>
-  <% end %>
-
-  <div class="login-south-container">
-    <div class="login-svg-container">
-      <%= render "devise/shared/links" %>
+    <div class="login-south-container">
+      <div class="login-svg-container">
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
-</div>
