@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_02_090252) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_09_143838) do
   create_table "champions", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -36,6 +36,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_02_090252) do
     t.string "link_path"
   end
 
+  create_table "tickets", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "subject"
+    t.text "message"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tickets_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -52,9 +62,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_02_090252) do
     t.datetime "two_factor_expires_at"
     t.string "provider"
     t.string "uid"
+    t.boolean "admin", default: false
+    t.boolean "online"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "last_sign_in_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "tickets", "users"
 end

@@ -36,6 +36,10 @@
             </div>
           <% end %>
           <%= link_to 'My Squad', my_squad_path %>
+
+           <% if user_signed_in? && current_user.admin? %>
+              <%= link_to 'Dashboard', admin_dashboard_path %>
+            <% end %>
         </ul>
       </div>
     </nav>

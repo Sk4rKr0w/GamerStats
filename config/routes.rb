@@ -53,6 +53,12 @@ end
   resources :items, only: [:index, :show]
 
 
+  namespace :admin do
+    get 'dashboard', to: 'dashboard#index'
+    post 'shutdown', to: 'dashboard#shutdown', as: 'shutdown'
+  end
+
+
   # Defines the root path route ("/")
   root "home#index"
 end
