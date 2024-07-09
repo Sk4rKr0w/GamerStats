@@ -4,6 +4,7 @@ import "controllers";
 //= require jquery
 //= require bootstrap
 //= require items
+//= require insights
 
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('champion_form');
