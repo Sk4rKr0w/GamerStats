@@ -1,3 +1,4 @@
+# app/controllers/admin/dashboard_controller.rb
 module Admin
   class DashboardController < ApplicationController
     before_action :require_admin
@@ -9,6 +10,7 @@ module Admin
       @user_registration_times = User.pluck(:created_at)
       @last_sign_in_times = User.pluck(:last_sign_in_at)
       @user_emails = User.pluck(:email)
+      @users = User.all # Aggiunto per la lista degli utenti nella dashboard
     end
 
     def shutdown
@@ -50,14 +52,13 @@ module Admin
       end
     end
 
-
     class Service
       def self.status_ok?
         # Logica per determinare lo stato dell'applicazione.
         # Potrebbe includere controlli per il database, l'API, ecc.
         database_status_ok?
       end
-    
+
       def self.database_status_ok?
         # Logica per controllare se il database è operativo.
         ActiveRecord::Base.connection.active?

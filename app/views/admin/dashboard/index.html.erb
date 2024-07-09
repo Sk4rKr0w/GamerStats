@@ -1,10 +1,10 @@
-<!-- app/views/admin/dashboard/index.html.erb -->
 <h1>Admin Dashboard</h1>
 
 <div class="dashboard-section">
   <h2>Users Information</h2>
   <p>Total Registered Users: <%= @user_count %></p>
   <p>Online Users: <%= @online_users %></p>
+  <%= link_to 'Manage Users', admin_users_path %> <!-- Questo ora funzionerà -->
 </div>
 
 <div class="dashboard-section">
@@ -42,5 +42,3 @@
 <div class="dashboard-section">
   <%= button_to "Shutdown Application", admin_shutdown_path, method: :post, data: { confirm: "Are you sure you want to shutdown the application?" }, class: "shutdown-button" %>
 </div>
-
-<!-- Aggiungi altre sezioni della dashboard se necessario -->

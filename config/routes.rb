@@ -56,6 +56,8 @@ end
   namespace :admin do
     get 'dashboard', to: 'dashboard#index'
     post 'shutdown', to: 'dashboard#shutdown', as: 'shutdown'
+    resources :users, only: [:index, :show, :edit, :update, :destroy] # Aggiungi :show qui
+    
   end
 
 

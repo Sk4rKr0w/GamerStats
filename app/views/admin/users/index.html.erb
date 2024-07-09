@@ -1,0 +1,24 @@
+<h1>All Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td>
+          <%= link_to 'Show', admin_user_path(user) %> | <!-- Link per mostrare i dettagli -->
+          <%= link_to 'Edit', edit_admin_user_path(user) %> | <!-- Link per modificare l'utente -->
+          <%= link_to 'Delete', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %> <!-- Link per eliminare l'utente -->
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back to Dashboard', admin_dashboard_path %>
