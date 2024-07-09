@@ -56,8 +56,13 @@ end
   namespace :admin do
     get 'dashboard', to: 'dashboard#index'
     post 'shutdown', to: 'dashboard#shutdown', as: 'shutdown'
-    resources :users, only: [:index, :show, :edit, :update, :destroy] # Aggiungi :show qui
-    
+    resources :users, only: [:index, :show, :edit, :update, :destroy] do
+      member do
+        post 'ban'
+        get 'warn'
+        post 'send_warning'
+      end
+    end
   end
 
 

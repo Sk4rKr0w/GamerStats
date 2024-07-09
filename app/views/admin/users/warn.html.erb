@@ -1,0 +1,13 @@
+<h1>Warn User</h1>
+
+<%= form_with url: send_warning_admin_user_path(@user), method: :post do |form| %>
+  <div>
+    <%= form.label :message, "Warning Message" %>
+    <%= form.text_area :message %>
+  </div>
+  <div>
+    <%= form.submit "Send Warning" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back to Users', admin_users_path %>
