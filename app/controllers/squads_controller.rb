@@ -55,6 +55,6 @@ class SquadsController < ApplicationController
   private
 
   def squad_params
-    params.require(:squad).permit(:name, :description, :creator_name, players_attributes: [:id, :riot_id, :game_tag, :_destroy])
+    params.require(:squad).permit(:name, :description, :creator_name, players_attributes: [:id, :riot_id, :game_tag, :_destroy, :win_rate])
   end
 end

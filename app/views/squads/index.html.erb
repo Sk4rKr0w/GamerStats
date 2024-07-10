@@ -6,11 +6,13 @@
     <p><%= squad.description %></p>
     <p>Created by: <%= squad.creator_name %></p>
 
+    <h3>Squad Winrate: <%= squad.average_win_rate %>%</h3>
+
     <h3>Players</h3>
     <ul>
       <% squad.players.each do |player| %>
         <li>
-          <%= player.riot_id %> (<%= player.game_tag %>) - PUUID: <%= player.puuid %>
+          <%= player.riot_id %> (<%= player.game_tag %>) - PUUID: <%= player.puuid %> - Win Rate: <%= player.win_rate %>%
           <% if player.puuid.blank? %>
             <p>Player details could not be fetched.</p>
           <% end %>
