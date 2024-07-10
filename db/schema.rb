@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_09_165501) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_10_081821) do
   create_table "champions", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -52,6 +52,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_09_165501) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "saved", default: false, null: false
+    t.string "description"
+    t.string "creator_name"
     t.index ["user_id"], name: "index_squads_on_user_id"
   end
 

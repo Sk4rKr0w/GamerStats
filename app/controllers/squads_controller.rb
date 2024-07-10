@@ -1,5 +1,5 @@
 class SquadsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :show, :save]
+  before_action :authenticate_user!, only: [:new, :create, :show, :save, :my_squads, :edit, :update]
 
   def new
     @squad = Squad.new
@@ -33,9 +33,28 @@ class SquadsController < ApplicationController
     @squads = Squad.where(saved: true)
   end
 
+  def my_squads
+    @squads = current_user.squads
+  end
+
+  def edit
+    @squad = current_user.squads.find(params[:id])
+  end
+
+  def update
+    @squad = current_user.squads.find(params[:id])
+    if @squad.update(squad_params)
+      @squad.players.each(&:fetch_details)
+      redirect_to new_squads_path, notice: 'Squad was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+
   private
 
   def squad_params
-    params.require(:squad).permit(:name, players_attributes: [:riot_id, :game_tag])
+    params.require(:squad).permit(:name, :description, :creator_name, players_attributes: [:id, :riot_id, :game_tag, :_destroy])
   end
 end

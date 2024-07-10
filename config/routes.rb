@@ -46,7 +46,7 @@ end
 
   get 'search_player', to: 'players#search'
   get 'player/show', to: 'players#show'
-  get 'new_squads', to: 'squads#new'
+  get 'new_squads', to: 'squads#my_squads'
   get 'squads', to: 'squads#index'
   post 'squads/:id/save', to: 'squads#save', as: 'save_squad'
 
@@ -56,10 +56,8 @@ end
   resources :champions, only: [:index, :show]
   resources :items, only: [:index, :show]
 
-  resources :squads, only: [:new, :create, :show, :index] do
-    member do
-      post :save
-    end
+  resources :squads do
+    post 'save', on: :member
   end
 
 

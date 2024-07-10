@@ -1,3 +1,5 @@
+<h1>Edit Squad</h1>
+
 <%= form_with(model: @squad, local: true) do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
@@ -18,7 +20,13 @@
       <%= player_form.label :game_tag %>
       <%= player_form.text_field :game_tag %>
     </div>
+    <div>
+      <%= player_form.check_box :_destroy %>
+      <%= player_form.label :_destroy, "Remove player" %>
+    </div>
   <% end %>
 
-  <%= form.submit "Create Squad" %>
+  <%= form.submit "Update Squad" %>
 <% end %>
+
+<%= link_to 'Back to My Squads', new_squad_path %>

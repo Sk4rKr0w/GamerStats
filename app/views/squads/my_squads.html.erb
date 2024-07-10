@@ -1,0 +1,31 @@
+<h1>My Squads</h1>
+
+<% if @squads.any? %>
+  <% @squads.each do |squad| %>
+    <div class="squad">
+      <h2><%= squad.name %></h2>
+      <p><%= squad.description %></p>
+      <p>Created by: <%= squad.creator_name %></p>
+
+      <h3>Players</h3>
+      <ul>
+        <% squad.players.each do |player| %>
+          <li>
+            <%= player.riot_id %> (<%= player.game_tag %>) - PUUID: <%= player.puuid %>
+            <% if player.puuid.blank? %>
+              <p>Player details could not be fetched.</p>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+
+      <%= link_to 'Edit Squad', edit_squad_path(squad), class: 'btn btn-secondary' %>
+    </div>
+  <% end %>
+<% else %>
+  <p>You have not created any squads yet.</p>
+<% end %>
+
+<%= link_to 'Create Squad', new_squad_path, class: 'btn btn-primary' %>
+
+<%= link_to 'Back to Home', root_path %>

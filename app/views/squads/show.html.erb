@@ -1,5 +1,8 @@
 <h1><%= @squad.name %></h1>
 
+<p><%= @squad.description %></p>
+<p>Created by: <%= @squad.creator_name %></p>
+
 <h3>Players</h3>
 <ul>
   <% @squad.players.each do |player| %>
