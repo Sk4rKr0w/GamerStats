@@ -56,6 +56,7 @@ end
   namespace :admin do
     get 'dashboard', to: 'dashboard#index'
     post 'shutdown', to: 'dashboard#shutdown', as: 'shutdown'
+    resources :patch_notes
     resources :users, only: [:index, :show, :edit, :update, :destroy] do
       member do
         post 'ban'
@@ -71,6 +72,8 @@ end
         post 'send_message'
       end
     end
+
+    resources :patch_notes, only: [:index]
   end
 
 
