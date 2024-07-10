@@ -61,6 +61,8 @@ end
         post 'ban'
         get 'warn'
         post 'send_warning'
+        post 'promote_to_admin'
+        post 'demote_from_admin'
       end
     end
   end

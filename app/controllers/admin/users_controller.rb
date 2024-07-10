@@ -48,6 +48,19 @@ class Admin::UsersController < ApplicationController
       UserMailer.warn_user(@user, message).deliver_now
       redirect_to admin_users_path, notice: 'User was successfully warned.'
     end
+
+    def promote_to_admin
+        @user = User.find(params[:id])
+        @user.update(admin: true)
+        redirect_to admin_users_path, notice: 'User was successfully promoted to admin.'
+    end
+    
+    def demote_from_admin
+        @user = User.find(params[:id])
+        @user.update(admin: false)
+        redirect_to admin_users_path, notice: 'User was successfully demoted from admin.'
+    end
+    
   
     private
   
