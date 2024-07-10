@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_09_225357) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_10_101408) do
   create_table "champions", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_09_225357) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
   end
 
   create_table "patch_notes", force: :cascade do |t|
@@ -40,7 +41,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_09_225357) do
     t.integer "user_id", null: false
     t.string "subject"
     t.text "message"
-    t.string "status"
+    t.string "status", default: "open"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_tickets_on_user_id"

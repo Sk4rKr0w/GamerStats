@@ -65,6 +65,12 @@ end
         post 'demote_from_admin'
       end
     end
+    resources :tickets, only: [:index, :show, :edit, :update, :destroy] do
+      member do
+        post 'resolve'
+        post 'send_message'
+      end
+    end
   end
 
 

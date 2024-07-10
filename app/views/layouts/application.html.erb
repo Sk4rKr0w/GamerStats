@@ -39,6 +39,7 @@
 
            <% if user_signed_in? && current_user.admin? %>
               <%= link_to 'Dashboard', admin_dashboard_path %>
+              <%= link_to 'Tickets', admin_tickets_path %>
             <% end %>
         </ul>
       </div>
