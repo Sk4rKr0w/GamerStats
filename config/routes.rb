@@ -57,7 +57,13 @@ end
   resources :items, only: [:index, :show]
 
   resources :squads do
-    post 'save', on: :member
+    collection do
+      get 'my_squads'
+      get 'compare'
+    end
+    member do
+      post 'save'
+    end
   end
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_10_095108) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_10_172415) do
   create_table "champions", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -44,6 +44,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_10_095108) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "win_rate"
+    t.float "kills"
+    t.float "deaths"
+    t.float "assists"
     t.index ["squad_id"], name: "index_players_on_squad_id"
   end
 

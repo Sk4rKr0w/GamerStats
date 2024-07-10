@@ -1,55 +1,64 @@
 class Player < ApplicationRecord
   belongs_to :squad
 
-  API_KEY = "RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9"
+  before_save :initialize_stats
 
   def fetch_details
-    uri = URI("https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/#{riot_id}/#{game_tag}?api_key=#{API_KEY}")
-    response = Net::HTTP.get(uri)
-    details = JSON.parse(response)
-    update(puuid: details['puuid'])
-    update_win_rate
-    details
+    api_key = "RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9"
+    puuid_uri = URI("https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/#{riot_id}/#{game_tag}?api_key=#{api_key}")
+    puuid_response = Net::HTTP.get(puuid_uri)
+    puuid_details = JSON.parse(puuid_response)
+
+    if puuid_details && puuid_details['puuid'].present?
+      update(puuid: puuid_details['puuid'])
+
+      match_ids_uri = URI("https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/#{puuid}/ids?start=0&count=15&api_key=#{api_key}")
+      match_ids_response = Net::HTTP.get(match_ids_uri)
+      match_ids = JSON.parse(match_ids_response)
+
+      total_kills = 0
+      total_deaths = 0
+      total_assists = 0
+      total_wins = 0
+      total_matches = match_ids.size
+
+      match_ids.each do |match_id|
+        match_uri = URI("https://europe.api.riotgames.com/lol/match/v5/matches/#{match_id}?api_key=#{api_key}")
+        match_response = Net::HTTP.get(match_uri)
+        match_details = JSON.parse(match_response)
+        participant = match_details['info']['participants'].find { |p| p['puuid'] == puuid }
+
+        if participant
+          total_kills += participant['kills']
+          total_deaths += participant['deaths']
+          total_assists += participant['assists']
+          total_wins += 1 if participant['win']
+        end
+      end
+
+      avg_kills = (total_kills / total_matches.to_f).round(2)
+      avg_deaths = (total_deaths / total_matches.to_f).round(2)
+      avg_assists = (total_assists / total_matches.to_f).round(2)
+      win_rate = ((total_wins / total_matches.to_f) * 100).round(2)
+
+      update(kills: avg_kills, deaths: avg_deaths, assists: avg_assists, win_rate: win_rate)
+
+      details
+    else
+      Rails.logger.error "PUUID not found or API response is invalid"
+      nil
+    end
   rescue StandardError => e
     Rails.logger.error "Error fetching player details: #{e.message}"
     nil
   end
 
-  def update_win_rate
-    match_ids = fetch_match_ids
-    return if match_ids.nil?
-
-    total_matches = match_ids.size
-    return if total_matches.zero?
-
-    wins = match_ids.count { |match_id| fetch_match_details(match_id) }
-
-    win_rate = (wins.to_f / total_matches) * 100
-    update(win_rate: win_rate)
-  rescue StandardError => e
-    Rails.logger.error "Error updating win rate: #{e.message}"
-    nil
-  end
-
   private
 
-  def fetch_match_ids
-    uri = URI("https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/#{puuid}/ids?api_key=#{API_KEY}")
-    response = Net::HTTP.get(uri)
-    JSON.parse(response)
-  rescue StandardError => e
-    Rails.logger.error "Error fetching match IDs: #{e.message}"
-    nil
-  end
-
-  def fetch_match_details(match_id)
-    uri = URI("https://europe.api.riotgames.com/lol/match/v5/matches/#{match_id}?api_key=#{API_KEY}")
-    response = Net::HTTP.get(uri)
-    match_details = JSON.parse(response)
-    participant = match_details['info']['participants'].find { |p| p['puuid'] == puuid }
-    participant['win']
-  rescue StandardError => e
-    Rails.logger.error "Error fetching match details: #{e.message}"
-    false
+  def initialize_stats
+    self.win_rate ||= 0.0
+    self.kills ||= 0.0
+    self.deaths ||= 0.0
+    self.assists ||= 0.0
   end
 end
