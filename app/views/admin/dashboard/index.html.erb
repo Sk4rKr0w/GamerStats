@@ -1,0 +1,44 @@
+<h1>Admin Dashboard</h1>
+
+<div class="dashboard-section">
+  <h2>Users Information</h2>
+  <p>Total Registered Users: <%= @user_count %></p>
+  <p>Online Users: <%= @online_users %></p>
+  <%= link_to 'Manage Users', admin_users_path %> <!-- Questo ora funzionerà -->
+</div>
+
+<div class="dashboard-section">
+  <h2>Application Status</h2>
+  <p>Status: <%= @application_status %></p>
+</div>
+
+<div class="dashboard-section">
+  <h2>User Registration Times</h2>
+  <ul>
+    <% @user_registration_times.each do |registration_time| %>
+      <li><%= registration_time.strftime('%Y-%m-%d %H:%M:%S') %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="dashboard-section">
+  <h2>Last Sign-in Times</h2>
+  <ul>
+    <% @last_sign_in_times.each do |last_sign_in_time| %>
+      <li><%= last_sign_in_time ? last_sign_in_time.strftime('%Y-%m-%d %H:%M:%S') : 'Never signed in' %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="dashboard-section">
+  <h2>User Emails</h2>
+  <ul>
+    <% @user_emails.each do |email| %>
+      <li><%= email %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="dashboard-section">
+  <%= button_to "Shutdown Application", admin_shutdown_path, method: :post, data: { confirm: "Are you sure you want to shutdown the application?" }, class: "shutdown-button" %>
+</div>

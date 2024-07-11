@@ -9,6 +9,7 @@ class PlayersController < ApplicationController
     game_name = params[:game_name]
     tag_line = params[:tag_line]
     region = params[:region]
+    server = params[:server]  # Aggiungi questa linea per ottenere il server dal form
 
     api_region = get_api_region(region)
     api_key = 'RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9'
@@ -17,10 +18,10 @@ class PlayersController < ApplicationController
 
     if @player_data
       puuid = @player_data['puuid']
-      @summoner_data = fetch_summoner_data(api_region, puuid, api_key)
+      @summoner_data = fetch_summoner_data(server, puuid, api_key)  # Usa il server
       @match_ids = fetch_match_ids(api_region, puuid, api_key)
       @matches, @win_rate = fetch_match_details(api_region, @match_ids, puuid, api_key)
-      @rank_data = fetch_rank_data(api_region, @summoner_data['id'], api_key)
+      @rank_data = fetch_rank_data(server, @summoner_data['id'], api_key)  # Usa il server
 
       redirect_to player_show_path(player_data: @player_data, region: region, matches: @matches, win_rate: @win_rate, summoner_data: @summoner_data, rank_data: @rank_data)
     else
@@ -28,6 +29,7 @@ class PlayersController < ApplicationController
       redirect_to root_path
     end
   end
+
 
   def show
     @player_data = params[:player_data]
@@ -56,8 +58,8 @@ class PlayersController < ApplicationController
     return JSON.parse(response.body) if response.code == "200"
   end
 
-  def fetch_summoner_data(api_region, puuid, api_key)
-    url = URI("https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/#{puuid}")
+  def fetch_summoner_data(server, puuid, api_key)
+    url = URI("https://#{server}/lol/summoner/v4/summoners/by-puuid/#{puuid}")
     response = perform_request(url, api_key)
     if response.code == "200"
       summoner_data = JSON.parse(response.body)
@@ -72,8 +74,8 @@ class PlayersController < ApplicationController
     "/assets/profileicon/#{profile_icon_id}.png"
   end
 
-  def fetch_rank_data(api_region, summoner_id, api_key)
-    url = URI("https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner/#{summoner_id}")
+  def fetch_rank_data(server, summoner_id, api_key)
+    url = URI("https://#{server}/lol/league/v4/entries/by-summoner/#{summoner_id}")
     response = perform_request(url, api_key)
     return JSON.parse(response.body) if response.code == "200"
   end

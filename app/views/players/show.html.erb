@@ -33,7 +33,7 @@
                         <% if @rank_data.present? %>
                             <% @rank_data.each do |entry| %>
                                 <div class="nrrs-left">
-                                    <p><strong>Queue Type:</strong> <%= entry['queueType'] %></p>
+                                    <p><strong>Queue Type:</strong> <%= format_queue_type(entry['queueType']) %></p>
                                     <p><strong>Tier:</strong> <%= entry['tier'] %> <%= entry['rank'] %></p>
                                     <p><strong>League Points:</strong> <%= entry['leaguePoints'] %></p>
                                 </div>

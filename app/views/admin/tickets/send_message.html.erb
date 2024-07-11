@@ -1,0 +1,13 @@
+<h1>Send Message for Ticket</h1>
+
+<%= form_with url: send_message_admin_ticket_path(@ticket), method: :post do |form| %>
+  <div>
+    <%= form.label :message, "Message" %>
+    <%= form.text_area :message %>
+  </div>
+  <div>
+    <%= form.submit "Send Message" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back to Ticket', admin_ticket_path(@ticket) %>

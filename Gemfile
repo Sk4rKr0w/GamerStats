@@ -98,3 +98,6 @@ gem "bootstrap", "~> 5.0.2"
 gem "jquery-rails"
 
 gem "json"
+
+gem 'retriable'
+
