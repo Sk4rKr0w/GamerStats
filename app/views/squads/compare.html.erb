@@ -21,11 +21,13 @@
   <div>
     <h3><%= @squad1.name %></h3>
     <p>Win Rate: <%= @squad1.average_win_rate %>%</p>
+    <p>K/D/A: <%= @squad1.average_kda %></p>
   </div>
 
   <div>
     <h3><%= @squad2.name %></h3>
     <p>Win Rate: <%= @squad2.average_win_rate %>%</p>
+    <p>K/D/A: <%= @squad2.average_kda %></p>
   </div>
 
   <div>
@@ -36,6 +38,15 @@
       <p><%= @squad2.name %> has a higher win rate.</p>
     <% else %>
       <p>Both squads have the same win rate.</p>
+    <% end %>
+
+    <h3>K/D/A Comparison</h3>
+    <% if @squad1.average_kda > @squad2.average_kda %>
+      <p><%= @squad1.name %> has a higher K/D/A.</p>
+    <% elsif @squad1.average_kda < @squad2.average_kda %>
+      <p><%= @squad2.name %> has a higher K/D/A.</p>
+    <% else %>
+      <p>Both squads have the same K/D/A.</p>
     <% end %>
   </div>
 <% end %>

@@ -58,7 +58,7 @@ class SquadsController < ApplicationController
   end
 
   def compare
-    @squads = current_user.squads
+    @squads = Squad.where(saved: true) # Modificato per prelevare tutte le squadre salvate
     @squad1 = Squad.find(params[:squad1]) if params[:squad1].present?
     @squad2 = Squad.find(params[:squad2]) if params[:squad2].present?
   end
