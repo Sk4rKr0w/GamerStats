@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_11_143318) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_11_145407) do
   create_table "champions", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -35,6 +35,31 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_11_143318) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "link_path"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "riot_id"
+    t.string "game_tag"
+    t.string "puuid"
+    t.integer "squad_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "win_rate"
+    t.float "kills"
+    t.float "deaths"
+    t.float "assists"
+    t.index ["squad_id"], name: "index_players_on_squad_id"
+  end
+
+  create_table "squads", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "saved", default: false, null: false
+    t.string "description"
+    t.string "creator_name"
+    t.index ["user_id"], name: "index_squads_on_user_id"
   end
 
   create_table "tickets", force: :cascade do |t|
@@ -75,5 +100,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_11_143318) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "players", "squads"
+  add_foreign_key "squads", "users"
   add_foreign_key "tickets", "users"
 end
