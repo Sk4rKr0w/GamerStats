@@ -7,7 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
   protected
-  
+
   def update_resource(resource, params)
     if params[:password].blank? && params[:password_confirmation].blank?
       resource.update_without_password(params.except(:current_password))
@@ -17,18 +17,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password, :password_confirmation, :riot_id, :riot_tagline])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :password, :password_confirmation, :current_password, :riot_id, :riot_tagline])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password, :password_confirmation, :riot_id, :riot_tagline, :continent, :region])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :password, :password_confirmation, :current_password, :riot_id, :riot_tagline, :continent, :region])
   end
 
   private
 
   def sign_up_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :riot_id, :riot_tagline)
+    params.require(:user).permit(:email, :password, :password_confirmation, :riot_id, :riot_tagline, :continent, :region)
   end
 
   def account_update_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :current_password, :riot_id, :riot_tagline)
+    params.require(:user).permit(:email, :password, :password_confirmation, :current_password, :riot_id, :riot_tagline, :continent, :region)
   end
 
   # GET /resource/sign_up

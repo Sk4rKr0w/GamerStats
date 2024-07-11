@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_11_160936) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_11_182925) do
   create_table "champions", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -95,6 +95,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_11_160936) do
     t.boolean "banned", default: false
     t.datetime "banned_until"
     t.string "riot_tagline"
+    t.string "continent"
+    t.string "region"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
