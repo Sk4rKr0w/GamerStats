@@ -8,6 +8,7 @@ import "controllers";
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require insights
 
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('champion_form');

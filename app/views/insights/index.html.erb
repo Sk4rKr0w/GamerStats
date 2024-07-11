@@ -3,9 +3,11 @@
 <div id="insights-container" class="insights-container">
     <div class="insights-container-north">
         <h1>Insights</h1>
+        <!-- AGGIUNGERE BARRA RICERCA CAMPIONI -->
+        <input type="text" id="champion-search" placeholder="Cerca campioni...">
     </div>
     <div class="insights-container-south">
-        <div class="table">
+        <div class="table" id="champion-table">
             <div class="table-header">
                 <div class="table-cell">Tier</div>
                 <div class="table-cell">Champion</div>
@@ -54,4 +56,6 @@
         </div>
     </div>
 </div>
+
+<%= javascript_include_tag 'insights' %>
 
