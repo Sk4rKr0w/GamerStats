@@ -1,5 +1,5 @@
 class SquadsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :show, :save, :my_squads, :edit, :update, :compare]
+  before_action :authenticate_user!, only: [:new, :create, :show, :save, :my_squads, :edit, :update, :compare, :destroy]
   before_action :clean_unsaved_squads, only: [:new, :my_squads]
 
   def new
@@ -58,9 +58,19 @@ class SquadsController < ApplicationController
   end
 
   def compare
-    @squads = Squad.where(saved: true) # Modificato per prelevare tutte le squadre salvate
+    @squads = Squad.where(saved: true)
     @squad1 = Squad.find(params[:squad1]) if params[:squad1].present?
     @squad2 = Squad.find(params[:squad2]) if params[:squad2].present?
+  end
+
+  def destroy
+    @squad = current_user.squads.find(params[:id])
+    if @squad.destroy
+      flash[:notice] = 'Squad was successfully deleted.'
+    else
+      flash[:alert] = 'Unable to delete squad.'
+    end
+    redirect_to new_squads_path
   end
 
   private
