@@ -87,7 +87,7 @@
         <div class="sidebar-bottom">
           <% if user_signed_in? %>
             <div>
-              <%= link_to edit_user_registration_path do %>
+              <%= link_to profile_path do %>
                 <%= image_tag 'application/profile-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                 Profile
               <% end %>
@@ -182,12 +182,13 @@
 
           <% if user_signed_in? %>
             <div>
-              <%= link_to edit_user_registration_path do %>
+              <%= link_to profile_path do %>
                 Profile
                 <%= image_tag 'application/profile-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
               <% end %>
             </div>
           <% end %>
+
         </div>
       </div>
     </div>
