@@ -36,6 +36,12 @@
             </div>
           <% end %>
           <%= link_to 'My Squad', new_squads_path %>
+
+           <% if user_signed_in? && current_user.admin? %>
+              <%= link_to 'Dashboard', admin_dashboard_path %>
+              <%= link_to 'Tickets', admin_tickets_path %>
+              <%= link_to 'Patch Notes', admin_patch_notes_path %>
+            <% end %>
         </ul>
       </div>
     </nav>

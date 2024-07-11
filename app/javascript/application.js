@@ -4,6 +4,10 @@ import "controllers";
 //= require jquery
 //= require bootstrap
 //= require items
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
+//= require_tree .
 //= require insights
 
 document.addEventListener("DOMContentLoaded", function() {

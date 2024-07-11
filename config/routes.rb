@@ -67,6 +67,30 @@ end
   end
 
 
+  namespace :admin do
+    get 'dashboard', to: 'dashboard#index'
+    post 'shutdown', to: 'dashboard#shutdown', as: 'shutdown'
+    resources :patch_notes
+    resources :users, only: [:index, :show, :edit, :update, :destroy] do
+      member do
+        post 'ban'
+        get 'warn'
+        post 'send_warning'
+        post 'promote_to_admin'
+        post 'demote_from_admin'
+      end
+    end
+    resources :tickets, only: [:index, :show, :edit, :update, :destroy] do
+      member do
+        post 'resolve'
+        post 'send_message'
+      end
+    end
+
+    resources :patch_notes, only: [:index]
+  end
+
+
   # Defines the root path route ("/")
   root "home#index"
 end
