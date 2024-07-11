@@ -1,3 +1,4 @@
+# app/models/user.rb
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -28,7 +29,6 @@ class User < ApplicationRecord
       new_user.uid = auth.uid
       new_user.email = auth.info.email
       new_user.password = Devise.friendly_token[0, 20]
-      # Se desideri aggiungere altre informazioni dall'auth hash, puoi farlo qui
     end
     user.save(validate: false) if user.new_record?
     user
@@ -45,7 +45,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, allow_blank: true
   validates :riot_id, uniqueness: true, allow_blank: true
-  validates :battle_id, uniqueness: true, allow_blank: true
+  validates :riot_tagline, uniqueness: true, allow_blank: true
 
   private
 
