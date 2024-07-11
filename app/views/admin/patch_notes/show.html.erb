@@ -1,0 +1,25 @@
+<h1>Patch Note Details</h1>
+
+<div>
+  <h2>Title:</h2>
+  <p><%= @patch_note.title %></p>
+</div>
+
+<div>
+  <h2>Description:</h2>
+  <p><%= @patch_note.description %></p>
+</div>
+
+<div>
+  <h2>Game:</h2>
+  <p><%= @patch_note.game %></p>
+</div>
+
+<div>
+  <h2>Image:</h2>
+  <%= image_tag @patch_note.image_path, alt: @patch_note.title %>
+</div>
+
+<div>
+  <%= link_to 'Back to Patch Notes', admin_patch_notes_path %>
+</div>

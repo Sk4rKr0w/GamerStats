@@ -3,6 +3,7 @@ class Users::SessionsController < Devise::SessionsController
     user = User.find_by(email: params[:user][:email])
 
     if user&.valid_password?(params[:user][:password])
+      user.update(last_sign_in_at: Time.current) # Aggiornamento last_sign_in_at
       user.send_two_factor_code
       session[:user_id] = user.id
       redirect_to user_two_factor_path

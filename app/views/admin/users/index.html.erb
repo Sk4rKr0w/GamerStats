@@ -1,0 +1,39 @@
+<h1>All Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Admin</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.admin? ? 'Yes' : 'No' %></td>
+        <td>
+          <%= link_to 'Show', admin_user_path(user) %> |
+          <%= link_to 'Edit', edit_admin_user_path(user) %> |
+          <%= button_to 'Delete', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %> |
+          <%= form_with url: ban_admin_user_path(user), method: :post, local: true do |form| %>
+            <div>
+              <%= form.label :ban_duration, "Ban Duration (minutes)" %>
+              <%= form.number_field :ban_duration, in: 1..1440 %>
+              <%= form.submit "Ban" %>
+            </div>
+          <% end %> |
+          <%= link_to 'Warn', warn_admin_user_path(user) %>
+          <% if user.admin? %>
+            <%= button_to 'Demote from Admin', demote_from_admin_admin_user_path(user), method: :post %>
+          <% else %>
+            <%= button_to 'Promote to Admin', promote_to_admin_admin_user_path(user), method: :post %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back to Dashboard', admin_dashboard_path %>
