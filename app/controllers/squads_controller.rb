@@ -1,3 +1,5 @@
+
+
 class SquadsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show, :save, :my_squads, :edit, :update, :compare, :destroy]
   before_action :clean_unsaved_squads, only: [:new, :my_squads]
