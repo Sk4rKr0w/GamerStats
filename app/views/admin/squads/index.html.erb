@@ -1,0 +1,22 @@
+<h1>Manage Squads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Creator</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @squads.each do |squad| %>
+      <tr>
+        <td><%= squad.name %></td>
+        <td><%= squad.creator_name %></td>
+        <td><%= squad.description %></td>
+        <td><%= link_to 'View Players', admin_squad_path(squad) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

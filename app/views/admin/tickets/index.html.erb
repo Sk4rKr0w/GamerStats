@@ -17,7 +17,6 @@
         <td><%= ticket.status %></td>
         <td>
           <%= link_to 'Show', admin_ticket_path(ticket) %> |
-          <%= link_to 'Edit', edit_admin_ticket_path(ticket) %> |
           <%= button_to 'Delete', admin_ticket_path(ticket), method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>

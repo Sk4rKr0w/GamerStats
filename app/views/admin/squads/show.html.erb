@@ -1,0 +1,35 @@
+<h1>Squad Details</h1>
+
+<p><strong>Name:</strong> <%= @squad.name %></p>
+<p><strong>Creator:</strong> <%= @squad.creator_name %></p>
+<p><strong>Description:</strong> <%= @squad.description %></p>
+
+<h2>Players</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Riot_id<th> 
+      <th>Game Tag</th>
+      <th>Win Rate</th>
+      <th>Kills</th>
+      <th>Deaths</th>
+      <th>Assists</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.riot_id %></td>
+        <td><%= player.game_tag %></td>
+        <td><%= player.win_rate %></td>
+        <td><%= player.kills %></td>
+        <td><%= player.deaths %></td>
+        <td><%= player.assists %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', admin_squads_path %>
+<%= button_to 'Delete Squad', admin_squad_path(@squad), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>

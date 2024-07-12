@@ -91,6 +91,7 @@ Rails.application.routes.draw do
         post 'send_message'
       end
     end
+    resources :squads, only: [:index, :show, :destroy]
   end
 
   # Route di default per health check
