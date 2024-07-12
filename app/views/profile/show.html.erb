@@ -1,50 +1,49 @@
-<h1>Profile</h1>
-
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Riot ID:</strong>
-  <%= @riot_id %>
-</p>
-
-<p>
-  <strong>Riot Tagline:</strong>
-  <%= @riot_tagline %>
-</p>
+<h1>User Profile</h1>
 
 <h2>Player Data</h2>
-
-<%= form_with url: profile_path, method: :get, local: true do %>
-  <div>
-    <label for="continent">Continent:</label>
-    <%= select_tag :continent, options_for_select(@continents.map { |key, value| [value, key] }, @selected_continent), onchange: "this.form.submit();" %>
-  </div>
-  <div>
-    <label for="region">Region:</label>
-    <%= select_tag :region, options_for_select(@regions[@selected_continent].map { |region| [region.upcase, region] }, @selected_region), onchange: "this.form.submit();" %>
-  </div>
+<% if @player_data %>
+  <p>Game Name: <%= @player_data['gameName'] %></p>
+  <p>Tag Line: <%= @player_data['tagLine'] %></p>
+<% else %>
+  <p>No player data available.</p>
 <% end %>
 
-<% if @player_data %>
-  <p><strong>PUUID:</strong> <%= @player_data['puuid'] %></p>
-  <p><strong>Summoner Name:</strong> <%= @summoner_data['name'] %></p>
-  <p><strong>Rank:</strong> <%= @rank_data.first['tier'] %> <%= @rank_data.first['rank'] %></p>
-
-  <h3>Recent Matches</h3>
-  <% @matches.each do |match| %>
-    <div>
-      <p><strong>Match ID:</strong> <%= match[:match_id] %></p>
-      <p><strong>Score:</strong> <%= match[:score] %></p>
-      <p><strong>Duration:</strong> <%= match[:duration] %></p>
-      <p><strong>Result:</strong> <%= match[:win] %></p>
-      <p><strong>Champion:</strong> <%= match[:champion_name] %></p>
-    </div>
-  <% end %>
-
-  <p><strong>Win Rate:</strong> <%= @win_rate %> %</p>
+<h2>Summoner Data</h2>
+<% if @summoner_data %>
+  <p>Summoner Name: <%= @summoner_data['name'] %></p>
+  <p>Level: <%= @summoner_data['summonerLevel'] %></p>
+  <p><img src="<%= @summoner_data['profileIconUrl'] %>" alt="Profile Icon"></p>
 <% else %>
-  <p>No player data found.</p>
+  <p>No summoner data available.</p>
+<% end %>
+
+<h2>Rank Data</h2>
+<% if @rank_data.any? %>
+  <% @rank_data.each do |rank| %>
+    <p>Queue Type: <%= rank['queueType'] %></p>
+    <p>Tier: <%= rank['tier'] %></p>
+    <p>Rank: <%= rank['rank'] %></p>
+    <p>Wins: <%= rank['wins'] %></p>
+    <p>Losses: <%= rank['losses'] %></p>
+  <% end %>
+<% else %>
+  <p>No rank data available.</p>
+<% end %>
+
+<h2>Match History</h2>
+<% if @matches.any? %>
+  <ul>
+    <% @matches.each do |match| %>
+      <li>
+        <p>Match ID: <%= match[:match_id] %></p>
+        <p>Score: <%= match[:score] %></p>
+        <p>Duration: <%= match[:duration] %> seconds</p>
+        <p>Result: <%= match[:win] %></p>
+        <p>Champion: <%= match[:champion_name] %></p>
+      </li>
+    <% end %>
+  </ul>
+  <p>Win Rate: <%= @win_rate %>%</p>
+<% else %>
+  <p>No match history available.</p>
 <% end %>

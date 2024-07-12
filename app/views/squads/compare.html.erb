@@ -1,52 +1,64 @@
-<h1>Compare Squads</h1>
+<%= stylesheet_link_tag "squads/compare_squad" %>
 
-<%= form_with url: compare_squads_path, method: :get, local: true do |form| %>
-  <div>
-    <%= form.label :squad1, "Select Squad 1" %>
-    <%= form.collection_select :squad1, @squads, :id, :name, prompt: "Choose a squad" %>
+<div class="compare-squad-container">
+  <h1>Compare Squads</h1>
+
+  <div class="compare-squad-container-north">
+    <%= form_with url: compare_squads_path, method: :get, local: true do |form| %>
+      <div>
+        <%= form.label :squad1, "Select Squad 1" %>
+        <%= form.collection_select :squad1, @squads, :id, :name, prompt: "Choose a squad" %>
+      </div>
+
+      <div>
+        <%= form.label :squad2, "Select Squad 2" %>
+        <%= form.collection_select :squad2, @squads, :id, :name, prompt: "Choose a squad" %>
+      </div>
   </div>
-
-  <div>
-    <%= form.label :squad2, "Select Squad 2" %>
-    <%= form.collection_select :squad2, @squads, :id, :name, prompt: "Choose a squad" %>
-  </div>
-
-  <div>
+  <div class="compare-squad-container-south">
     <%= form.submit "Compare", class: "btn btn-primary" %>
-  </div>
-<% end %>
-
-<% if @squad1 && @squad2 %>
-  <h2>Comparison Result</h2>
-  <div>
-    <h3><%= @squad1.name %></h3>
-    <p>Win Rate: <%= @squad1.average_win_rate %>%</p>
-    <p>K/D/A: <%= @squad1.average_kda %></p>
-  </div>
-
-  <div>
-    <h3><%= @squad2.name %></h3>
-    <p>Win Rate: <%= @squad2.average_win_rate %>%</p>
-    <p>K/D/A: <%= @squad2.average_kda %></p>
-  </div>
-
-  <div>
-    <h3>Comparison</h3>
-    <% if @squad1.average_win_rate > @squad2.average_win_rate %>
-      <p><%= @squad1.name %> has a higher win rate.</p>
-    <% elsif @squad1.average_win_rate < @squad2.average_win_rate %>
-      <p><%= @squad2.name %> has a higher win rate.</p>
-    <% else %>
-      <p>Both squads have the same win rate.</p>
-    <% end %>
-
-    <h3>K/D/A Comparison</h3>
-    <% if @squad1.average_kda > @squad2.average_kda %>
-      <p><%= @squad1.name %> has a higher K/D/A.</p>
-    <% elsif @squad1.average_kda < @squad2.average_kda %>
-      <p><%= @squad2.name %> has a higher K/D/A.</p>
-    <% else %>
-      <p>Both squads have the same K/D/A.</p>
     <% end %>
   </div>
-<% end %>
+
+  <div class="comparison-result-container">
+    <% if @squad1 && @squad2 %>
+      <div class="comparison-result-container-north">
+
+        <h2>Comparison Result</h2>
+        <div>
+          <h3><%= @squad1.name %></h3>
+          <p>Win Rate: <%= @squad1.average_win_rate %>%</p>
+          <p>K/D/A: <%= @squad1.average_kda %></p>
+        </div>
+        <hr>
+        <div>
+          <h3><%= @squad2.name %></h3>
+          <p>Win Rate: <%= @squad2.average_win_rate %>%</p>
+          <p>K/D/A: <%= @squad2.average_kda %></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="comparison-result-container-south">
+        <h3>Comparison</h3>
+        <% if @squad1.average_win_rate > @squad2.average_win_rate %>
+          <p><%= @squad1.name %> has a higher win rate.</p>
+        <% elsif @squad1.average_win_rate < @squad2.average_win_rate %>
+          <p><%= @squad2.name %> has a higher win rate.</p>
+        <% else %>
+          <p>Both squads have the same win rate.</p>
+        <% end %>
+
+        <h3>K/D/A Comparison</h3>
+        <% if @squad1.average_kda > @squad2.average_kda %>
+          <p><%= @squad1.name %> has a higher K/D/A.</p>
+        <% elsif @squad1.average_kda < @squad2.average_kda %>
+          <p><%= @squad2.name %> has a higher K/D/A.</p>
+        <% else %>
+          <p>Both squads have the same K/D/A.</p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -2,23 +2,24 @@ body {
     background: linear-gradient(to right, black 50%, rgb(245, 58, 58) 50%);
 }
 
-.main-content {
-    align-items: center;
-}
-
 .confirmation-container {
     width: 480px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(32, 32, 32);
+
+    background-color: #1c1c1c;
     border-radius: 10px;
-    border: 2px solid black;
+    border: 2px solid #2c2c2c;
+    padding: 20px;
     transition: 1s ease;
+    margin-top: 100px;
 }
 
-form .field {
+.confirmation-container h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.field {
     width: 90%;
     display: flex;
     justify-content: center;
@@ -45,9 +46,11 @@ form .field {
     padding: 5px 20px 5px 10px;
     margin: 0px 10px;
     font-size: 15px;
+    background-color: #2c2c2c;
+    color: #ffffff;
 }
 
-.field-south input {
+.field-south input[type="submit"] {
     padding: 10px 30px;
     border-radius: 10px;
     font-family: "Abel", sans-serif;
@@ -59,7 +62,7 @@ form .field {
     transition: 0.5s ease;
 }
 
-.field-south input:hover {
+.field-south input[type="submit"]:hover {
     background-color: white;
     color: black;
     cursor: pointer;
@@ -70,6 +73,7 @@ form .field {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .actions .links {
@@ -141,18 +145,18 @@ form .field {
     }
 
     .confirmation-container {
-        transform: scale(0.9) translateY(30px);
+        transform: scale(0.9);
     }
 }
 
 @media (min-width: 769px) and (max-width: 920px) {
     .confirmation-container {
-        transform: scale(0.9) translateY(30px);
+        transform: scale(0.9);
     }
 }
 
 @media (min-width: 921px) and (max-width: 1024px) {
     .confirmation-container {
-        transform: scale(0.9) translateY(30px);
+        transform: scale(0.9);
     }
 }
