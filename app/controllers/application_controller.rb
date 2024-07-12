@@ -4,13 +4,14 @@ class ApplicationController < ActionController::Base
 
   include Devise::Controllers::Helpers
 
-
   private
 
   def check_banned
-    if user_signed_in? && current_user.banned?
+    Rails.logger.debug "Current user: #{current_user.inspect}"
+    if user_signed_in? && current_user&.banned?
+      banned_until = current_user.banned_until
       sign_out current_user
-      redirect_to new_user_session_path, alert: "Your account has been banned until #{current_user.banned_until}."
+      redirect_to new_user_session_path, alert: "Your account has been banned until #{banned_until}."
     end
   end
 
