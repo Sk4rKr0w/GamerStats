@@ -1,109 +1,116 @@
+# app/controllers/profiles_controller.rb
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_user, only: :show
+  require 'net/http'
+  require 'json'
 
   def show
-    @user = current_user
-    api_region = get_api_region(@user.continent)
-    api_key = 'RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9' # Assicurati di utilizzare un'API Key valida
+    api_key = 'RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9'
+    api_region = @user.continent
+    game_name = @user.riot_id
+    tag_line = @user.riot_tagline
+    server = @user.region
 
-    @player_data = fetch_player_data(api_region, @user.riot_id, @user.riot_tagline, api_key)
+    # Prima chiamata API per ottenere il PUUID
+    puuid_url = URI("https://#{api_region}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/#{game_name}/#{tag_line}?api_key=#{api_key}")
+    puuid_response = Net::HTTP.get(puuid_url)
+    account_data = JSON.parse(puuid_response)
 
-    if @player_data
-      puuid = @player_data['puuid']
-      @summoner_data = fetch_summoner_data(@user.region, puuid, api_key)
-      @match_ids = fetch_match_ids(api_region, puuid, api_key)
-      @matches, @win_rate = fetch_match_details(api_region, @match_ids, puuid, api_key)
-      @rank_data = fetch_rank_data(@user.region, @summoner_data['id'], api_key)
-    else
-      flash[:alert] = "Player data not found or API error"
-      redirect_to root_path
+    if account_data['status'] && account_data['status']['status_code'] != 200
+      @error = account_data['status']['message']
+      return
     end
+
+    puuid = account_data['puuid']
+
+    # Seconda chiamata API per ottenere i dati del summoner
+    summoner_url = URI("https://#{server}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/#{puuid}?api_key=#{api_key}")
+    summoner_response = Net::HTTP.get(summoner_url)
+    @summoner_data = JSON.parse(summoner_response)
+
+    if @summoner_data['status'] && @summoner_data['status']['status_code'] != 200
+      @error = @summoner_data['status']['message']
+      return
+    end
+
+    summoner_id = @summoner_data['id']
+
+    # Terza chiamata API per ottenere i dati della lega
+    league_url = URI("https://#{server}.api.riotgames.com/lol/league/v4/entries/by-summoner/#{summoner_id}?api_key=#{api_key}")
+    league_response = Net::HTTP.get(league_url)
+    @league_data = JSON.parse(league_response)
+
+    if @league_data.is_a?(Array) && @league_data.empty?
+      @error = "No league data found."
+    elsif @league_data.is_a?(Hash) && @league_data['status'] && @league_data['status']['status_code'] != 200
+      @error = @league_data['status']['message']
+      return
+    end
+
+    # Calcolo del winrate delle ranked
+    ranked_wins = 0
+    ranked_losses = 0
+
+    if @league_data.is_a?(Array)
+      @league_data.each do |entry|
+        ranked_wins += entry['wins']
+        ranked_losses += entry['losses']
+      end
+    end
+
+    @ranked_winrate = if (ranked_wins + ranked_losses) > 0
+                        (ranked_wins.to_f / (ranked_wins + ranked_losses) * 100).round(0)
+                      else
+                        0
+                      end
+
+    # Quarta chiamata API per ottenere i match IDs
+    matches_url = URI("https://#{api_region}.api.riotgames.com/lol/match/v5/matches/by-puuid/#{puuid}/ids?api_key=#{api_key}&count=20")
+    matches_response = Net::HTTP.get(matches_url)
+    @match_ids = JSON.parse(matches_response)
+
+    if @match_ids.is_a?(Hash) && @match_ids['status'] && @match_ids['status']['status_code'] != 200
+      @error = @match_ids['status']['message']
+      return
+    end
+
+    # Quinta chiamata API per ottenere i dettagli di ogni partita
+    @matches_details = @match_ids.map do |match_id|
+      match_url = URI("https://#{api_region}.api.riotgames.com/lol/match/v5/matches/#{match_id}?api_key=#{api_key}")
+      match_response = Net::HTTP.get(match_url)
+      match_data = JSON.parse(match_response)
+
+      if match_data['status'] && match_data['status']['status_code'] != 200
+        next { error: match_data['status']['message'] }
+      end
+
+      participant = match_data['info']['participants'].find { |p| p['puuid'] == puuid }
+
+      {
+        match_id: match_id,
+        score: "#{participant['kills']}/#{participant['deaths']}/#{participant['assists']}",
+        duration: match_data['info']['gameDuration'],
+        outcome: participant['win'] ? 'Win' : 'Defeat',
+        champion_name: participant['championName'],
+        win: participant['win']
+      }
+    end.compact
+
+    # Calcolo del winrate delle ultime 20 partite
+    recent_wins = @matches_details.count { |match| match[:win] }
+    @recent_winrate = if @matches_details.size > 0
+                        (recent_wins.to_f / @matches_details.size * 100).round(0)
+                      else
+                        0
+                      end
+  rescue ActiveRecord::RecordNotFound
+    @error = "User not found."
   end
 
   private
 
-  def get_api_region(region)
-    case region
-    when 'americas' then 'americas.api.riotgames.com'
-    when 'asia' then 'asia.api.riotgames.com'
-    when 'europe' then 'europe.api.riotgames.com'
-    when 'sea' then 'sea.api.riotgames.com'
-    else 'americas.api.riotgames.com' # default region
-    end
-  end
-
-  def fetch_player_data(api_region, game_name, tag_line, api_key)
-    url = URI("https://#{api_region}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/#{game_name}/#{tag_line}")
-    response = perform_request(url, api_key)
-    return JSON.parse(response.body) if response.code == "200"
-  end
-
-  def fetch_summoner_data(server, puuid, api_key)
-    url = URI("https://#{server}/lol/summoner/v4/summoners/by-puuid/#{puuid}")
-    response = perform_request(url, api_key)
-    if response.code == "200"
-      summoner_data = JSON.parse(response.body)
-      summoner_data['profileIconUrl'] = profile_icon_url(summoner_data['profileIconId'])
-      return summoner_data
-    end
-  end
-
-  def profile_icon_url(profile_icon_id)
-    "/assets/profileicon/#{profile_icon_id}.png"
-  end
-
-  def fetch_rank_data(server, summoner_id, api_key)
-    url = URI("https://#{server}/lol/league/v4/entries/by-summoner/#{summoner_id}")
-    response = perform_request(url, api_key)
-    return JSON.parse(response.body) if response.code == "200"
-  end
-
-  def fetch_match_ids(api_region, puuid, api_key)
-    url = URI("https://#{api_region}/lol/match/v5/matches/by-puuid/#{puuid}/ids")
-    response = perform_request(url, api_key)
-    return JSON.parse(response.body) if response.code == "200"
-  end
-
-  def fetch_match_details(api_region, match_ids, puuid, api_key)
-    matches = []
-    wins = 0
-
-    match_ids.each do |match_id|
-      url = URI("https://#{api_region}/lol/match/v5/matches/#{match_id}")
-      response = perform_request(url, api_key)
-      if response.code == "200"
-        match_data = JSON.parse(response.body)
-        participant_data = match_data['info']['participants'].find { |p| p['puuid'] == puuid }
-        win = participant_data['win']
-        wins += 1 if win
-
-        champion_name = participant_data['championName']
-
-        Rails.logger.debug "Match ID: #{match_id}, PUUID: #{puuid}, Win: #{win}, Champion: #{champion_name}"
-        matches << {
-          match_id: match_id,
-          score: "#{participant_data['kills']}/#{participant_data['deaths']}/#{participant_data['assists']}",
-          duration: match_data['info']['gameDuration'],
-          win: win ? 'Victory' : 'Defeat',
-          champion_name: champion_name
-        }
-      end
-    end
-
-    win_rate = calculate_win_rate(wins, matches.size)
-    [matches, win_rate]
-  end
-
-  def calculate_win_rate(wins, total_matches)
-    return 0.0 if total_matches.zero?
-    (wins.to_f / total_matches.to_f * 100).round(2)
-  end
-
-  def perform_request(url, api_key)
-    http = Net::HTTP.new(url.host, url.port)
-    http.use_ssl = true
-    request = Net::HTTP::Get.new(url)
-    request["X-Riot-Token"] = api_key
-    http.request(request)
+  def set_user
+    @user = User.find(params[:id])
   end
 end

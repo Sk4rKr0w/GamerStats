@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Profilo
   authenticate :user do
-    get 'profile', to: 'profiles#show', as: 'user_profile'
+    get 'profile/:id', to: 'profiles#show', as: 'profile'
   end
 
   # Squads
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'new_squads', to: 'squads#my_squads'
   get 'squads', to: 'squads#index'
   post 'squads/:id/save', to: 'squads#save', as: 'save_squad'
-  
+
   resources :squads do
     collection do
       get 'my_squads'
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get 'players/show'
   get 'search_player', to: 'players#search'
   get 'player/show', to: 'players#show'
-  
+
   # Leaderboards
   get 'leaderboards/index'
   get 'leaderboards/show'
@@ -38,14 +38,14 @@ Rails.application.routes.draw do
   get 'champions/index'
   get 'champion_masteries', to: 'champions#champion_masteries', as: 'champion_masteries'
   get 'champions/:id', to: 'champions#show', as: 'champion'
-  
+
   resources :champions, only: [:index, :show]
 
   # Contacts
   get 'contacts/new'
   get 'contacts/create'
   resources :contacts, only: [:new, :create]
-  
+
   # Items
   resources :items, only: [:index, :show]
   get 'items', to: 'items#index'
