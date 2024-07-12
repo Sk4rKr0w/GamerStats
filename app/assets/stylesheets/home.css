@@ -1,7 +1,6 @@
 .search-container {
     background-image: url(assets/home/bg_home.jpg);
     background-size: cover;
-
     border: 1px solid #2c2c2c;
     border-radius: 8px;
     padding: 20px;
@@ -144,8 +143,8 @@ select {
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .search-container {
-        margin: 50px 0px 0px 0px;
+        margin: 0px;
     }
 }
