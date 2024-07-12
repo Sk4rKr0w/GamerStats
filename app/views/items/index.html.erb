@@ -1,12 +1,12 @@
+<!-- app/views/items/index.html.erb -->
 <%= stylesheet_link_tag "items" %>
 
 <div id="item-container" class="item-container">
     <h1>League of Legends Items</h1>
 
     <!-- AGGIUNGERE BARRA RICERCA OGGETTI -->
-    <input type="text" id="item-search" placeholder="Cerca oggetti...">
 
-    <div class="image-gallery" id="image-gallery">
+    <div class="image-gallery">
         <% @items.each do |item_id, item| %>
             <% image_path = @images.find { |path| path.include?(item_id) } %>
             <% next unless image_path %>
@@ -36,6 +36,3 @@
         </div>
     </div>
 </div>
-
-<%= javascript_include_tag "items" %>
-

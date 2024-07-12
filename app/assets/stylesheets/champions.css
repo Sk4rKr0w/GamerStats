@@ -79,6 +79,23 @@ form .form-group {
     margin: 5px 0px;
 }
 
+.champion-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: "Abel", sans-serif;
+    background-color: #2c2c2c;
+    border: 2px solid #141414;
+    border-radius: 8px;
+    color: #f1f1f1;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.champion-button:hover {
+    background-color: #121212;
+    color: #e74c3c;
+}
+
 .champions-container-mid hr {
     border: none;
     height: 2px;
@@ -94,18 +111,29 @@ form .form-group {
     margin: 0px 5px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .champions-container {
-        margin-left: 0;
+        margin: 50px 0px 0px 0px;
+    }
+    .champions-container-north,
+    .champions-container-mid {
+        transform: scale(0.9);
     }
 }
 
-@media (max-width: 800px) {
+@media (min-width: 480px) and (max-width: 940px) {
     .champions-container {
-        margin-left: 0;
+        margin: 50px 0px 0px 0px;
+    }
+
+    .champions-container-north,
+    .champions-container-mid {
+        transform: scale(0.8);
     }
 
     .champions-container-north {
-        transform: translateY(15px);
+        transform: translateY(30px);
     }
+}
+@media (min-width: 1024px) and (max-width: 1080px) {
 }
