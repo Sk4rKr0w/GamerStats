@@ -164,8 +164,9 @@ GEM
     erubi (1.13.0)
     eventmachine (1.2.7)
     execjs (2.9.1)
-    faraday (2.9.2)
+    faraday (2.10.0)
       faraday-net_http (>= 2.0, < 3.2)
+      logger
     faraday-net_http (3.1.0)
       net-http
     ffi (1.17.0-x64-mingw-ucrt)
@@ -201,7 +202,7 @@ GEM
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.7.2)
-    irb (1.13.2)
+    irb (1.14.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     jbuilder (2.12.0)
@@ -240,9 +241,9 @@ GEM
     matrix (0.4.2)
     mime-types (3.5.2)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2024.0604)
+    mime-types-data (3.2024.0702)
     mini_mime (1.1.5)
-    minitest (5.24.0)
+    minitest (5.24.1)
     msgpack (1.7.2)
     multi_test (1.1.0)
     multi_xml (0.7.1)
@@ -351,6 +352,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    retriable (3.1.2)
     rexml (3.3.1)
       strscan
     rotp (6.3.0)
@@ -424,7 +426,7 @@ GEM
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
     webrick (1.8.1)
-    websocket (1.2.10)
+    websocket (1.2.11)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -459,6 +461,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.1.3, >= 7.1.3.2)
   rest-client
+  retriable
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
