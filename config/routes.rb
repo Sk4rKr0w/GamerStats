@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'profile/show'
+  # Profilo
+  authenticate :user do
+    get 'profile', to: 'profiles#show', as: 'user_profile'
+  end
 
   # Squads
   get 'squads/new'
@@ -67,10 +70,6 @@ Rails.application.routes.draw do
   get 'patch_notes', to: 'patch_notes#index'
 
   post 'signup', to: 'users#create', as: 'signup'
-
-  # Profilo
-  get 'profile', to: 'profile#show', as: 'profile'
-  resource :profile, only: [:show]
 
   # Admin namespace
   namespace :admin do
