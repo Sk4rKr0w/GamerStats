@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # Profilo
   authenticate :user do
-    get 'profile', to: 'profiles#show', as: 'user_profile'
+    get 'profile/:id', to: 'profiles#show', as: 'profile'
   end
 
   # Squads
