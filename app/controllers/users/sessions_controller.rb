@@ -20,12 +20,28 @@ class Users::SessionsController < Devise::SessionsController
     user = User.find(session[:pre_2fa_user_id])
 
     if user&.verify_two_factor_code(params[:code])
-      sign_in(user)
       session[:user_id] = user.id
+      sign_in(user)
       session.delete(:pre_2fa_user_id)
       redirect_to root_path, notice: 'Successfully authenticated'
     else
-      redirect_to new_user_session_path, alert: 'Invalid two-factor code'
+      redirect_to user_two_factor_path, alert: 'Invalid two-factor code'
+    end
+  end
+
+  # Metodo per gestire l'accesso tramite OAuth
+  def oauth
+    auth = request.env['omniauth.auth']
+    user = User.from_omniauth(auth)
+
+    if user.persisted?
+      user.update(last_sign_in_at: Time.current) # Aggiornamento last_sign_in_at
+      user.send_two_factor_code
+      session[:pre_2fa_user_id] = user.id
+      redirect_to user_two_factor_path
+    else
+      session['devise.google_data'] = auth.except(:extra)
+      redirect_to new_user_registration_url, alert: 'Email not found. Please sign up.'
     end
   end
 end
