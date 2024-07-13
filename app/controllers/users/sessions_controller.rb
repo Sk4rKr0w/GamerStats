@@ -5,7 +5,7 @@ class Users::SessionsController < Devise::SessionsController
     if user&.valid_password?(params[:user][:password])
       user.update(last_sign_in_at: Time.current) # Aggiornamento last_sign_in_at
       user.send_two_factor_code
-      session[:user_id] = user.id
+      session[:pre_2fa_user_id] = user.id
       redirect_to user_two_factor_path
     else
       super
@@ -17,11 +17,12 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def verify_two_factor
-    user = User.find(session[:user_id])
+    user = User.find(session[:pre_2fa_user_id])
 
     if user&.verify_two_factor_code(params[:code])
       sign_in(user)
-      session.delete(:user_id)
+      session[:user_id] = user.id
+      session.delete(:pre_2fa_user_id)
       redirect_to root_path, notice: 'Successfully authenticated'
     else
       redirect_to new_user_session_path, alert: 'Invalid two-factor code'

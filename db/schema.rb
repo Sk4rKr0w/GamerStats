@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_12_000804) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_13_160135) do
   create_table "champions", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -63,7 +63,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_12_000804) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.string "subject"
     t.text "message"
     t.string "status", default: "open"
@@ -104,5 +104,4 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_12_000804) do
 
   add_foreign_key "players", "squads"
   add_foreign_key "squads", "users"
-  add_foreign_key "tickets", "users"
 end

@@ -1,0 +1,58 @@
+.admin-patch-note-edit {
+    font-family: "Abel", sans-serif;
+    color: #ffffff;
+    background-color: #1e1e1e;
+    padding: 20px;
+    width: 100%;
+    margin-left: 15%;
+}
+
+.admin-patch-note-edit form {
+    margin-top: 20px;
+}
+
+.admin-patch-note-edit label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e2e1e1;
+}
+
+.admin-patch-note-edit input[type="text"],
+.admin-patch-note-edit textarea,
+.admin-patch-note-edit input[type="submit"] {
+    width: 95%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    border: 1px solid #333333;
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.admin-patch-note-edit textarea {
+    min-height: 150px;
+}
+
+.admin-patch-note-edit input[type="submit"] {
+    background-color: #1a1a1a;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-patch-note-edit input[type="submit"]:hover {
+    background-color: #141414;
+}
+
+.admin-patch-note-edit a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #bfbfbf;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.admin-patch-note-edit a:hover {
+    color: #ffffff;
+}

@@ -1,27 +1,31 @@
-<%= form_with model: [:admin, @patch_note] do |form| %>
-  <div>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-  <div>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-  <div>
-    <%= form.label :image_path %>
-    <%= form.text_field :image_path %>
-  </div>
-  <div>
-    <%= form.label :game %>
-    <%= form.text_field :game %>
-  </div>
-  <div>
-    <%= form.label :link_path %>
-    <%= form.text_field :link_path %>
-  </div>
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<%= stylesheet_link_tag "admin/patch_notes/edit" %>
 
-<%= link_to 'Back', admin_patch_notes_path %>
+<div class="admin-patch-note-edit">
+  <%= form_with model: [:admin, @patch_note] do |form| %>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+    <div>
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+    <div>
+      <%= form.label :image_path %>
+      <%= form.text_field :image_path %>
+    </div>
+    <div>
+      <%= form.label :game %>
+      <%= form.text_field :game %>
+    </div>
+    <div>
+      <%= form.label :link_path %>
+      <%= form.text_field :link_path %>
+    </div>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+
+  <%= link_to 'Back', admin_patch_notes_path %>
+</div>

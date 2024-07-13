@@ -11,7 +11,7 @@
 
   <h2>Dati Summoner</h2>
   <p><strong>ID:</strong> <%= @summoner_data['id'] %></p>
-  <p><strong>Icona Profilo:</strong> <%= image_tag "profileicon/#{@summoner_data['profileIconId']}.png", alt: "Profile Icon", class: "profile-icon" %></p>
+  <p><strong>Icona Profilo:</strong> <%= image_tag "profileicon/#{@summoner_data['profileIconId']}.webp", alt: "Profile Icon", class: "profile-icon" %></p>
   <p><strong>Livello Summoner:</strong> <%= @summoner_data['summonerLevel'] %></p>
 
   <h2>Dati Lega</h2>
@@ -57,6 +57,6 @@
 <% end %>
 
 <div>
-  <%= link_to 'My Squads', new_squads_path, class: 'btn btn-primary' %>
-  <%= link_to 'Edit Profile', edit_user_registration_path, class: 'btn btn-secondary' %>
+  <%= link_to 'My Squads', new_squads_path, class: 'my-squad-button' %>
+  <%= link_to 'Edit Profile', edit_user_registration_path, class: 'edit-profile-button' %>
 </div>

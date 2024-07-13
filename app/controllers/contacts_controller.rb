@@ -7,9 +7,19 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       ContactMailer.contact_email(@contact).deliver_now
-      Ticket.create(subject: @contact.subject, message: @contact.message, status: 'open', user_id: current_user.id)
-      flash[:notice] = "Your message has been sent and a ticket has been created."
-      redirect_to new_contact_path
+      ticket = if current_user
+                 Ticket.create(subject: @contact.subject, message: @contact.message, status: 'open', user_id: current_user.id)
+               else
+                 Ticket.create(subject: @contact.subject, message: @contact.message, status: 'open')
+               end
+
+      if ticket.persisted?
+        flash[:notice] = "Your message has been sent and a ticket has been created."
+        redirect_to new_contact_path
+      else
+        flash[:alert] = "Failed to create ticket."
+        render :new
+      end
     else
       render :new
     end

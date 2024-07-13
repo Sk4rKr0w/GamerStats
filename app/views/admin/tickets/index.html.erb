@@ -1,27 +1,39 @@
-<h1>All Tickets</h1>
+<%= stylesheet_link_tag "admin/tickets/index" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Subject</th>
-      <th>Message</th>
-      <th>Status</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @tickets.each do |ticket| %>
+<div class="admin-tickets-container">
+  <h1>All Tickets</h1>
+
+  <table>
+    <thead>
       <tr>
-        <td><%= ticket.subject %></td>
-        <td><%= ticket.message %></td>
-        <td><%= ticket.status %></td>
-        <td>
-          <%= link_to 'Show', admin_ticket_path(ticket) %> |
-          <%= button_to 'Delete', admin_ticket_path(ticket), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        <th>Subject</th>
+        <th>Message</th>
+        <th>Status</th>
+        <th>User</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%= ticket.subject %></td>
+          <td><%= ticket.message %></td>
+          <td><%= ticket.status %></td>
+          <td>
+            <% if ticket.user %>
+              <%= link_to ticket.user.email, admin_user_path(ticket.user) %>
+            <% else %>
+              Guest
+            <% end %>
+          </td>
+          <td>
+            <%= link_to 'Show', admin_ticket_path(ticket) %>
+            <%= button_to 'Delete', admin_ticket_path(ticket), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'Back to Dashboard', admin_dashboard_path %>
+  <%= link_to 'Back to Dashboard', admin_dashboard_path %>
+</div>
