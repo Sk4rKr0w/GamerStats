@@ -1,4 +1,3 @@
-# app/controllers/home_controller.rb
 class HomeController < ApplicationController
   before_action :check_if_banned, only: [:index]
 
@@ -9,6 +8,7 @@ class HomeController < ApplicationController
   private
 
   def check_if_banned
+    Rails.logger.debug "Current user: #{current_user.inspect}"
     if current_user&.banned?
       banned_until = current_user.banned_until
       sign_out current_user

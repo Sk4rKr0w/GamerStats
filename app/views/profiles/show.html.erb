@@ -1,0 +1,62 @@
+<!-- app/views/profiles/show.html.erb -->
+<h1>Profilo di <%= @user.riot_id %></h1>
+
+<% if @error %>
+  <p><strong>Errore:</strong> <%= @error %></p>
+<% else %>
+  <h2>Dati Account</h2>
+  <p><strong>PUUID:</strong> <%= @summoner_data['puuid'] %></p>
+  <p><strong>Riot ID:</strong> <%= @user.riot_id %></p>
+  <p><strong>Tagline:</strong> <%= @user.riot_tagline %></p>
+
+  <h2>Dati Summoner</h2>
+  <p><strong>ID:</strong> <%= @summoner_data['id'] %></p>
+  <p><strong>Icona Profilo:</strong> <%= image_tag "profileicon/#{@summoner_data['profileIconId']}.webp", alt: "Profile Icon", class: "profile-icon" %></p>
+  <p><strong>Livello Summoner:</strong> <%= @summoner_data['summonerLevel'] %></p>
+
+  <h2>Dati Lega</h2>
+  <% if @league_data.is_a?(Array) %>
+    <% @league_data.each do |league_entry| %>
+      <p><strong>Queue Type:</strong> <%= league_entry['queueType'] == 'RANKED_SOLO_5x5' ? 'Ranked Solo/Duo' : league_entry['queueType'] %></p>
+      <p><strong>Tier:</strong> <%= league_entry['tier'] %></p>
+      <p><strong>Rank:</strong> <%= league_entry['rank'] %></p>
+      <p><strong>League Points:</strong> <%= league_entry['leaguePoints'] %></p>
+      <p><strong>Wins:</strong> <%= league_entry['wins'] %></p>
+      <p><strong>Losses:</strong> <%= league_entry['losses'] %></p>
+    <% end %>
+    <p><strong>Ranked Winrate:</strong> <%= @ranked_winrate %>%</p>
+  <% else %>
+    <p><strong>Errore:</strong> <%= @error %></p>
+  <% end %>
+
+  <h2>Match IDs</h2>
+  <% if @match_ids.is_a?(Array) %>
+    <% @match_ids.each do |match_id| %>
+      <p><strong>Match ID:</strong> <%= match_id %></p>
+    <% end %>
+  <% else %>
+    <p><strong>Errore:</strong> <%= @error %></p>
+  <% end %>
+
+  <h2>Dettagli Partite</h2>
+  <% if @matches_details.is_a?(Array) %>
+    <% @matches_details.each do |match| %>
+      <p><strong>Match ID:</strong> <%= match[:match_id] %></p>
+      <p><strong>Score:</strong> <%= match[:score] %></p>
+      <p><strong>Durata:</strong> <%= match[:duration] %> seconds</p>
+      <p><strong>Esito:</strong> <%= match[:outcome] %></p>
+        <%= image_tag "champion/#{match[:champion_name]}.webp", class: 'champion-icon' %>
+        <%= content_tag(:span, match[:champion_name], class: 'champion-name') %>
+      <p><strong>Champion Name:</strong> <%= match[:champion_name] %></p>
+      <hr>
+    <% end %>
+    <p><strong>Recent Winrate:</strong> <%= @recent_winrate %>%</p>
+  <% else %>
+    <p><strong>Errore:</strong> <%= @error %></p>
+  <% end %>
+<% end %>
+
+<div>
+  <%= link_to 'My Squads', new_squads_path, class: 'my-squad-button' %>
+  <%= link_to 'Edit Profile', edit_user_registration_path, class: 'edit-profile-button' %>
+</div>

@@ -1,0 +1,63 @@
+.admin-patch-note-new {
+    width: 100%;
+    margin-left: 15%;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    font-family: "Abel", sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-patch-note-new form {
+    margin-bottom: 20px;
+}
+
+.admin-patch-note-new label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.admin-patch-note-new input[type="text"],
+.admin-patch-note-new input[type="url"],
+.admin-patch-note-new textarea {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #333333;
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+    font-family: "Abel", sans-serif;
+    border-radius: 4px;
+}
+
+.admin-patch-note-new textarea {
+    height: 120px;
+}
+
+.admin-patch-note-new input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #141414;
+    color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.admin-patch-note-new input[type="submit"]:hover {
+    background-color: #2c2c2c;
+}
+
+.admin-patch-note-new a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.admin-patch-note-new a:hover {
+    background-color: #141414;
+}

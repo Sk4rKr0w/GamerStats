@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'profile/show'
+  # Profilo
+  authenticate :user do
+    get 'profile/:id', to: 'profiles#show', as: 'profile'
+  end
 
   # Squads
   get 'squads/new'
@@ -68,10 +71,6 @@ Rails.application.routes.draw do
 
   post 'signup', to: 'users#create', as: 'signup'
 
-  # Profilo
-  get 'profile', to: 'profile#show', as: 'profile'
-  resource :profile, only: [:show]
-
   # Admin namespace
   namespace :admin do
     get 'dashboard', to: 'dashboard#index'
@@ -92,6 +91,7 @@ Rails.application.routes.draw do
         post 'send_message'
       end
     end
+    resources :squads, only: [:index, :show, :destroy]
   end
 
   # Route di default per health check

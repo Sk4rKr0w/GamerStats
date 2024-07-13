@@ -1,0 +1,37 @@
+body {
+    background-color: #141414;
+}
+
+.admin-user-show-container {
+    font-family: "Abel", sans-serif;
+    padding: 0px 20px;
+    border-radius: 8px;
+    width: 100%;
+    margin-left: 15%;
+}
+
+.admin-user-show-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.admin-user-show-container p {
+    margin-bottom: 10px;
+}
+
+.admin-user-show-container strong {
+    font-weight: bold;
+}
+
+.admin-user-show-container a {
+    text-decoration: none;
+    color: white;
+    transition: 0.2s ease;
+    padding: 5px 10px;
+    background-color: #3a3a3a;
+    border-radius: 5px;
+}
+
+.admin-user-show-container a:hover {
+    color: rgb(144, 2, 2);
+}

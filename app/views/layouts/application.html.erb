@@ -26,7 +26,7 @@
           <%= link_to 'Home', home_path %>
           <%= link_to 'About', about_path %>
           <%= link_to 'Contact Us', contacts_path %>
-          <% if user_signed_in? %>
+          <% if fully_authenticated? %>
             <div>
               <%= button_to "Logout", destroy_user_session_path, method: :delete %>
             </div>
@@ -35,12 +35,15 @@
               <%= link_to "Login", new_user_session_path %>
             </div>
           <% end %>
-          <%= link_to 'My Squad', new_squads_path %>
+          <% if fully_authenticated? %>
+            <%= link_to 'My Squad', new_squads_path %>
+          <% end %>
 
-           <% if user_signed_in? && current_user.admin? %>
+           <% if fully_authenticated? && current_user.admin? %>
               <%= link_to 'Dashboard', admin_dashboard_path %>
               <%= link_to 'Tickets', admin_tickets_path %>
               <%= link_to 'Patch Notes', admin_patch_notes_path %>
+              <%= link_to 'Manage Squads', admin_squads_path %>
             <% end %>
         </ul>
       </div>
@@ -85,9 +88,10 @@
         </div>
 
         <div class="sidebar-bottom">
-          <% if user_signed_in? %>
+          <% if fully_authenticated? %>
             <div>
-              <%= link_to profile_path do %>
+
+              <%= link_to profile_path(current_user.id) do %>
                 <%= image_tag 'application/profile-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
                 Profile
               <% end %>
@@ -161,7 +165,7 @@
             <%= image_tag 'application/contact_us-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
           <% end %>
 
-          <% if user_signed_in? %>
+          <% if fully_authenticated? %>
             <div>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 Logout
@@ -175,20 +179,22 @@
             </div>
           <% end %>
 
-          <%= link_to new_squads_path do %>
-            My Squad
-            <%= image_tag 'application/my_squad-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+          <% if fully_authenticated? %>
+            <%= link_to new_squads_path do %>
+              My Squad
+              <%= image_tag 'application/my_squad-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
+            <% end %>
           <% end %>
 
-          <% if user_signed_in? %>
+          <% if fully_authenticated? %>
             <div>
-              <%= link_to profile_path do %>
+
+              <%= link_to profile_path(current_user.id) do %>
                 Profile
                 <%= image_tag 'application/profile-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
               <% end %>
             </div>
           <% end %>
-
         </div>
       </div>
     </div>
