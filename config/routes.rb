@@ -60,6 +60,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'users/two_factor', to: 'users/sessions#two_factor', as: 'user_two_factor'
     post 'users/two_factor', to: 'users/sessions#verify_two_factor'
+    post 'users/resend_two_factor_code', to: 'users/sessions#resend_two_factor_code', as: 'user_resend_two_factor_code'
+    delete 'users/cancel_two_factor', to: 'users/sessions#cancel_two_factor', as: 'user_cancel_two_factor'
   end
 
   # Altre rotte personalizzate

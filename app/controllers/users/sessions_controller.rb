@@ -29,6 +29,21 @@ class Users::SessionsController < Devise::SessionsController
     end
   end
 
+  def resend_two_factor_code
+    user = User.find(session[:pre_2fa_user_id])
+    if user
+      user.send_two_factor_code
+      redirect_to user_two_factor_path, notice: 'A new two-factor code has been sent to your email.'
+    else
+      redirect_to new_user_session_path, alert: 'Unable to resend two-factor code. Please try again.'
+    end
+  end
+
+  def cancel_two_factor
+    session.delete(:pre_2fa_user_id)
+    redirect_to new_user_session_path, notice: 'Two-factor authentication has been canceled.'
+  end
+
   # Metodo per gestire l'accesso tramite OAuth
   def oauth
     auth = request.env['omniauth.auth']
