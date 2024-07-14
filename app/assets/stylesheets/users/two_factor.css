@@ -73,3 +73,12 @@ body {
         transform: scale(0.9);
     }
 }
+
+.additional-actions {
+    margin-top: 20px;
+}
+
+.additional-actions .button_to {
+    display: inline-block;
+    margin-right: 10px;
+}
