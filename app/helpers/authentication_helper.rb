@@ -1,7 +1,4 @@
-module ApplicationHelper
-
-  include AuthenticationHelper
-  
+module AuthenticationHelper
   def fully_authenticated?
     user_signed_in? && session[:user_id].present?
   end
