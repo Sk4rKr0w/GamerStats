@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :check_banned
+  before_action :check_two_factor_auth, unless: -> { devise_controller? || session[:user_id].present? }
 
   include Devise::Controllers::Helpers
+  include AuthenticationHelper
 
   private
 
@@ -12,6 +14,12 @@ class ApplicationController < ActionController::Base
       banned_until = current_user.banned_until
       sign_out current_user
       redirect_to new_user_session_path, alert: "Your account has been banned until #{banned_until}."
+    end
+  end
+
+  def check_two_factor_auth
+    if user_signed_in? && !session[:user_id]
+      redirect_to user_two_factor_path unless fully_authenticated?
     end
   end
 
