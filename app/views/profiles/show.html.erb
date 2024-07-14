@@ -55,7 +55,6 @@
       <p><strong>Risultato:</strong> <%= match[:outcome] %></p>
       <%= image_tag "champion/#{match[:champion_name]}.webp", class: 'champion-icon' %>
       <%= content_tag(:span, match[:champion_name], class: 'champion-name') %>
-      <p><strong>Champion:</strong> <%= match[:champion_name] %></p>
       <hr>
     <% end %>
     <p><strong>Recent Winrate:</strong> <%= @recent_winrate %>%</p>
