@@ -41,7 +41,9 @@ class Users::SessionsController < Devise::SessionsController
 
   def cancel_two_factor
     session.delete(:pre_2fa_user_id)
-    redirect_to new_user_session_path, notice: 'Two-factor authentication has been canceled.'
+    session.delete(:user_id)
+    sign_out(current_user) if user_signed_in?
+    redirect_to new_user_session_path, alert: 'Two-factor authentication was cancelled.'
   end
 
   # Metodo per gestire l'accesso tramite OAuth
