@@ -43,6 +43,8 @@
                                     <p><strong>Win Ratio:</strong> <%= (entry['wins'].to_f / (entry['wins'].to_f + entry['losses'].to_f) * 100).round(0) %> %</p>
                                 </div>
                             <% end %>
+                        <% else %>
+                            <p>No ranked information available.</p>
                         <% end %>
                     </div>
                 </div>
