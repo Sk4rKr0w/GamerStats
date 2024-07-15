@@ -101,3 +101,4 @@ gem "json"
 
 gem 'retriable'
 
+gem 'rspec-rails', '~> 5.0'

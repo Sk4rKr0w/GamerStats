@@ -1,32 +1,39 @@
 <%= stylesheet_link_tag "squads/new_squad" %>
 
 <div class="new-squad-container">
-    <h1>Create a new squad!</h1>
-
+  <h1>Create a new squad!</h1>
 
   <%= form_with(model: @squad, local: true) do |form| %>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: 'squad_name' %>
+    </div>
 
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description, id: 'squad_description' %>
+    </div>
 
-    <%= form.label :creator_name %>
-    <%= form.text_field :creator_name %>
+    <div class="field">
+      <%= form.label :creator_name %>
+      <%= form.text_field :creator_name, id: 'squad_creator_name' %>
+    </div>
 
     <h3>Players</h3>
     <%= form.fields_for :players do |player_form| %>
-      <div>
+      <div class="field">
         <%= player_form.label :riot_id %>
         <%= player_form.text_field :riot_id %>
       </div>
-      <div>
+      <div class="field">
         <%= player_form.label :game_tag %>
         <%= player_form.text_field :game_tag %>
       </div>
       <hr>
     <% end %>
 
-    <%= form.submit "Create Squad" %>
+    <div class="actions">
+      <%= form.submit "Create Squad", id: 'create_squad_button' %>
+    </div>
   <% end %>
 </div>
