@@ -137,6 +137,14 @@ body {
     color: red;
 }
 
+.oauth-button {
+    transition: 0.2s ease;
+}
+
+.oauth-button:hover {
+    transform: scale(1.2);
+}
+
 @media (max-width: 480px) {
     .login-section {
         transform: scale(0.95);

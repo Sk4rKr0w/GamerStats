@@ -1,0 +1,123 @@
+.all-squads-container {
+    background-color: #2c2c2c;
+    width: 100%;
+    margin-left: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.squad-sample {
+    width: 90%;
+}
+
+.squad {
+    background-color: #1c1c1c;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+}
+
+.squad-left,
+.squad-right {
+    flex: 1;
+}
+
+.squad-left {
+    padding-right: 20px;
+}
+
+.squad-right {
+    padding-left: 20px;
+}
+
+.all-squads-container h2 {
+    margin-top: 0;
+    font-size: 24px;
+    background-color: rgb(161, 2, 2);
+    color: black;
+    padding: 5px 0px;
+    border-radius: 5px;
+}
+
+.squad-right h2 {
+    background-color: rgb(72, 0, 0);
+    color: rgb(205, 205, 205);
+}
+
+.all-squads-container p {
+    color: #e0e0e0;
+    margin: 15px 0;
+}
+
+.all-squads-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.all-squads-container ul li {
+    margin-bottom: 10px;
+}
+
+.all-squads-container button,
+.button_to input[type="submit"] {
+    background-color: #444;
+    color: #e0e0e0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.all-squads-container button:hover,
+.button_to input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.all-squads-container a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin: 20px 0px;
+    width: 80%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #1c1c1c;
+    transition: 0.2s ease;
+}
+
+.all-squads-container a:hover {
+    background-color: #393939;
+}
+
+@media (max-width: 480px) {
+    .all-squads-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .all-squads-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 920px) {
+    .all-squads-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 921px) and (max-width: 1023px) {
+    .all-squads-container {
+        margin: 50px 0px 0px 0px;
+    }
+}

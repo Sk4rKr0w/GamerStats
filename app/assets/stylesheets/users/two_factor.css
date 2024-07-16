@@ -68,6 +68,28 @@ body {
     background-color: #5c5c5c;
 }
 
+.alternative-actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 15px;
+    padding: 5px;
+}
+
+.alternative-actions button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #141414;
+    border: 1px solid rgb(74, 74, 74);
+    transition: 0.2s ease;
+    color: white;
+}
+
+.alternative-actions button:hover {
+    background-color: #2c2c2c;
+}
+
 @media (max-width: 940px) {
     .two-factor-container {
         transform: scale(0.9);

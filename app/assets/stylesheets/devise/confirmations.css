@@ -4,7 +4,6 @@ body {
 
 .confirmation-container {
     width: 480px;
-
     background-color: #1c1c1c;
     border-radius: 10px;
     border: 2px solid #2c2c2c;
@@ -134,8 +133,16 @@ body {
         transform: scale(0.95);
     }
 
+    .links {
+        flex-direction: column;
+    }
+
     .links a {
-        padding: 10px 15px;
+        margin: 0px;
+        font-size: 17px;
+        transition: 0.5s ease;
+        width: 90%;
+        text-align: center;
     }
 }
 
