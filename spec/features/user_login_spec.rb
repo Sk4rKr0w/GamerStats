@@ -76,8 +76,37 @@ RSpec.feature "User authentication flow", type: :feature, js: true do
     puts("IL TUO CODICE E': ",code)
     fill_in "code", with: code
     click_button "Verify"
-
     expect(page).to have_content("Successfully authenticated")
+
+    click_link "My Squad"
+    expect(page).to have_content("My Squads")
+
+    click_link "Create Squad"
+    expect(page).to have_content("Create a new squad!")
+
+    fill_in "Name", with: "Le Grandi Ciole"
+    fill_in "Description", with: "Le ciole più grandi di Italia"
+    fill_in "Creator name", with: "Sk4rKr0w"
+
+    fill_in "squad[players_attributes][0][riot_id]", with: "Sk4rKr0w"
+    fill_in "squad[players_attributes][0][game_tag]", with: "EUW"
+
+    # fill_in "squad[players_attributes][1][riot_id]", with: "Sk4rKr0w"
+    # fill_in "squad[players_attributes][1][game_tag]", with: "EUW"
+
+    # fill_in "squad[players_attributes][2][riot_id]", with: "Sk4rKr0w"
+    # fill_in "squad[players_attributes][2][game_tag]", with: "EUW"
+
+    # fill_in "squad[players_attributes][4][riot_id]", with: "Sk4rKr0w"
+    # fill_in "squad[players_attributes][4][game_tag]", with: "EUW"
+
+    # fill_in "squad[players_attributes][4][riot_id]", with: "Sk4rKr0w"
+    # fill_in "squad[players_attributes][4][game_tag]", with: "EUW"
+
+    click_button "Create Squad"
+    expect(page).to have_content("Created by")
+
+    click_button("Save Squad")
 
     user.destroy
   end
