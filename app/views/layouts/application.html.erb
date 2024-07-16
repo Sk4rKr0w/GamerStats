@@ -36,7 +36,7 @@
           </div>
         <% end %>
         <% if fully_authenticated? %>
-          <%= link_to 'My Squad', new_squads_path %>
+          <%= link_to 'My Squad', my_squads_path %>
         <% end %>
 
         <% if fully_authenticated? && current_user.admin? %>
@@ -183,7 +183,7 @@
         <% end %>
 
         <% if fully_authenticated? %>
-          <%= link_to new_squads_path do %>
+          <%= link_to my_squads_path do %>
             My Squad
             <%= image_tag 'application/my_squad-icon.svg', width: 18, height: 18, alt: '', style: 'margin-right: 5px;' %>
           <% end %>
