@@ -66,7 +66,6 @@ end
 group :test do
   gem 'cucumber-rails', require: false
   # database_cleaner is not mandatory, but highly recommended
-  gem 'database_cleaner'
 end
 
 group :development, :test do
@@ -76,6 +75,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'mailcatcher'
   gem 'database_cleaner'
+  gem 'webmock'
+  gem 'rails-controller-testing'
 end
 
 
