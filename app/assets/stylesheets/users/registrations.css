@@ -126,6 +126,12 @@ body {
     color: #ffffff;
 }
 
+.signup-south-south-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 @media (max-width: 480px) {
     .signup-section {
         margin: 10px 0px;
