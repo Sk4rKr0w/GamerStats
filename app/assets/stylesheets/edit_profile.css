@@ -1,13 +1,13 @@
-.edit-container {
-    width: 600px;
+body {
     background-color: #141414;
-    border-radius: 15px;
+}
+.edit-container {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 5px;
-    max-height: 700px;
+    margin-left: 15%;
 }
 
 .edit-container-north {
@@ -23,12 +23,10 @@
 }
 
 .edit-container-south {
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #2c2c2c;
-    margin: 20px 0px;
     border-radius: 10px;
     text-align: left;
     padding: 10px 0px;
@@ -120,8 +118,39 @@
     border: none;
     transition: 0.2s ease;
     background-color: #0249fc;
+    font-size: 16px;
 }
 
 .edit-container-south a:hover {
     background-color: #1d5dff;
+}
+
+@media (max-width: 480px) {
+    .edit-container {
+        margin: 50px 0px 0px 0px;
+    }
+
+    .edit-container form {
+        transform: scale(0.9);
+    }
+}
+
+@media (min-width: 480px) and (max-width: 940px) {
+    .edit-container {
+        margin: 50px 0px 0px 0px;
+    }
+
+    .edit-container form {
+        transform: scale(0.9);
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1080px) {
+    .edit-container {
+        margin: 50px 0px 0px 0px;
+    }
+
+    .edit-container form {
+        transform: scale(0.9);
+    }
 }

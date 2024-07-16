@@ -1,69 +1,104 @@
-<!-- app/views/profiles/show.html.erb -->
-<h1>Profilo di <%= @user.riot_id %></h1>
+<%= stylesheet_link_tag "profiles" %>
 
-<% if @errors.any? %>
-  <p><strong>Errore:</strong></p>
-  <ul>
-    <% @errors.each do |error| %>
-      <li><%= error %></li>
+<div class="profile-container">
+  <div class="profile-container-north">
+    <% if @user.riot_id.blank? || @user.riot_tagline.blank? %>
+      <p><strong>Errore:</strong> riot_id or riot_tagline not found</p>
+    <% else %>
+
+
+      <div class="profile-container-north-left">
+        <% if @summoner_data['profileIconId'].present? %>
+          <%= image_tag "profileicon/#{@summoner_data['profileIconId']}.webp", alt: "Profile Icon", class: "profile-icon" %>
+        <% end %>
+      </div>
+
+      <div class="profile-container-north-right">
+        <div class="profile-container-nr-left">
+          <div class="nrrl-north">
+            <h1 class="profile-name">
+              <%= @user.riot_id %>#<%= @user.riot_tagline %>
+            </h1>
+          </div>
+
+          <div class="nrrl-south">
+            <% if @summoner_data %>
+              <p><strong>Region:</strong> <%= @user.continent.upcase %></p>
+              <p><strong>ID:</strong> <%= @summoner_data['id'] %></p>
+              <p><strong>Summoner Level:</strong> <%= @summoner_data['summonerLevel'] %></p>
+            <% else %>
+              <p><strong>Errore:</strong> Dati account non disponibili.</p>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="profile-container-nr-right">
+          <div class="nrr-north">
+            <h1>Ranked Information</h1>
+          </div>
+          <div class="nrr-south">
+            <% if @league_data %>
+              <% @league_data.each do |league_entry| %>
+                <div class="nrrs-left">
+                  <p><strong>Queue Type:</strong> <%= league_entry['queueType'] == 'RANKED_SOLO_5x5' ? 'Ranked Solo/Duo' : league_entry['queueType'] %></p>
+                  <p><strong>Tier:</strong> <%= league_entry['tier'] %> <%= league_entry['rank'] %></p>
+                  <p><strong>League Points:</strong> <%= league_entry['leaguePoints'] %></p>
+                </div>
+                <div class="nrrs-right">
+                  <p><strong>Wins:</strong> <%= league_entry['wins'] %></p>
+                  <p><strong>Losses:</strong> <%= league_entry['losses'] %></p>
+                  <p><strong>Win Ratio:</strong> <%= (league_entry['wins'].to_f / (league_entry['wins'].to_f + league_entry['losses'].to_f) * 100).round(0) %> %</p>
+                </div>
+              <% end %>
+              <p><strong>Ranked Winrate:</strong> <%= @ranked_winrate %>%</p>
+            <% else %>
+              <p>No ranked information available.</p>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </ul>
-<% end %>
+  </div>
 
-<% if @user.riot_id.blank? || @user.riot_tagline.blank? %>
-  <p><strong>Errore:</strong> riot_id or riot_tagline not found</p>
-<% else %>
-  <h2>Dati Account</h2>
-  <% if @summoner_data %>
-    <p><strong>PUUID:</strong> <%= @summoner_data['puuid'] %></p>
-    <p><strong>Riot ID:</strong> <%= @user.riot_id %></p>
-    <p><strong>Tagline:</strong> <%= @user.riot_tagline %></p>
-  <% else %>
-    <p><strong>Errore:</strong> Dati account non disponibili.</p>
-  <% end %>
+  <div class="profile-container-mid">
+    <%= link_to 'My Squads', my_squads_path, class: 'my-squad-button' %>
+    <%= link_to 'Edit Profile', edit_user_registration_path, class: 'edit-profile-button' %>
+  </div>
 
-  <h2>Dati Summoner</h2>
-  <% if @summoner_data %>
-    <p><strong>ID:</strong> <%= @summoner_data['id'] %></p>
-    <p><strong>Icona Profilo:</strong> <%= image_tag "profileicon/#{@summoner_data['profileIconId']}.webp", alt: "Profile Icon", class: "profile-icon" %></p>
-    <p><strong>Livello Summoner:</strong> <%= @summoner_data['summonerLevel'] %></p>
-  <% else %>
-    <p><strong>Errore:</strong> Dati summoner non disponibili.</p>
-  <% end %>
+  <div class="profile-container-south">
+    <div class="match-history">
+      <% if @matches_details %>
+        <h2>Match History</h2>
+        <p><strong>Win Rate (based on the latest 20 matches):</strong> <%= @recent_winrate %>%</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Champion</th>
+              <th>Match ID</th>
+              <th>Score</th>
+              <th>Duration</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @matches_details.each do |match| %>
+              <tr>
+                <td>
+                  <%= image_tag "champion/#{match[:champion_name]}.webp", class: 'champion-icon' %>
+                  <%= content_tag(:span, match[:champion_name], class: 'champion-name') %>
+                </td>
+                <td><%= match[:match_id] %></td>
+                <td><%= match[:score] %></td>
+                <td><%= Time.at(match[:duration].to_i).utc.strftime("%M:%S") %></td>
+                <td><%= match[:outcome] %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <p><strong>Errore:</strong> Dati dettagli partite recenti non disponibili.</p>
+      <% end %>
+    </div>
+  </div>
 
-  <h2>Dati Lega</h2>
-  <% if @league_data %>
-    <% @league_data.each do |league_entry| %>
-      <p><strong>Queue Type:</strong> <%= league_entry['queueType'] == 'RANKED_SOLO_5x5' ? 'Ranked Solo/Duo' : league_entry['queueType'] %></p>
-      <p><strong>Tier:</strong> <%= league_entry['tier'] %></p>
-      <p><strong>Rank:</strong> <%= league_entry['rank'] %></p>
-      <p><strong>League Points:</strong> <%= league_entry['leaguePoints'] %></p>
-      <p><strong>Wins:</strong> <%= league_entry['wins'] %></p>
-      <p><strong>Losses:</strong> <%= league_entry['losses'] %></p>
-    <% end %>
-    <p><strong>Ranked Winrate:</strong> <%= @ranked_winrate %>%</p>
-  <% else %>
-    <p><strong>Errore:</strong> Dati lega non disponibili.</p>
-  <% end %>
-
-  <h2>Dettagli Partite Recenti</h2>
-  <% if @matches_details %>
-    <% @matches_details.each do |match| %>
-      <p><strong>Match ID:</strong> <%= match[:match_id] %></p>
-      <p><strong>Score:</strong> <%= match[:score] %></p>
-      <p><strong>Durata:</strong> <%= match[:duration] %> seconds</p>
-      <p><strong>Risultato:</strong> <%= match[:outcome] %></p>
-      <%= image_tag "champion/#{match[:champion_name]}.webp", class: 'champion-icon' %>
-      <%= content_tag(:span, match[:champion_name], class: 'champion-name') %>
-      <hr>
-    <% end %>
-    <p><strong>Recent Winrate:</strong> <%= @recent_winrate %>%</p>
-  <% else %>
-    <p><strong>Errore:</strong> Dati dettagli partite recenti non disponibili.</p>
-  <% end %>
-<% end %>
-
-<div>
-  <%= link_to 'My Squads', my_squads_path, class: 'my-squad-button' %>
-  <%= link_to 'Edit Profile', edit_user_registration_path, class: 'edit-profile-button' %>
 </div>
