@@ -18,10 +18,6 @@
     margin-left: 10px;
 }
 
-.admin-patchnotes-container a:hover {
-    text-decoration: underline;
-}
-
 .admin-patchnotes-container table {
     width: 100%;
     border-collapse: collapse;
