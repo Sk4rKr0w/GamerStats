@@ -76,6 +76,7 @@ group :development, :test do
   gem 'mailcatcher'
   gem 'database_cleaner'
   gem 'webmock'
+  gem 'rails-controller-testing'
 end
 
 
