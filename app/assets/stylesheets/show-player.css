@@ -181,7 +181,7 @@
     }
 
     .nrrl-south {
-        width: 100%;
+        width: 90%;
         font-size: 14px;
         margin: 5px 10px;
     }
@@ -225,9 +225,9 @@
     }
 }
 
-@media (min-width: 480px) and (max-width: 800px) {
+@media (min-width: 480px) and (max-width: 920px) {
     .player-container {
-        margin: 0;
+        margin: 50px 0px 0px 0px;
     }
 
     .player-container-north-left {
@@ -243,5 +243,11 @@
     .player-container-nr-right {
         font-size: 10px;
         margin: 0;
+    }
+}
+
+@media (min-width: 920px) and (max-width: 1020px) {
+    .player-container {
+        margin: 50px 0px 0px 0px;
     }
 }
