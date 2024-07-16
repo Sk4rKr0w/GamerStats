@@ -35,6 +35,15 @@ end
 RSpec.feature "User authentication flow and Squad Creation", type: :feature, js: true do
   let(:user) { FactoryBot.create(:user) }
 
+  before(:each) do
+    WebMock.allow_net_connect!
+  end
+
+  after(:each) do
+    WebMock.disable_net_connect!(allow_localhost: true)
+    user.destroy
+  end
+
   scenario "User creates and saves a new Squad" do
     visit root_path
     click_link "Login"
@@ -91,7 +100,6 @@ RSpec.feature "User authentication flow and Squad Creation", type: :feature, js:
     expect(page).to have_content("NAVI di Wish")
 
     sleep 2
-
   end
 
   scenario "User compares squads" do
@@ -132,11 +140,5 @@ RSpec.feature "User authentication flow and Squad Creation", type: :feature, js:
     expect(page).to have_content(squad2.name)
 
     sleep 2
-
-  end
-
-
-  after(:each) do
-    user.destroy
   end
 end

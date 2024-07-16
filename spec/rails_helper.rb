@@ -28,6 +28,8 @@ Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |file| require
 
 Capybara.default_max_wait_time = 45
 
+WebMock.disable_net_connect!(allow_localhost: true)
+
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
 begin
