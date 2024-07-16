@@ -18,7 +18,7 @@
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
     <%= form_with url: omniauth_authorize_path(resource_name, provider), method: :post, data: { turbo: "false" }, class: 'oauth-form' do |f| %>
-      <%= f.submit "Login", type: "image", src: url_for("/assets/google_sign_in/web_dark_rd_SI@1x.png"), class: 'oauth-button' %>
+      <%= f.submit "Login", type: "image", src: url_for("/assets/google_sign_in/web_dark_rd_SI@1x.webp"), class: 'oauth-button' %>
     <% end %>
   <% end %>
 <% end %>
