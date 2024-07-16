@@ -35,24 +35,6 @@ end
 RSpec.feature "User authentication flow and Squad Creation", type: :feature, js: true do
   let(:user) { FactoryBot.create(:user) }
 
-  scenario "User completes Two-Factor Authentication" do
-    visit root_path
-    click_link "Login"
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password
-    click_button "Sign In"
-
-    expect(page).to have_content("Two-Factor Authentication")
-
-    email_body = find_email(user.email)
-    code = email_body.match(/Your two-factor code is: (\d+)/)&.captures&.first
-    expect(code).not_to be_nil, "Two-factor code not found in email"
-
-    fill_in "code", with: code
-    click_button "Verify"
-    expect(page).to have_content("Successfully authenticated")
-  end
-
   scenario "User creates and saves a new Squad" do
     visit root_path
     click_link "Login"
@@ -72,6 +54,8 @@ RSpec.feature "User authentication flow and Squad Creation", type: :feature, js:
 
     click_link "My Squad"
     expect(page).to have_content("My Squads")
+
+    sleep 1
 
     click_link "Create Squad"
     expect(page).to have_content("Create a new squad!")
@@ -127,7 +111,6 @@ RSpec.feature "User authentication flow and Squad Creation", type: :feature, js:
     click_button "Verify"
     expect(page).to have_content("Successfully authenticated")
 
-    # Creazione di squadre fittizie
     squad1 = FactoryBot.create(:squad, :with_players, user: user, name: "Squad 1")
     squad2 = FactoryBot.create(:squad, :with_players, user: user, name: "Squad 2")
 
@@ -135,6 +118,8 @@ RSpec.feature "User authentication flow and Squad Creation", type: :feature, js:
 
     click_link "My Squad"
     expect(page).to have_content("My Squads")
+
+    sleep 1
 
     click_link "Compare Squads"
     expect(page).to have_content("Compare Squads")
@@ -145,6 +130,9 @@ RSpec.feature "User authentication flow and Squad Creation", type: :feature, js:
 
     expect(page).to have_content(squad1.name)
     expect(page).to have_content(squad2.name)
+
+    sleep 2
+
   end
 
 
