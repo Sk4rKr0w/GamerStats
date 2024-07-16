@@ -1,11 +1,19 @@
+body {
+    background-color: #1e1e1e;
+}
+
 .admin-patch-note-new {
     width: 100%;
     margin-left: 15%;
     padding: 20px;
-    background-color: #1e1e1e;
     color: #f0f0f0;
     font-family: "Abel", sans-serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-patch-note-new h1 {
+    padding: 10px 15px;
+    background-color: rgb(128, 0, 0);
 }
 
 .admin-patch-note-new form {
@@ -60,4 +68,22 @@
 
 .admin-patch-note-new a:hover {
     background-color: #141414;
+}
+
+@media (max-width: 480px) {
+    .admin-patch-note-new {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 940px) {
+    .admin-patch-note-new {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 940px) and (max-width: 1023px) {
+    .admin-patch-note-new {
+        margin: 50px 0px 0px 0px;
+    }
 }

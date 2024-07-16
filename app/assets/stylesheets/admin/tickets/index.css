@@ -1,7 +1,9 @@
+body {
+    background-color: #141414;
+}
 .admin-tickets-container {
     font-family: "Abel", sans-serif;
     color: #fff;
-    background-color: #141414;
     width: 100%;
     margin-left: 15%;
     padding: 20px;
