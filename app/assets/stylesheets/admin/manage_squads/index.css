@@ -46,7 +46,3 @@ td a {
     color: #fff;
     text-decoration: none;
 }
-
-td a:hover {
-    text-decoration: underline;
-}

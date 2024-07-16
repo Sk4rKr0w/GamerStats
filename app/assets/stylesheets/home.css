@@ -1,5 +1,5 @@
 .search-container {
-    background-image: url(assets/home/bg_home.jpg);
+    background-image: url(assets/home/bg_home.webp);
     background-size: cover;
     border: 1px solid #2c2c2c;
     border-radius: 8px;
@@ -101,7 +101,6 @@ select {
 
 @media (min-width: 480px) and (max-width: 768px) {
     .search-container {
-        margin: 50px 0px 0px 0px;
         background-position: center center;
         background-size: cover;
     }

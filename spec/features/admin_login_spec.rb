@@ -57,6 +57,8 @@ RSpec.feature "Admin authentication and dashboard access", type: :feature, js: t
     click_link "Dashboard"
     expect(page).to have_content("Shutdown")
 
+    sleep 1
+
     admin.destroy
   end
 end
