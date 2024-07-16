@@ -32,35 +32,10 @@ def find_email(recipient_email)
   end
 end
 
-RSpec.feature "User authentication flow", type: :feature, js: true do
-  scenario "User visits the Home Page" do
-    user = FactoryBot.create(:user)
-
-    visit root_path
-    expect(page).to have_link("Login")
-
-    user.destroy
-  end
-
-  scenario "User logs in with valid credentials" do
-    user = FactoryBot.create(:user)
-
-    visit root_path
-    click_link "Login"
-    expect(page).to have_field("Email")
-    fill_in "Email", with: user.email
-    expect(page).to have_field("Password")
-    fill_in "Password", with: user.password
-    click_button "Sign In"
-
-    expect(page).to have_content("Two-Factor Authentication")
-
-    user.destroy
-  end
+RSpec.feature "User authentication flow and Squad Creation", type: :feature, js: true do
+  let(:user) { FactoryBot.create(:user) }
 
   scenario "User completes Two-Factor Authentication" do
-    user = FactoryBot.create(:user)
-
     visit root_path
     click_link "Login"
     fill_in "Email", with: user.email
@@ -73,7 +48,24 @@ RSpec.feature "User authentication flow", type: :feature, js: true do
     code = email_body.match(/Your two-factor code is: (\d+)/)&.captures&.first
     expect(code).not_to be_nil, "Two-factor code not found in email"
 
-    puts("IL TUO CODICE E': ",code)
+    fill_in "code", with: code
+    click_button "Verify"
+    expect(page).to have_content("Successfully authenticated")
+  end
+
+  scenario "User creates and saves a new Squad" do
+    visit root_path
+    click_link "Login"
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Sign In"
+
+    expect(page).to have_content("Two-Factor Authentication")
+
+    email_body = find_email(user.email)
+    code = email_body.match(/Your two-factor code is: (\d+)/)&.captures&.first
+    expect(code).not_to be_nil, "Two-factor code not found in email"
+
     fill_in "code", with: code
     click_button "Verify"
     expect(page).to have_content("Successfully authenticated")
@@ -84,30 +76,79 @@ RSpec.feature "User authentication flow", type: :feature, js: true do
     click_link "Create Squad"
     expect(page).to have_content("Create a new squad!")
 
-    fill_in "Name", with: "Le Grandi Ciole"
-    fill_in "Description", with: "Le ciole più grandi di Italia"
+    fill_in "Name", with: "NAVI di Wish"
+    fill_in "Description", with: "Siamo i NAVI di Wish!"
     fill_in "Creator name", with: "Sk4rKr0w"
 
-    fill_in "squad[players_attributes][0][riot_id]", with: "Sk4rKr0w"
-    fill_in "squad[players_attributes][0][game_tag]", with: "EUW"
+    fill_in "squad[players_attributes][0][riot_id]", with: "NikoChaos01"
+    fill_in "squad[players_attributes][0][game_tag]", with: "2912"
 
-    # fill_in "squad[players_attributes][1][riot_id]", with: "Sk4rKr0w"
-    # fill_in "squad[players_attributes][1][game_tag]", with: "EUW"
+    fill_in "squad[players_attributes][1][riot_id]", with: "Sk4rKr0w"
+    fill_in "squad[players_attributes][1][game_tag]", with: "EUW"
 
-    # fill_in "squad[players_attributes][2][riot_id]", with: "Sk4rKr0w"
-    # fill_in "squad[players_attributes][2][game_tag]", with: "EUW"
+    fill_in "squad[players_attributes][2][riot_id]", with: "ZhioSharp"
+    fill_in "squad[players_attributes][2][game_tag]", with: "EUW"
 
-    # fill_in "squad[players_attributes][4][riot_id]", with: "Sk4rKr0w"
-    # fill_in "squad[players_attributes][4][game_tag]", with: "EUW"
+    fill_in "squad[players_attributes][3][riot_id]", with: "ilmiche98"
+    fill_in "squad[players_attributes][3][game_tag]", with: "EUW"
 
-    # fill_in "squad[players_attributes][4][riot_id]", with: "Sk4rKr0w"
-    # fill_in "squad[players_attributes][4][game_tag]", with: "EUW"
+    fill_in "squad[players_attributes][4][riot_id]", with: "Syndex"
+    fill_in "squad[players_attributes][4][game_tag]", with: "EUW"
 
     click_button "Create Squad"
-    expect(page).to have_content("Created by")
+    expect(page).to have_content("Squad was successfully created.")
+
+    sleep 2
 
     click_button("Save Squad")
+    expect(page).to have_content("Squad was successfully saved.")
 
+    click_link("Back to Squads")
+    expect(page).to have_content("NAVI di Wish")
+
+    sleep 2
+
+  end
+
+  scenario "User compares squads" do
+    visit root_path
+    click_link "Login"
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Sign In"
+
+    expect(page).to have_content("Two-Factor Authentication")
+
+    email_body = find_email(user.email)
+    code = email_body.match(/Your two-factor code is: (\d+)/)&.captures&.first
+    expect(code).not_to be_nil, "Two-factor code not found in email"
+
+    fill_in "code", with: code
+    click_button "Verify"
+    expect(page).to have_content("Successfully authenticated")
+
+    # Creazione di squadre fittizie
+    squad1 = FactoryBot.create(:squad, :with_players, user: user, name: "Squad 1")
+    squad2 = FactoryBot.create(:squad, :with_players, user: user, name: "Squad 2")
+
+    visit root_path
+
+    click_link "My Squad"
+    expect(page).to have_content("My Squads")
+
+    click_link "Compare Squads"
+    expect(page).to have_content("Compare Squads")
+
+    select squad1.name, from: "squad1"
+    select squad2.name, from: "squad2"
+    click_button "Compare"
+
+    expect(page).to have_content(squad1.name)
+    expect(page).to have_content(squad2.name)
+  end
+
+
+  after(:each) do
     user.destroy
   end
 end
