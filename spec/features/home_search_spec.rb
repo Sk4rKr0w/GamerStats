@@ -3,6 +3,13 @@ require 'rest-client'
 require 'json'
 
 RSpec.feature "User search for a player", type: :feature, js: true do
+  before(:each) do
+    WebMock.allow_net_connect!
+  end
+
+  after(:each) do
+    WebMock.disable_net_connect!(allow_localhost: true)
+  end
 
   scenario "User visits the Home Page" do
     visit root_path
