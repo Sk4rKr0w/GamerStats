@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_13_160135) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_15_211344) do
   create_table "champions", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -22,8 +22,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_13_160135) do
     t.string "email"
     t.string "subject"
     t.text "message"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "status"
   end
 
@@ -32,8 +32,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_13_160135) do
     t.text "description"
     t.string "game"
     t.string "image_path"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "link_path"
   end
 
@@ -42,8 +42,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_13_160135) do
     t.string "game_tag"
     t.string "puuid"
     t.integer "squad_id", null: false
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.float "win_rate"
     t.float "kills"
     t.float "deaths"
@@ -54,8 +54,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_13_160135) do
   create_table "squads", force: :cascade do |t|
     t.string "name"
     t.integer "user_id", null: false
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean "saved", default: false, null: false
     t.string "description"
     t.string "creator_name"
@@ -76,24 +76,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_13_160135) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at", precision: nil
-    t.datetime "remember_created_at", precision: nil
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.string "confirmation_token"
-    t.datetime "confirmed_at", precision: nil
-    t.datetime "confirmation_sent_at", precision: nil
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "riot_id"
     t.string "two_factor_code"
-    t.datetime "two_factor_expires_at", precision: nil
+    t.datetime "two_factor_expires_at"
     t.string "provider"
     t.string "uid"
     t.boolean "admin", default: false
     t.boolean "online"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-    t.datetime "last_sign_in_at", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "last_sign_in_at"
     t.boolean "banned", default: false
-    t.datetime "banned_until", precision: nil
+    t.datetime "banned_until"
     t.string "riot_tagline"
     t.string "continent"
     t.string "region"

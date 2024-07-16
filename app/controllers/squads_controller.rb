@@ -72,7 +72,7 @@ class SquadsController < ApplicationController
     else
       flash[:alert] = 'Unable to delete squad.'
     end
-    redirect_to new_squads_path
+    redirect_to my_squads_path
   end
 
   private
