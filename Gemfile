@@ -75,6 +75,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'mailcatcher'
   gem 'database_cleaner'
+  gem 'webmock'
 end
 
 
