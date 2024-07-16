@@ -48,6 +48,10 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
 end
 
+group :test do
+  gem 'database_cleaner-active_record'
+end
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
@@ -60,20 +64,22 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-end
-
-group :test do
   gem 'cucumber-rails', require: false
   # database_cleaner is not mandatory, but highly recommended
   gem 'database_cleaner'
 end
 
-gem "devise", "~> 4.9"
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'factory_bot_rails'
+  gem 'mailcatcher'
+  gem 'database_cleaner'
+end
 
-gem "mailcatcher", "~> 0.2.4"
+
+gem "devise", "~> 4.9"
 
 gem 'thin', '~> 1.7'
 
@@ -100,4 +106,3 @@ gem "jquery-rails"
 gem "json"
 
 gem 'retriable'
-
