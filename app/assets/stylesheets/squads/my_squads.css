@@ -98,3 +98,21 @@
     text-decoration: none;
     color: #fff;
 }
+
+@media (max-width: 480px) {
+    .my-squad-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .my-squad-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 920px) {
+    .my-squad-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
