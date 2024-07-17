@@ -299,6 +299,7 @@ nav {
     top: 50px;
     left: 0;
     width: 100%;
+    height: calc(100vh - 50px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -310,12 +311,12 @@ nav {
     transition: 0.5s ease;
     position: relative;
     width: 50%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    transition: 0.3s linear;
     background-color: #000000;
+    overflow-y: auto;
 }
 
 .mobile-left {
