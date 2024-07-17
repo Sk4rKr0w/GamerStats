@@ -422,8 +422,17 @@ nav {
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1080px) {
+@media (min-width: 1024px) and (max-width: 1367px) {
     nav {
         height: auto;
+    }
+
+    .nav-container ul a {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .nav-container div button {
+        font-size: 14px;
     }
 }
