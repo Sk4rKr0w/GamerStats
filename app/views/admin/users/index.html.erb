@@ -1,5 +1,4 @@
 <%= stylesheet_link_tag "admin/users/index" %>
-
 <div class="admin-users-container">
   <h1>All Users</h1>
 
@@ -12,7 +11,9 @@
       </tr>
     </thead>
     <tbody>
+      <% form_counter = 0 %>
       <% @users.each do |user| %>
+        <% form_counter += 1 %>
         <tr>
           <td><%= user.email %></td>
           <td><%= user.admin? ? 'Yes' : 'No' %></td>
@@ -25,9 +26,9 @@
               <%= button_to 'Delete', admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' } %> |
               <%= form_with url: ban_admin_user_path(user), method: :post, local: true do |form| %>
                 <div>
-                  <%= form.label :ban_duration, "Ban Duration (minutes)" %>
-                  <%= form.number_field :ban_duration, in: 1..1440 %>
-                  <%= form.submit "Ban" %>
+                  <%= form.label :ban_duration, "Ban Duration (minutes)", id: "ban_duration_label_#{form_counter}" %>
+                  <%= form.number_field :ban_duration, in: 1..1440, id: "ban_duration_#{form_counter}" %>
+                  <%= form.submit "Ban", id: "ban_submit_#{form_counter}" %>
                 </div>
               <% end %> |
               <%= link_to 'Warn', warn_admin_user_path(user) %>

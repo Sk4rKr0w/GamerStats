@@ -55,10 +55,51 @@ RSpec.feature "Admin authentication and dashboard access", type: :feature, js: t
     expect(page).to have_content("Successfully authenticated")
 
     click_link "Dashboard"
-    expect(page).to have_content("Shutdown")
+    expect(page).to have_content("Admin Dashboard")
+
+    sleep 1
 
     sleep 1
 
     admin.destroy
+  end
+
+  scenario "Admin logs in and bans a user" do
+
+    admin = FactoryBot.create(:user, :admin)
+    user = FactoryBot.create(:user)
+
+    visit root_path
+    click_link "Login"
+    fill_in "Email", with: admin.email
+    fill_in "Password", with: admin.password
+    click_button "Sign In"
+
+    expect(page).to have_content("Two-Factor Authentication")
+
+    email_body = find_email(admin.email)
+    code = email_body.match(/Your two-factor code is: (\d+)/)&.captures&.first
+    expect(code).not_to be_nil, "Two-factor code not found in email"
+
+    puts("IL TUO CODICE E': #{code}")
+    fill_in "code", with: code
+    click_button "Verify"
+
+    expect(page).to have_content("Successfully authenticated")
+
+    click_link "Dashboard"
+    expect(page).to have_content("Admin Dashboard")
+
+    click_link "Manage Users"
+    expect(page).to have_content("All Users")
+
+    sleep 1
+
+    fill_in 'ban_duration_2', with: "5"
+    click_button "ban_submit_2"
+    expect(page).to have_content("User was successfully banned.")
+
+    sleep 2
+
   end
 end

@@ -53,7 +53,7 @@ class SquadsController < ApplicationController
     @squad = current_user.squads.find(params[:id])
     if @squad.update(squad_params)
       @squad.players.each(&:fetch_details)
-      redirect_to new_squad_path, notice: 'Squad was successfully updated.'
+      redirect_to @squad, notice: 'Squad was successfully updated.'
     else
       render :edit
     end
