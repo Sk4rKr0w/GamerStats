@@ -307,10 +307,11 @@ nav {
 
 .mobile-left,
 .mobile-right {
+    overflow-y: scroll;
     transition: 0.5s ease;
     position: relative;
     width: 50%;
-    height: 100vh;
+    height: 100vb;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
