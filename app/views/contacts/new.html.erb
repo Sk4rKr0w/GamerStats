@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag 'contacts' %>
+
+<div class="contact-container" id="contact-container">
+  <div class="contact-container-north">
+    <h1>Contact Us</h1>
+  </div>
+
+  <div class="contact-container-south">
+    <%= form_with(model: @contact, local: true, url: contacts_path) do |form| %>
+      <div class="contact-form-north">
+        <div>
+          <%= form.label :name %>
+          <%= form.text_field :name %>
+        </div>
+
+        <div>
+          <%= form.label :email %>
+          <%= form.email_field :email %>
+        </div>
+
+        <div>
+          <%= form.label :subject %>
+          <%= form.text_field :subject %>
+        </div>
+      </div>
+
+      <div class="contact-form-south">
+        <div>
+          <%= form.label :message %>
+          <%= form.text_area :message %>
+          <%= form.submit 'Send' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+body {
+    background-color: #141414;
+}
+
+.manage-squad-container {
+    font-family: "Abel", sans-serif;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    margin-left: 15%;
+    padding: 10px;
+}
+
+.manage-squad-container h1 {
+    color: #fff;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2c2c2c;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #141414;
+}
+
+thead {
+    background-color: #141414;
+}
+
+th {
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #2c2c2c;
+}
+
+tbody tr:hover {
+    background-color: #383838;
+}
+
+td a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 480px) {
+    .manage-squad-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 940px) {
+    .manage-squad-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 940px) and (max-width: 1023px) {
+    .manage-squad-container {
+        margin: 50px 0px 0px 0px;
+    }
+}

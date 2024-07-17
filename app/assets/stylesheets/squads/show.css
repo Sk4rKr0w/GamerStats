@@ -1,0 +1,105 @@
+.squad-show-container {
+    background-color: #222222;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-left: 15%;
+}
+
+.squad-show-container h1 {
+    margin-top: 0;
+    font-size: 32px;
+    color: #e0e0e0;
+    text-align: center;
+    background-color: rgb(161, 2, 2);
+    color: black;
+}
+
+.squad-show-container p {
+    font-size: 16px;
+    color: #e0e0e0;
+    margin: 10px 0;
+}
+
+.squad-show-container h3 {
+    font-size: 20px;
+    color: #e0e0e0;
+    margin: 20px 0 10px 0;
+}
+
+.squad-show-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.squad-show-container ul li {
+    background-color: #1c1c1c;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.squad-show-container ul li p {
+    color: #ff6b6b;
+    margin: 5px 0 0 0;
+}
+
+.squad-show-container button,
+.button_to input[type="submit"] {
+    background-color: #444;
+    color: #e0e0e0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.squad-show-container button:hover,
+.button_to input[type="submit"]:hover {
+    background-color: #1b1b1b;
+}
+
+.squad-show-container a {
+    color: #888;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #141414;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+.squad-show-container a:hover {
+    background-color: #3f3f3f;
+}
+
+@media (max-width: 480px) {
+    .squad-show-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .squad-show-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 920px) {
+    .squad-show-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 921px) and (max-width: 1023px) {
+    .squad-show-container {
+        margin: 50px 0px 0px 0px;
+    }
+}

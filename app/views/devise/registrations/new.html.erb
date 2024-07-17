@@ -1,0 +1,62 @@
+<%= stylesheet_link_tag 'users/registrations' %>
+
+<div class="signup-section" id="signup-section">
+    <div class="signup-north-container">
+      <h1>Registrati</h1>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'signup-south-container' }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="signup-south-north-container">
+
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'e.g. MarcoRossi@gmail.com' %>
+
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: '******' %>
+
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: '******' %>
+
+          <%= f.label :riot_id %>
+          <%= f.text_field :riot_id %>
+
+          <%= f.label :riot_tagline %>
+          <%= f.text_field :riot_tagline %>
+
+          <div class="signup-server-container">
+            <%= f.label :continent %>
+            <%= f.select :continent, options_for_select([['americas', 'americas'], ['asia', 'asia'], ['europe', 'europe'], ['sea', 'sea']]), { include_blank: 'Select Continent' } %>
+
+            <%= f.label :region %>
+            <%= f.select :region, options_for_select([
+              ['br1', 'br1'],
+              ['eun1', 'eun1'],
+              ['euw1', 'euw1'],
+              ['jp1', 'jp1'],
+              ['kr', 'kr'],
+              ['la1', 'la1'],
+              ['la2', 'la2'],
+              ['na1', 'na1'],
+              ['oc1', 'oc1'],
+              ['tr1', 'tr1'],
+              ['ru', 'ru'],
+              ['ph2', 'ph2'],
+              ['sg2', 'sg2'],
+              ['th2', 'th2'],
+              ['tw2', 'tw2'],
+              ['vn2', 'vn2']
+            ]), { include_blank: 'Select Region' } %>
+          </div>
+      </div>
+
+      <div class="signup-south-south-container">
+        <%= f.submit "Sign Up" %>
+        <%= link_to "Hai già un account? Accedi!", new_user_session_path %>
+      </div>
+    <% end %>
+</div>

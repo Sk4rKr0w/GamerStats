@@ -1,31 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <%= stylesheet_link_tag 'home_style' %>
-</head>
-<body>
+<%= stylesheet_link_tag 'home' %>
 
-    <div class="search-container" id="search-container">
-        <div class="search-central">
-            <label for="numbers" class="numbers-label">N° Players</label>
-            <select name="numbers" id="numbers">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+<div class="search-container" id="search-container">
+    <div class="search-central">
+        <%= form_with url: search_player_path, method: :get, local: true do %>
+            <input class="search-input" type="text" name="game_name" placeholder="Game Name" required>
+            <input class="search-input" type="text" name="tag_line" placeholder="Tag Line" required>
+            <select name="region" id="region" required>
+                <option value="americas">AMERICAS</option>
+                <option value="asia">ASIA</option>
+                <option value="europe">EUROPE</option>
+                <option value="sea">SEA</option>
             </select>
-            <input class="search-input" type="text" placeholder="Search player..">
-            <select name="numbers" id="game">
-                <option value="lol">
-                    League of Legends
-                </option>
-                <option value="vl">Valorant</option>
+            <select name="server" id="server" required>
+                <option value="br1.api.riotgames.com">BR1</option>
+                <option value="eun1.api.riotgames.com">EUN1</option>
+                <option value="euw1.api.riotgames.com">EUW1</option>
+                <option value="jp1.api.riotgames.com">JP1</option>
+                <option value="kr.api.riotgames.com">KR</option>
+                <option value="la1.api.riotgames.com">LA1</option>
+                <option value="la2.api.riotgames.com">LA2</option>
+                <option value="na1.api.riotgames.com">NA1</option>
+                <option value="oc1.api.riotgames.com">OC1</option>
+                <option value="tr1.api.riotgames.com">TR1</option>
+                <option value="ru.api.riotgames.com">RU</option>
+                <option value="ph2.api.riotgames.com">PH2</option>
+                <option value="sg2.api.riotgames.com">SG2</option>
+                <option value="th2.api.riotgames.com">TH2</option>
+                <option value="tw2.api.riotgames.com">TW2</option>
+                <option value="vn2.api.riotgames.com">VN2</option>
             </select>
-        </div>
+            <%= submit_tag 'Search', class: 'search-button' %>
+        <% end %>
     </div>
-
-</body>
-</html>
+</div>

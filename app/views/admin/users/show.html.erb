@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag "admin/users/show" %>
+
+<div class="admin-user-show-container">
+  <h1>User Details</h1>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+
+  <p>
+    <strong>Created At:</strong>
+    <%= @user.created_at.strftime('%Y-%m-%d %H:%M:%S') %>
+  </p>
+
+  <p>
+    <strong>Last Sign In:</strong>
+    <%= @user.last_sign_in_at ? @user.last_sign_in_at.strftime('%Y-%m-%d %H:%M:%S') : 'Never signed in' %>
+  </p>
+
+  <%= link_to 'Edit', edit_admin_user_path(@user) %> |
+  <%= link_to 'Back to Users List', admin_users_path %>
+</div>

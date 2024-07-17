@@ -1,0 +1,92 @@
+.compare-squad-container {
+    width: 500px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #1e1e1e;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.compare-squad-container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: rgb(122, 0, 0);
+}
+
+.compare-squad-container form {
+    margin-bottom: 20px;
+}
+
+.compare-squad-container form div {
+    margin-bottom: 10px;
+}
+
+.compare-squad-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.compare-squad-container select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #333;
+    background-color: #2c2c2c;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #2c2c2c;
+    color: #fff;
+    border: 1px solid #2c2c2c;
+}
+
+.btn-primary:hover {
+    background-color: #3d3d3d;
+    border-color: #3d3d3d;
+}
+
+.comparison-result-container {
+    margin-top: 20px;
+}
+
+.comparison-result-container-north,
+.comparison-result-container-south {
+    margin-bottom: 20px;
+}
+
+.comparison-result-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: rgb(122, 0, 0);
+}
+
+.comparison-result-container h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.comparison-result-container p {
+    margin-bottom: 5px;
+}
+
+.comparison-result-container-south p {
+    margin-bottom: 10px;
+}

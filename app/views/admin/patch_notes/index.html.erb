@@ -1,0 +1,34 @@
+<%= stylesheet_link_tag "admin/patch_notes/index" %>
+
+<div class="admin-patchnotes-container">
+  <h1>Patch Notes</h1>
+
+  <%= link_to 'New Patch Note', new_admin_patch_note_path %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Game</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @patch_notes.each do |patch_note| %>
+        <tr>
+          <td><%= patch_note.title %></td>
+          <td><%= patch_note.description %></td>
+          <td><%= patch_note.game %></td>
+          <td>
+            <div class="actions">
+              <%= link_to 'Show', admin_patch_note_path(patch_note) %>
+              <%= link_to 'Edit', edit_admin_patch_note_path(patch_note) %>
+              <%= button_to 'Delete', admin_patch_note_path(patch_note), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

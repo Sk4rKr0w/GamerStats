@@ -1,0 +1,126 @@
+body {
+    background-color: #1f1f1f;
+}
+
+.admin-tickets-show {
+    font-family: "Abel", sans-serif;
+    color: #eaeaea;
+    padding: 20px;
+    width: 100%;
+    margin-left: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.admin-tickets-show h1 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: rgb(139, 0, 0);
+}
+
+.admin-tickets-north {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.admin-tickets-north p {
+    margin-bottom: 10px;
+}
+
+.admin-tickets-north strong {
+    color: #ffffff;
+}
+
+.admin-tickets-north .btn-resolve {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.admin-tickets-south {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.admin-tickets-south h2 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.admin-tickets-south form {
+    margin-bottom: 20px;
+}
+
+.admin-tickets-south label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.admin-tickets-south textarea {
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #505050;
+    border: 1px solid #2c2c2c;
+}
+
+.admin-tickets-north button {
+    background-color: #141414;
+    border: 1px solid rgb(69, 69, 69);
+    padding: 10px 15px;
+    color: white;
+    transition: 0.2s ease;
+}
+
+.admin-tickets-north button:hover {
+    background-color: #505050;
+}
+
+.admin-tickets-south input[type="submit"] {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.admin-tickets-show a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.admin-tickets-show a:hover {
+    color: rgb(164, 0, 0);
+}
+
+@media (max-width: 480px) {
+    .admin-tickets-show {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 940px) {
+    .admin-tickets-show {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 940px) and (max-width: 1023px) {
+    .admin-tickets-show {
+        margin: 50px 0px 0px 0px;
+    }
+}

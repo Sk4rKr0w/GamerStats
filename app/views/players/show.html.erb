@@ -1,0 +1,92 @@
+<%= stylesheet_link_tag "show-player" %>
+
+<div class="player-container">
+    <div class="player-container-north">
+        <% if @player_data %>
+            <div class="player-container-north-left">
+                <% if @summoner_data['profileIconUrl'].present? %>
+                    <%= image_tag @summoner_data['profileIconUrl'].gsub('.png', '.webp'), class: 'profile-icon' %>
+                <% end %>
+            </div>
+            <div class="player-container-north-right">
+                <div class="player-container-nr-left">
+                    <div class="nrrl-north">
+                        <h1 class="player-name">
+                            <%= @player_data['gameName'] %>#<%= @player_data['tagLine'] %>
+                        </h1>
+                    </div>
+
+                    <div class="nrrl-south">
+                        <p><strong>Region:</strong> <%= @region.upcase %></p>
+                        <% if @summoner_data.present? %>
+                            <p><strong>ID:</strong> <%= @summoner_data['id'] %></p>
+                            <p><strong>Summoner Level:</strong> <%= @summoner_data['summonerLevel'] %></p>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="player-container-nr-right">
+                    <div class="nrr-north">
+                        <h1>Ranked Information</h1>
+                    </div>
+                    <div class="nrr-south">
+                        <% if @rank_data.present? %>
+                            <% @rank_data.each do |entry| %>
+                                <div class="nrrs-left">
+                                    <p><strong>Queue Type:</strong> <%= format_queue_type(entry['queueType']) %></p>
+                                    <p><strong>Tier:</strong> <%= entry['tier'] %> <%= entry['rank'] %></p>
+                                    <p><strong>League Points:</strong> <%= entry['leaguePoints'] %></p>
+                                </div>
+                                <div class="nrrs-right">
+                                    <p><strong>Wins:</strong> <%= entry['wins'] %></p>
+                                    <p><strong>Losses:</strong> <%= entry['losses'] %></p>
+                                    <p><strong>Win Ratio:</strong> <%= (entry['wins'].to_f / (entry['wins'].to_f + entry['losses'].to_f) * 100).round(0) %> %</p>
+                                </div>
+                            <% end %>
+                        <% else %>
+                            <p>No ranked information available.</p>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="player-container-south">
+            <div class="match-history">
+                <% if @matches.any? %>
+                    <h2>Match History</h2>
+                    <p><strong>Win Rate (based on the latest 20 matches):</strong> <%= @win_rate %> %</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Champion</th>
+                                <th>Match ID</th>
+                                <th>Score</th>
+                                <th>Duration</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% @matches.each do |match| %>
+                                <tr>
+                                    <td>
+                                        <%= image_tag "champion/#{match[:champion_name]}.webp", class: 'champion-icon' %>
+                                        <%= content_tag(:span, match[:champion_name], class: 'champion-name') %>
+                                    </td>
+                                    <td><%= match[:match_id] %></td>
+                                    <td><%= match[:score] %></td>
+                                    <td><%= Time.at(match[:duration].to_i).utc.strftime("%M:%S") %></td>
+                                    <td><%= match[:win] %></td>
+                                </tr>
+                            <% end %>
+                        </tbody>
+                    </table>
+                <% else %>
+                <p>No match data available.</p>
+                <% end %>
+            </div>
+        </div>
+
+    <% else %>
+        <p>No data available.</p>
+    <% end %>
+</div>

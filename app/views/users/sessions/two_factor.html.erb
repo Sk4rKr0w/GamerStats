@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag 'users/two_factor' %>
+
+<div class="two-factor-container">
+  <div class="two-factor-container-north">
+    <h2>Two-Factor Authentication</h2>
+    <span>You have received a 2FA code! <br>Please insert it down here:</span>
+  </div>
+  <div class="two-factor-container-south">
+    <%= form_with url: user_two_factor_path, method: :post do |f| %>
+      <div class="field">
+         <%= f.text_field :code %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Verify" %>
+      </div>
+    <% end %>
+
+    <div class="alternative-actions">
+      <%= button_to 'Resend Code', user_resend_two_factor_code_path, method: :post %>
+      <%= button_to 'Cancel', user_cancel_two_factor_path, method: :delete %>
+    </div>
+  </div>
+</div>

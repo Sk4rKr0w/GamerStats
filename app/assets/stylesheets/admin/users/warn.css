@@ -1,0 +1,77 @@
+body {
+    background-color: #141414;
+}
+
+.admin-user-warn-container {
+    font-family: "Abel", sans-serif;
+    color: #2c2c2c;
+    padding: 0px 20px;
+    width: 100%;
+    margin-left: 15%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-user-warn-container h1 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.admin-user-warn-container label {
+    color: #ffffff;
+}
+
+.admin-user-warn-container textarea,
+.admin-user-warn-container input[type="submit"] {
+    width: 95%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #2c2c2c;
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+.admin-user-warn-container input[type="submit"] {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.2s ease;
+}
+
+.admin-user-warn-container input[type="submit"]:hover {
+    background-color: #1c1c1c;
+}
+
+.admin-user-warn-container a {
+    text-decoration: none;
+    color: white;
+    transition: 0.2s ease;
+}
+
+.admin-user-warn-container a:hover {
+    color: rgb(144, 2, 2);
+}
+
+@media (max-width: 480px) {
+    .admin-user-warn-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 940px) {
+    .admin-user-warn-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 940px) and (max-width: 1023px) {
+    .admin-user-warn-container {
+        margin: 50px 0px 0px 0px;
+    }
+}

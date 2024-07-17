@@ -1,0 +1,93 @@
+<%= stylesheet_link_tag "edit_profile" %>
+
+<div class="edit-container">
+  <div class="edit-container-north">
+    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  </div>
+
+  <div class="edit-container-mid">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="edit-container-mid-north">
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>
+            Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="edit-container-mid-south">
+        <div class="field">
+          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+          <% if @minimum_password_length %>
+            <em><%= @minimum_password_length %> characters minimum</em>
+          <% end %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.password_field :current_password, autocomplete: "current-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :riot_id %><br />
+          <%= f.text_field :riot_id %>
+        </div>
+
+        <div class="field">
+          <%= f.label :riot_tagline %><br />
+          <%= f.text_field :riot_tagline %>
+        </div>
+
+        <div class="field">
+          <%= f.label :continent %><br />
+          <%= f.select :continent, options_for_select([['americas', 'americas'], ['asia', 'asia'], ['europe', 'europe'], ['sea', 'sea']], selected: resource.continent), { include_blank: 'Select Continent' } %>
+        </div>
+
+        <div class="field">
+          <%= f.label :region %><br />
+          <%= f.select :region, options_for_select([
+            ['br1', 'br1'],
+            ['eun1', 'eun1'],
+            ['euw1', 'euw1'],
+            ['jp1', 'jp1'],
+            ['kr', 'kr'],
+            ['la1', 'la1'],
+            ['la2', 'la2'],
+            ['na1', 'na1'],
+            ['oc1', 'oc1'],
+            ['tr1', 'tr1'],
+            ['ru', 'ru'],
+            ['ph2', 'ph2'],
+            ['sg2', 'sg2'],
+            ['th2', 'th2'],
+            ['tw2', 'tw2'],
+            ['vn2', 'vn2']
+          ], selected: resource.region), { include_blank: 'Select Region' } %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Update" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="edit-container-south">
+    <div>
+      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %>
+    </div>
+    <%= link_to "Back", :home %>
+  </div>
+</div>

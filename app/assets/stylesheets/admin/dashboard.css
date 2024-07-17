@@ -1,0 +1,95 @@
+body {
+    background: #141414;
+}
+
+.admin-container {
+    width: 100%;
+    margin-left: 15%;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.admin-dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dashboard-section {
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1 1 300px;
+    min-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.dashboard-section p,
+.dashboard-section ul,
+.dashboard-section li {
+    font-size: 1em;
+    color: #d3d3d3;
+}
+
+.dashboard-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dashboard-section li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.shutdown-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #ff4c4c;
+    color: #ffffff;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    font-family: "Abel", sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.shutdown-button:hover {
+    background-color: #e60000;
+}
+
+@media (max-width: 480px) {
+    .admin-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 940px) {
+    .admin-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 940px) and (max-width: 1023px) {
+    .admin-container {
+        margin: 50px 0px 0px 0px;
+    }
+}

@@ -16,6 +16,11 @@ module GamerStats
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w(assets tasks))
 
+     # Carica le variabili d'ambiente dalla gemma dotenv-rails
+     Bundler.require(*Rails.groups)
+
+     Dotenv::Rails.load if defined?(Dotenv)
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -23,5 +28,9 @@ module GamerStats
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    # Add the path to the DataDragon assets
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'dragontail-14.13.1', '14.13.1', 'img', 'item')
+    config.assets.compile = true
+
   end
 end

@@ -1,59 +1,99 @@
+// app/assets/javascripts/custom_script.js
+document.addEventListener("DOMContentLoaded", () => {
+    const champions = document.querySelectorAll(".table-row");
+    const championInvisible = document.getElementById("champion-invisible");
+    const championName = document.getElementById("champion-name");
+    const championTitle = document.getElementById("champion-title");
+    const championLore = document.getElementById("champion-lore");
+    const championImage = document.getElementById("champion-image");
+    const insightsContainer = document.getElementById("insights-container");
+
+    champions.forEach((champion) => {
+        champion.addEventListener("click", function () {
+            const dataset = this.dataset;
+
+            championName.textContent = dataset.name;
+            championTitle.textContent = dataset.title;
+            championLore.textContent = dataset.lore;
+            championImage.src = `/assets/${dataset.imagePath}`;
+
+            championInvisible.style.display = "flex";
+            championInvisible.style.zIndex = "1";
+            insightsContainer.style.display = "none";
+        });
+    });
+});
+
+function toggleChampions() {
+    const championInvisible = document.getElementById("champion-invisible");
+    const insightsContainer = document.getElementById("insights-container");
+
+    championInvisible.style.display = "none";
+    championInvisible.style.zIndex = "-1";
+    insightsContainer.style.display = "flex";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll(".item-image");
+    const itemInvisible = document.getElementById("item-invisible");
+    const itemName = document.getElementById("item-name");
+    const itemImage = document.getElementById("item-image");
+    const itemDescription = document.getElementById("item-description");
+    const itemCost = document.getElementById("item-cost");
+    const itemContainer = document.getElementById("item-container");
+
+    items.forEach((item) => {
+        item.addEventListener("click", function () {
+            itemName.textContent = this.dataset.name;
+            itemDescription.innerHTML = this.dataset.description;
+            itemCost.textContent = `Cost: ${this.dataset.cost}`;
+            itemImage.src = `/assets/${this.dataset.imagePath}`;
+            itemInvisible.style.display = "flex";
+            itemInvisible.style.zIndex = "1";
+            itemContainer.style.display = "none";
+        });
+    });
+});
+
+function toggleItem() {
+    const itemInvisible = document.getElementById("item-invisible");
+    const itemContainer = document.getElementById("item-container");
+
+    itemInvisible.style.display = "none";
+    itemInvisible.style.zIndex = "-2";
+    itemContainer.style.display = "flex";
+}
+
 var sideCounter = 0;
 var loginCounter = 0;
 var signUpCounter = 0;
 
-function toogleSidebar() {
-    var sidebarLeft = document.getElementById("sidebar-left");
-    var sidebarRight = document.getElementById("sidebar-right");
-    var searchContainer = document.getElementById("search-container");
-    sidebarLeft.style.transition = "0.5s ease";
-    sidebarRight.style.transition = "0.5s ease";
+function toggleSidebar() {
+    var mobileLeft = document.getElementById("mobile-left");
+    var mobileRight = document.getElementById("mobile-right");
+
+    var mainContent = document.getElementById("main-content");
+    var mobileBottom = document.getElementById("mobile-bottom");
 
     if (sideCounter % 2 === 0) {
-        sidebarLeft.style.left = "0";
-        sidebarRight.style.right = "0";
+        mobileLeft.style.left = "0px";
+        mobileRight.style.right = "0px";
+
+        // mainContent sottoposto a mobileBottom
+        mainContent.style.zIndex = "0";
+        mobileBottom.style.zIndex = "1";
+        mobileBottom.style.pointerEvents = "auto";
+
         sideCounter += 1;
     } else {
-        sidebarLeft.style.left = "-500px";
-        sidebarRight.style.right = "-500px";
+        mobileLeft.style.left = "-500px";
+        mobileRight.style.right = "-500px";
+
+        // mainContent sovrapposto a mobileBottom
+        mainContent.style.zIndex = "2";
+        mobileBottom.style.zIndex = "-1";
+        mobileBottom.style.pointerEvents = "none";
+
         sideCounter += 1;
-    }
-}
-
-function toogleLogin() {
-    var login = document.getElementById("login");
-    var mainContent = document.getElementById("main-content");
-
-    if (loginCounter % 2 === 0) {
-        login.style.opacity = "1";
-        login.style.zIndex = "2";
-        mainContent.style.zIndex = "-1";
-        mainContent.style.opacity = "0.25";
-        loginCounter += 1;
-    } else {
-        login.style.opacity = "0";
-        login.style.zIndex = "-1";
-        mainContent.style.zIndex = "1";
-        mainContent.style.opacity = "1";
-        loginCounter += 1;
-    }
-}
-
-function toogleSignUp() {
-    var loginSection = document.getElementById("login-section");
-    var signUpSection = document.getElementById("signup-section");
-
-    if (signUpCounter % 2 === 0) {
-        loginSection.style.opacity = "0";
-        loginSection.style.zIndex = "-2";
-        signUpSection.style.zIndex = "2";
-        signUpSection.style.opacity = "1";
-        signUpCounter += 1;
-    } else {
-        loginSection.style.opacity = "1";
-        loginSection.style.zIndex = "2";
-        signUpSection.style.zIndex = "-2";
-        signUpSection.style.opacity = "0";
-        signUpCounter += 1;
     }
 }

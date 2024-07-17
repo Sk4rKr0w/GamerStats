@@ -1,0 +1,290 @@
+.profile-container {
+    width: 100%;
+    margin-left: 15%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: #121212;
+}
+
+.profile-container strong {
+    color: rgb(161, 2, 2);
+}
+
+.profile-container p,
+.profile-container h1 {
+    margin: 15px 5px;
+}
+
+.profile-container-north {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+}
+
+.profile-container-north-left,
+.profile-container-north-right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.profile-container-north-left {
+    width: 20%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profile-container-north-right {
+    justify-content: space-around;
+    background-color: #2c2c2c;
+    margin: 0px 10px;
+    border-radius: 15px;
+    height: 90%;
+    width: 80%;
+}
+
+.profile-container-north-right h1 {
+    margin: 5px;
+}
+
+.profile-container-north-left img {
+    transform: scale(0.5);
+    border-radius: 50%;
+}
+
+.profile-container-nr-left,
+.profile-container-nr-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nrrl-north {
+    width: 100%;
+}
+
+.nrrl-north h1 {
+    background-color: rgb(161, 2, 2);
+    color: black;
+    padding: 0px 5px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.nrr-south {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container-south {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-container-south {
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.match-history {
+    width: 100%;
+}
+
+.match-history h2 {
+    color: #f5f5f5;
+    border-bottom: 2px solid #2c2c2c;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.match-history table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #141414;
+}
+
+.match-history th,
+.match-history td {
+    border: 1px solid #2c2c2c;
+    padding: 10px;
+    text-align: left;
+}
+
+.match-history th {
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+
+.match-history td {
+    background-color: #1a1a1a;
+}
+
+.match-history tbody tr:nth-child(even) {
+    background-color: #2c2c2c;
+}
+
+.match-history tbody tr:hover {
+    background-color: #333333;
+}
+
+.champion-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.match-history p {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #f5f5f5;
+}
+
+.profile-container-mid {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profile-container-mid a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 15px;
+    background-color: #333333;
+    color: white;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+.profile-container-mid a:hover {
+    background-color: #1a1a1a;
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        margin: 50px 0px 0px 0px;
+    }
+
+    .profile-container-north {
+        flex-direction: column;
+        height: 600px;
+    }
+
+    .profile-container-north-left,
+    .profile-container-north-right {
+        width: 100%;
+    }
+
+    .profile-container-north-left {
+        height: 30%;
+    }
+
+    .profile-container-north-right {
+        height: 70%;
+    }
+
+    .profile-container-north-right {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .nrrl-south {
+        width: 90%;
+        font-size: 14px;
+        margin: 5px 10px;
+    }
+
+    .nrrl-north {
+        width: auto;
+    }
+
+    .nrr-north {
+        width: auto;
+    }
+
+    .match-history p {
+        font-size: 16px;
+    }
+
+    .profile-container-south {
+        padding: 10px;
+    }
+
+    .match-history td {
+        font-size: 12px;
+    }
+
+    .match-history th {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .match-history td {
+        text-align: center;
+    }
+
+    .match-history th,
+    .match-history td {
+        padding: 5px;
+    }
+
+    .match-history .champion-name {
+        display: none;
+    }
+
+    .nrrl-south p:nth-of-type(2) {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 920px) {
+    .profile-container {
+        margin: 50px 0px 0px 0px;
+    }
+
+    .profile-container-north-left {
+        width: 30%;
+    }
+
+    .profile-container-north-right {
+        width: 70%;
+        height: 80%;
+    }
+
+    .profile-container-nr-left,
+    .profile-container-nr-right {
+        font-size: 10px;
+        margin: 0;
+    }
+}
+
+@media (min-width: 920px) and (max-width: 1024px) {
+    .profile-container {
+        width: 100%;
+        margin-left: 15%;
+    }
+
+    .profile-container-north-right {
+        transform: scale(0.95);
+    }
+
+    .profile-container-nr-right {
+        height: 100%;
+    }
+
+    .profile-container-nr-right h1 {
+        font-size: 27px;
+    }
+}

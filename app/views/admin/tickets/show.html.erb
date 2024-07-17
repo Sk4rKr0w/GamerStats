@@ -1,0 +1,32 @@
+<%= stylesheet_link_tag "admin/tickets/show" %>
+
+<div class="admin-tickets-show">
+  <h1>Ticket Details</h1>
+
+  <div class="admin-tickets-north">
+    <p><strong>Subject:</strong> <%= @ticket.subject %></p>
+    <p><strong>Message:</strong> <%= @ticket.message %></p>
+    <p><strong>Status:</strong> <%= @ticket.status %></p>
+
+    <% if @ticket.status != 'resolved' %>
+      <%= button_to 'Resolve', resolve_admin_ticket_path(@ticket), method: :post %>
+    <% end %>
+  </div>
+
+  <div class="admin-tickets-south">
+    <h2>Send a Message to the User</h2>
+
+    <%= form_with url: send_message_admin_ticket_path(@ticket), method: :post do |form| %>
+      <div>
+        <%= form.label :message, "Your Message" %>
+        <%= form.text_area :message %>
+      </div>
+      <div>
+        <%= form.submit "Send Message" %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to 'Back to Tickets', admin_tickets_path %>
+
+</div>

@@ -1,0 +1,80 @@
+.new-squad-container {
+    width: 75%;
+    margin: 20px 0px 20px 15%;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.new-squad-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.new-squad-container input[type="text"],
+.new-squad-container textarea {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    background-color: #2c2c2c;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.new-squad-container textarea {
+    min-height: 100px;
+}
+
+.new-squad-container .fields_for {
+    margin-top: 10px;
+}
+
+.new-squad-container .fields_for label {
+    margin-bottom: 3px;
+}
+
+.new-squad-container .fields_for input[type="text"] {
+    width: calc(50% - 5px);
+    padding: 6px;
+}
+
+.new-squad-container input[type="submit"] {
+    background-color: #2c2c2c;
+    color: #fff;
+    border: 1px solid #2c2c2c;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.new-squad-container input[type="submit"]:hover {
+    background-color: #3d3d3d;
+    border-color: #3d3d3d;
+}
+
+hr {
+    background: linear-gradient(to left, 50% white, 100% black);
+}
+
+@media (max-width: 480px) {
+    .new-squad-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .new-squad-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 920px) {
+    .new-squad-container {
+        margin: 50px 0px 0px 0px;
+    }
+}

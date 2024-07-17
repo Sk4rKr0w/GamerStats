@@ -1,0 +1,60 @@
+<%= stylesheet_link_tag 'insights' %>
+
+<div id="insights-container" class="insights-container">
+    <div class="insights-container-north">
+        <h1>Insights</h1>
+        <input type="text" id="champion-search" placeholder="Cerca campioni...">
+    </div>
+    <div class="insights-container-south">
+        <div class="table" id="champion-table">
+            <div class="table-header">
+                <div class="table-cell">Tier</div>
+                <div class="table-cell">Champion</div>
+                <div class="table-cell">Winrate</div>
+                <div class="table-cell">Pickrate</div>
+                <div class="table-cell">Banrate</div>
+                <div class="table-cell">Matches</div>
+                <div class="table-cell">Lane</div>
+            </div>
+            <% @insights.each do |insight| %>
+            <div
+                class="table-row"
+                data-name="<%= insight[:champion] %>"
+                data-title="<%= insight[:title] %>"
+                data-lore="<%= insight[:lore] %>"
+                data-image-path="champion/<%= insight[:champion] %>.webp"
+            >
+                <div class="table-cell"><%= insight[:tier] %></div>
+                <div class="table-cell">
+                    <img class="champion-img" src="<%= asset_path("champion/#{insight[:champion]}.webp") %>" alt="<%= insight[:champion] %>"> <%= insight[:champion] %>
+                </div>
+                <div class="table-cell"><%= insight[:winrate] %></div>
+                <div class="table-cell"><%= insight[:pickrate] %></div>
+                <div class="table-cell"><%= insight[:banrate] %></div>
+                <div class="table-cell"><%= insight[:matches] %></div>
+                <div class="table-cell"><%= insight[:lane] %></div>
+            </div>
+
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div id="champion-invisible" class="champion-invisible">
+    <div id="champion-details" class="champion-details">
+        <div class="champion-details-north">
+            <h2 id="champion-name"></h2>
+            <%= image_tag("application/x-icon.svg", alt: "champion Image", onclick: 'toggleChampions()') %>
+        </div>
+        <div class="champion-details-mid">
+            <%= image_tag("", id: "champion-image", alt: "champion Image") %>
+        </div>
+        <div class="champion-details-south">
+            <p id="champion-title"></p>
+            <p id="champion-lore"></p>
+        </div>
+    </div>
+</div>
+
+<%= javascript_include_tag 'insights' %>
+

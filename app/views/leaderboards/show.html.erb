@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag "leaderboards" %>
+
+<div class="leaderboard-container">
+    <div class="leaderboard-container-north">
+        <h1>Classifica Challenger</h1>
+    </div>
+
+    <div class="leaderboard-container-south">
+        <% if @lol_leaderboard.present? && @lol_leaderboard['entries'].present? %>
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Nome Giocatore</th>
+                    <th>League Points</th>
+                    <th>Winrate</th>
+                    <th>Tier</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @lol_leaderboard['entries'].each do |player| %>
+                <tr>
+                    <td>
+                        <%= player['summonerName'] || "Nome non disponibile" %>
+                    </td>
+                    <td><%= player['leaguePoints'] %></td>
+                    <td><%= player['winRate'] %>%</td>
+                    <td>
+                        <%= @lol_leaderboard['tier'] %> <%= player['rank'] %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+        <% else %>
+        <p class="no-data">
+            Non sono disponibili dati per il server selezionato.
+        </p>
+        <% end %>
+    </div>
+</div>

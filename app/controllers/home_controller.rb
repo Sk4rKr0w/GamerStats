@@ -1,9 +1,18 @@
 class HomeController < ApplicationController
-  def home
-    # La tua logica per la pagina "Home" va qui
+  before_action :check_if_banned, only: [:index]
+
+  def index
+    # Altre logiche del tuo controller
   end
 
-  def about
+  private
 
+  def check_if_banned
+    Rails.logger.debug "Current user: #{current_user.inspect}"
+    if current_user&.banned?
+      banned_until = current_user.banned_until
+      sign_out current_user
+      redirect_to new_user_session_path, alert: "Your account has been banned until #{banned_until}."
+    end
   end
 end

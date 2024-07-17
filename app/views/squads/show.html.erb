@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag "squads/show" %>
+
+<div class="squad-show-container">
+  <h1><%= @squad.name %></h1>
+
+  <h3>Description:</h3> <p><%= @squad.description %></p>
+  <h3>Created by:</h3> <p><%= @squad.creator_name %></p>
+
+  <h3>Squad Winrate: <%= @squad.average_win_rate %>%</h3>
+  <h3>Squad K/D/A: <%= @squad.average_kda %></h3>
+
+  <h3>Players</h3>
+  <ul>
+    <% @squad.players.each do |player| %>
+      <li>
+        <%= player.riot_id %> (<%= player.game_tag %>) - Win Rate: <%= player.win_rate %>% - K/D/A: <%= player.kills %>/<%= player.deaths %>/<%= player.assists %>
+        <% if player.puuid.blank? %>
+          <p>Player details could not be fetched.</p>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= button_to "Save Squad", save_squad_path(@squad), method: :post %>
+
+  <%= link_to 'Back to Squads', squads_path %>
+</div>
