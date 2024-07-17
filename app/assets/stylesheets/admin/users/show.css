@@ -35,3 +35,21 @@ body {
 .admin-user-show-container a:hover {
     color: rgb(144, 2, 2);
 }
+
+@media (max-width: 480px) {
+    .admin-user-show-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 940px) {
+    .admin-user-show-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 940px) and (max-width: 1023px) {
+    .admin-user-show-container {
+        margin: 50px 0px 0px 0px;
+    }
+}

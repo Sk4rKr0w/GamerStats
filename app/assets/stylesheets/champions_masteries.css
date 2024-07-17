@@ -1,7 +1,10 @@
+body {
+    background-color: #141414;
+}
+
 .champions-result-container {
     width: 100%;
     margin-left: 15%;
-    background-color: #141414;
     color: #fff;
     padding: 20px;
 }

@@ -1,6 +1,9 @@
+body {
+    background-color: #1c1c1c;
+}
+
 .admin-patch-note-details {
     font-family: "Abel", sans-serif;
-    background-color: #1c1c1c;
     color: #ffffff;
     padding: 0px 20px;
     border: 1px solid #2c2c2c;
@@ -47,4 +50,22 @@
 
 .admin-patch-note-details div {
     margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+    .admin-patch-note-details {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 940px) {
+    .admin-patch-note-details {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 940px) and (max-width: 1023px) {
+    .admin-patch-note-details {
+        margin: 50px 0px 0px 0px;
+    }
 }

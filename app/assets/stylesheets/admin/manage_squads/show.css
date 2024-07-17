@@ -1,6 +1,9 @@
+body {
+    background-color: #1f1f1f;
+}
+
 .admin-squad-show {
     color: #ffffff;
-    background-color: #1f1f1f;
     width: 100%;
     padding: 20px;
     margin-left: 15%;
@@ -8,7 +11,9 @@
 }
 
 .admin-squad-show h1 {
-    color: #ffffff;
+    color: black;
+    padding: 10px 15px;
+    background-color: #c9302c;
     font-size: 28px;
 }
 
@@ -89,4 +94,22 @@
 
 .admin-squad-show thead tr th:nth-of-type(2) {
     display: none;
+}
+
+@media (max-width: 480px) {
+    .admin-squad-show {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 940px) {
+    .admin-squad-show {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 940px) and (max-width: 1023px) {
+    .admin-squad-show {
+        margin: 50px 0px 0px 0px;
+    }
 }

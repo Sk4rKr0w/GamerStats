@@ -1,7 +1,10 @@
+body {
+    background-color: #1e1e1e;
+}
+
 .admin-patch-note-edit {
     font-family: "Abel", sans-serif;
     color: #ffffff;
-    background-color: #1e1e1e;
     padding: 20px;
     width: 100%;
     margin-left: 15%;
@@ -55,4 +58,22 @@
 
 .admin-patch-note-edit a:hover {
     color: #ffffff;
+}
+
+@media (max-width: 480px) {
+    .admin-patch-note-edit {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 940px) {
+    .admin-patch-note-edit {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 940px) and (max-width: 1023px) {
+    .admin-patch-note-edit {
+        margin: 50px 0px 0px 0px;
+    }
 }

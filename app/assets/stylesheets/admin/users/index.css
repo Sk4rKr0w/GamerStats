@@ -92,8 +92,27 @@ thead {
     text-decoration: none;
     color: white;
     transition: 0.2s ease;
+    padding: 20px 0px;
 }
 
 .admin-users-container a:hover {
     color: rgb(144, 2, 2);
+}
+
+@media (max-width: 480px) {
+    .admin-users-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 940px) {
+    .admin-users-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 940px) and (max-width: 1023px) {
+    .admin-users-container {
+        margin: 50px 0px 0px 0px;
+    }
 }
