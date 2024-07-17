@@ -1,11 +1,17 @@
+body {
+    background-color: #141414;
+}
 .admin-tickets-container {
     font-family: "Abel", sans-serif;
     color: #fff;
-    background-color: #141414;
     width: 100%;
     margin-left: 15%;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .admin-tickets-container h1 {
@@ -22,7 +28,7 @@ table {
 
 table th,
 table td {
-    padding: 12px;
+    padding: 5px;
     text-align: left;
     border-bottom: 1px solid #2c2c2c;
 }
@@ -80,4 +86,22 @@ table tbody tr:hover {
 
 .admin-tickets-container a:hover {
     color: rgb(160, 3, 3);
+}
+
+@media (max-width: 480px) {
+    .admin-tickets-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 940px) {
+    .admin-tickets-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 940px) and (max-width: 1023px) {
+    .admin-tickets-container {
+        margin: 50px 0px 0px 0px;
+    }
 }

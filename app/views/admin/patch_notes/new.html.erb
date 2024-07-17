@@ -1,6 +1,8 @@
 <%= stylesheet_link_tag "admin/patch_notes/new" %>
 
 <div class="admin-patch-note-new">
+
+  <h1>New Patch Note</h1>
   <%= form_with model: [:admin, @patch_note] do |form| %>
     <div>
       <%= form.label :title %>

@@ -12,6 +12,8 @@
     font-size: 28px;
     margin-bottom: 20px;
     text-align: center;
+    padding: 10px 15px;
+    background-color: rgb(122, 0, 0);
 }
 
 .compare-squad-container form {
@@ -72,6 +74,8 @@
     font-size: 24px;
     margin-bottom: 10px;
     text-align: center;
+    padding: 10px 15px;
+    background-color: rgb(122, 0, 0);
 }
 
 .comparison-result-container h3 {

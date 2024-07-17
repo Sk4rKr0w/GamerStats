@@ -59,6 +59,8 @@ RSpec.feature "Admin authentication and dashboard access", type: :feature, js: t
 
     sleep 1
 
+    sleep 1
+
     admin.destroy
   end
 

@@ -1,10 +1,14 @@
+body {
+    background-color: #141414;
+}
+
 .manage-squad-container {
     font-family: "Abel", sans-serif;
     color: #fff;
-    background-color: #141414;
     padding: 20px;
     width: 100%;
     margin-left: 15%;
+    padding: 10px;
 }
 
 .manage-squad-container h1 {
@@ -45,4 +49,22 @@ tbody tr:hover {
 td a {
     color: #fff;
     text-decoration: none;
+}
+
+@media (max-width: 480px) {
+    .manage-squad-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 940px) {
+    .manage-squad-container {
+        margin: 50px 0px 0px 0px;
+    }
+}
+
+@media (min-width: 940px) and (max-width: 1023px) {
+    .manage-squad-container {
+        margin: 50px 0px 0px 0px;
+    }
 }
