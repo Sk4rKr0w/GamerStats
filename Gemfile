@@ -77,6 +77,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'webmock'
   gem 'rails-controller-testing'
+   gem 'shoulda-matchers', '~> 5.0'
 end
 
 
