@@ -1,32 +1,43 @@
-<h1>Edit Squad</h1>
+<%= stylesheet_link_tag "squads/edit_squad" %>
 
-<%= form_with(model: @squad, local: true) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
 
-  <%= form.label :description %>
-  <%= form.text_area :description %>
+<div class="edit-squad-container">
+  <h1>Edit Squad</h1>
 
-  <%= form.label :creator_name %>
-  <%= form.text_field :creator_name %>
+  <%= form_with(model: @squad, local: true) do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'text-field' %>
 
-  <h3>Players</h3>
-  <%= form.fields_for :players do |player_form| %>
-    <div>
-      <%= player_form.label :riot_id %>
-      <%= player_form.text_field :riot_id %>
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'textarea' %>
+
+    <%= form.label :creator_name %>
+    <%= form.text_field :creator_name, class: 'text-field' %>
+
+    <hr>
+    <h3>Players</h3>
+    <div class="players-section">
+      <%= form.fields_for :players do |player_form| %>
+        <div class="player-card">
+          <div class="fields_for">
+            <%= player_form.label :riot_id %>
+            <%= player_form.text_field :riot_id, class: 'text-field' %>
+          </div>
+          <div class="fields_for">
+            <%= player_form.label :game_tag %>
+            <%= player_form.text_field :game_tag, class: 'text-field' %>
+          </div>
+          <div class="remove-player">
+            <%= player_form.check_box :_destroy %>
+            <%= player_form.label :_destroy, "Remove player" %>
+          </div>
+        </div>
+      <% end %>
     </div>
-    <div>
-      <%= player_form.label :game_tag %>
-      <%= player_form.text_field :game_tag %>
-    </div>
-    <div>
-      <%= player_form.check_box :_destroy %>
-      <%= player_form.label :_destroy, "Remove player" %>
+
+    <div class="form-actions">
+      <%= form.submit "Update Squad" %>
+      <%= link_to 'Back to My Squads', new_squad_path, class: 'back-link' %>
     </div>
   <% end %>
-
-  <%= form.submit "Update Squad" %>
-<% end %>
-
-<%= link_to 'Back to My Squads', new_squad_path %>
+</div>
