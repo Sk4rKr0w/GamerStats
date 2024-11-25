@@ -12,7 +12,7 @@ class PlayersController < ApplicationController
     server = params[:server]  # Aggiungi questa linea per ottenere il server dal form
 
     api_region = get_api_region(region)
-    api_key = 'RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9'
+    api_key = ENV['RIOT_API_KEY']
 
     @player_data = fetch_player_data(api_region, game_name, tag_line, api_key)
 
