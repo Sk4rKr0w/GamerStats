@@ -4,7 +4,7 @@ class Player < ApplicationRecord
   before_save :initialize_stats
 
   def fetch_details
-    api_key = "RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9"
+    api_key = ENV['RIOT_API_KEY']
     puuid_uri = URI("https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/#{riot_id}/#{game_tag}?api_key=#{api_key}")
     puuid_response = Net::HTTP.get(puuid_uri)
     puuid_details = JSON.parse(puuid_response)

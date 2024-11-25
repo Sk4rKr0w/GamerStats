@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
   require 'json'
 
   def show
-    api_key = 'RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9'
+    api_key = ENV['RIOT_API_KEY']
     api_region = @user.continent
     game_name = @user.riot_id
     tag_line = @user.riot_tagline

@@ -18,7 +18,7 @@ RSpec.describe PlayersController, type: :controller do
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
             'Host'=>'europe.api.riotgames.com',
             'User-Agent'=>'Ruby',
-            'X-Riot-Token'=>'RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9'
+            'X-Riot-Token'=> ENV['RIOT_API_KEY']
           }).
         to_return(status: 200, body: '{"puuid": "some_puuid"}', headers: {})
 
@@ -29,7 +29,7 @@ RSpec.describe PlayersController, type: :controller do
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
             'Host'=>'euw1',
             'User-Agent'=>'Ruby',
-            'X-Riot-Token'=>'RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9'
+            'X-Riot-Token'=> ENV['RIOT_API_KEY']
           }).
         to_return(status: 200, body: '{"id": "some_id", "profileIconId": 1234}', headers: {})
 
@@ -40,7 +40,7 @@ RSpec.describe PlayersController, type: :controller do
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
             'Host'=>'europe.api.riotgames.com',
             'User-Agent'=>'Ruby',
-            'X-Riot-Token'=>'RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9'
+            'X-Riot-Token'=>ENV['RIOT_API_KEY']
           }).
         to_return(status: 200, body: '["match1", "match2"]', headers: {})
 
@@ -51,7 +51,7 @@ RSpec.describe PlayersController, type: :controller do
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
             'Host'=>'europe.api.riotgames.com',
             'User-Agent'=>'Ruby',
-            'X-Riot-Token'=>'RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9'
+            'X-Riot-Token'=>ENV['API_KEY']
           }).
         to_return(status: 200, body: '{"info": {"participants": [{"puuid": "some_puuid", "win": true, "kills": 10, "deaths": 2, "assists": 5, "championName": "Aatrox"}], "gameDuration": 1800}}', headers: {})
 
@@ -62,7 +62,7 @@ RSpec.describe PlayersController, type: :controller do
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
             'Host'=>'europe.api.riotgames.com',
             'User-Agent'=>'Ruby',
-            'X-Riot-Token'=>'RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9'
+            'X-Riot-Token'=>ENV['RIOT_API_KEY']
           }).
         to_return(status: 200, body: '{"info": {"participants": [{"puuid": "some_puuid", "win": false, "kills": 7, "deaths": 3, "assists": 4, "championName": "Ahri"}], "gameDuration": 1600}}', headers: {})
 
@@ -73,7 +73,7 @@ RSpec.describe PlayersController, type: :controller do
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
             'Host'=>'euw1',
             'User-Agent'=>'Ruby',
-            'X-Riot-Token'=>'RGAPI-d7f82b42-919a-4fb4-857b-e65bd32ee1d9'
+            'X-Riot-Token'=>ENV['RIOT_API_KEY']
           }).
         to_return(status: 200, body: '[{"tier": "Gold", "rank": "IV", "leaguePoints": 50}]', headers: {})
     end

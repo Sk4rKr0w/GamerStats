@@ -67,10 +67,10 @@ RSpec.describe Player, type: :model do
       player.reload
 
       expect(player.puuid).to eq('XqWN8mVYAy3CnBV3r8K82XrHPOP3l58peKOgwrEtJ9H0U3EL98Ofdeecg5UJ7L0l841U-Tkrs7lLtw')
-      expect(player.kills).to eq(4.53) # (10 + 5) / 2
-      expect(player.deaths).to eq(4.87) # (2 + 3) / 2
-      expect(player.assists).to eq(8.93) # (5 + 8) / 2
-      expect(player.win_rate).to eq(33.33) # 1 win out of 2 matches
+      expect(player.kills).to eq(4.53)
+      expect(player.deaths).to eq(4.87)
+      expect(player.assists).to eq(8.93)
+      expect(player.win_rate).to eq(33.33)
     end
   end
 end
